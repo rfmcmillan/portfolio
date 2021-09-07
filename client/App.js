@@ -1,13 +1,32 @@
 import React from 'react';
 import Routes from './Routes';
 import Banner from './components/Banner';
+import Nav from './components/Nav';
+import About from './components/About';
+import { ThemeProvider, createTheme } from '@material-ui/core/styles';
+
+const theme = createTheme({
+  typography: {
+    fontFamily: ['Alata', 'sans-serif'].join(','),
+  },
+  palette: {
+    primary: {
+      main: '#7CD2B3',
+      contrastText: 'black',
+    },
+  },
+});
 
 const App = () => {
   return (
-    <div>
-      <Banner />
-      <Routes />
-    </div>
+    <ThemeProvider theme={theme}>
+      <div>
+        <Banner />
+        <Nav />
+        <About />
+        <Routes />
+      </div>
+    </ThemeProvider>
   );
 };
 
