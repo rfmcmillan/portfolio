@@ -6,19 +6,25 @@ export const prioritiesData = [
   {
     title: 'Maintainable',
     icon: Group,
-    altText: 'Lineal HTML',
+    altText: 'Wrench',
     text: 'Focused on writing adaptable and easy-to-read code.',
   },
   {
     title: 'Full Stack',
     icon: Reorder,
-    altText: 'Lineal Rocket Ship',
+    altText: 'Stack of Rectangles',
     text: 'Proficient in modern back-end and front-end technologies',
+  },
+  {
+    title: 'Agile',
+    icon: Mood,
+    altText: 'Lineal Phone and Desktop',
+    text: 'Use agile methodologies to work effectively with a team.',
   },
   {
     title: 'User-Focused',
     icon: Mood,
-    altText: 'Lineal Phone and Desktop',
+    altText: 'Smiley Face',
     text: 'Driven by desire to create web applications that are both easy and wonderful to use.',
   },
 ];

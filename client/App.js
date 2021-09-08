@@ -4,6 +4,7 @@ import Banner from './components/Banner';
 import Nav from './components/Nav';
 import About from './components/About';
 import Priorities from './components/Priorities';
+import Skills from './components/Skills';
 import { ThemeProvider, createTheme } from '@material-ui/core/styles';
 
 const theme = createTheme({
@@ -27,6 +28,7 @@ const App = () => {
         <About />
         <Routes />
         <Priorities />
+        <Skills />
       </div>
     </ThemeProvider>
   );

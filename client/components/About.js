@@ -8,8 +8,8 @@ const About = () => {
     root: {
       color: 'black',
       backgroundColor: theme.palette.primary.main,
-      textAlign: 'center',
       paddingTop: 100,
+      margin: 'auto',
     },
     about: {
       width: '50vw',

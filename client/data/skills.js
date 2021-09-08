@@ -1,0 +1,50 @@
+import {
+  css,
+  html,
+  javascript,
+  nodejs,
+  postgres,
+  react,
+  redux,
+  express,
+  materialUi,
+  git,
+  mocha,
+  sequelize,
+  webpack,
+  babel,
+  chai,
+  travisCi,
+  jwt,
+  heroku,
+} from '../img/logos';
+
+export const skillsData = [
+  {
+    phrase: 'I am proficient in',
+    items: [
+      css,
+      html,
+      javascript,
+      nodejs,
+      react,
+      redux,
+      express,
+      postgres,
+      sequelize,
+      materialUi,
+      git,
+      travisCi,
+      mocha,
+      chai,
+    ],
+  },
+  {
+    phrase: 'familiar with',
+    items: [webpack, babel, jwt, heroku],
+  },
+  {
+    phrase: 'and exploring',
+    items: [],
+  },
+];

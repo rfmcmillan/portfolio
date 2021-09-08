@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography, Grid } from '@material-ui/core';
+import { Typography, Grid, Divider } from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { prioritiesData } from '../../data/priorities.js';
 import { Reorder } from '@material-ui/icons';
@@ -8,7 +8,7 @@ const Priority = ({ priority }) => {
   const theme = useTheme();
   const useStyles = makeStyles({
     root: {
-      backgroundColor: theme.palette.primary.main,
+      maxWidth: 200,
     },
   });
   const classes = useStyles();
