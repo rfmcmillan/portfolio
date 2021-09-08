@@ -1,26 +1,27 @@
 import React from 'react';
-import { makeStyles, useTheme, ThemeProvider } from '@material-ui/core/styles';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { Typography, Grid } from '@material-ui/core';
 
-const useStyles = makeStyles({
-  root: {
-    color: 'black',
-    backgroundColor: '#7CD2B3',
-    textAlign: 'center',
-    paddingTop: 100,
-  },
-  about: {
-    width: '50vw',
-  },
-  name: {
-    fontSize: 36,
-    marginBottom: 20,
-  },
-});
-
 const About = () => {
-  const classes = useStyles();
   const theme = useTheme();
+  const useStyles = makeStyles({
+    root: {
+      color: 'black',
+      backgroundColor: theme.palette.primary.main,
+      textAlign: 'center',
+      paddingTop: 100,
+    },
+    about: {
+      width: '50vw',
+      marginBottom: 100,
+    },
+    name: {
+      fontSize: 36,
+      marginBottom: 20,
+    },
+  });
+  const classes = useStyles();
+
   return (
     <section className="section" id="about">
       <div className={classes.root}>
