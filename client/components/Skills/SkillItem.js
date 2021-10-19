@@ -17,7 +17,6 @@ const SkillItem = ({ skill }) => {
   });
 
   const classes = useStyles();
-
   return (
     <Paper className={classes.root} square>
       <Box
@@ -33,6 +32,7 @@ const SkillItem = ({ skill }) => {
           src={logo ? logo : ''}
           alt={logo ? `${title} logo` : ''}
         />
+
         <Typography
           className={classes.text}
           fontFamily={theme.typography.fontFamily}

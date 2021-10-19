@@ -34,13 +34,13 @@ const About = () => {
           <Grid item>
             <Typography className={classes.about} variant="body1">
               A self-motivated and team-minded full stack engineer with a
-              background in architecture and finance. Prior to 2021, I was
-              focused on designing and developing homes that are sustainable,
-              affordable and, of course, wonderful to live in. Now, after
-              completing the 26-week software engineering program at Fullstack
-              Academy, I am ready to combine my love of problem-solving with my
-              passion for design to create software that is both powerful and
-              wonderful to use.
+              background in architecture. Prior to 2021, I was focused on
+              designing and developing homes that are sustainable, affordable
+              and, of course, wonderful to live in. Now, after completing the
+              26-week software engineering program at Fullstack Academy, I am
+              ready to combine my love of problem-solving with my passion for
+              design to create software that is both powerful and wonderful to
+              use.
             </Typography>
           </Grid>
         </Grid>

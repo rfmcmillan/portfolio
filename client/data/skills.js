@@ -12,15 +12,14 @@ import {
   mocha,
   sequelize,
   webpack,
-  babel,
   chai,
-  travisCi,
   jwt,
   heroku,
 } from '../img/logos';
 
 export const skillsData = [
   {
+    id: 0,
     phrase: 'I am proficient in',
     items: [
       css,
@@ -34,16 +33,13 @@ export const skillsData = [
       sequelize,
       materialUi,
       git,
-      travisCi,
       mocha,
       chai,
     ],
   },
+  { id: 1, phrase: 'familiar with', items: [webpack, jwt, heroku] },
   {
-    phrase: 'familiar with',
-    items: [webpack, babel, jwt, heroku],
-  },
-  {
+    id: 2,
     phrase: 'and exploring',
     items: [],
   },

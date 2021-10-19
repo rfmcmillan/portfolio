@@ -1,24 +1,32 @@
 import React from 'react';
-
-import ProjectCard from './project-card';
-
-import { projectsData } from '../../data';
+import { Typography, Box } from '@material-ui/core';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
+import ProjectCard from './ProjectCard';
+import { projectsData } from '../../data/projects';
 
 const Projects = () => {
+  const theme = useTheme();
+  const useStyles = makeStyles({
+    projects: {
+      margin: 20,
+    },
+  });
+  const classes = useStyles();
+
   return (
     <section>
-      <div>
-        <h2>Projects</h2>
-        <p>
+      <Box>
+        <Typography variant="h2">Projects</Typography>
+        <Typography>
           Reinforcing my knowledge practically by applying new skills and
           open-source frameworks to complete personal projects.
-        </p>
-      </div>
-      <div>
+        </Typography>
+      </Box>
+      <Box className={classes.projects}>
         {projectsData.map((project, index) => (
           <ProjectCard project={project} key={index} />
         ))}
-      </div>
+      </Box>
     </section>
   );
 };

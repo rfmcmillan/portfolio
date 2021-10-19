@@ -5,11 +5,12 @@ import Nav from './components/Nav';
 import About from './components/About';
 import Priorities from './components/Priorities';
 import Skills from './components/Skills';
+import Projects from './components/Projects';
 import { ThemeProvider, createTheme } from '@material-ui/core/styles';
 
 const theme = createTheme({
   typography: {
-    fontFamily: ['Alata', 'sans-serif'].join(','),
+    fontFamily: ['Roboto', 'sans-serif'].join(','),
   },
   palette: {
     primary: {
@@ -29,6 +30,7 @@ const App = () => {
         <Routes />
         <Priorities />
         <Skills />
+        <Projects />
       </div>
     </ThemeProvider>
   );

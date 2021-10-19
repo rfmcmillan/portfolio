@@ -1,35 +1,46 @@
 import React, { useState } from 'react';
-
-import SkillItem from '../../skill-item';
+import { Box, List, Link, Paper, Typography } from '@material-ui/core';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
+import SkillItem from '../../Skills/SkillItem';
 
 const ProjectCard = ({ project }) => {
+  const useStyles = makeStyles({
+    root: { width: 350 },
+    title: { fontSize: 22, fontWeight: 500 },
+  });
+  const classes = useStyles({ button: { height: 20, width: 20 } });
+  console.log('project.buttons:', project.buttons);
   return (
-    <div>
-      <div>
+    <Paper className={classes.root}>
+      <Box>
         <img src={project.image} alt={project.title} />
-        <div>
-          <h3>{project.title}</h3>
-          <p>{project.description}</p>
-        </div>
-        <span>{isMobile ? 'Tap' : 'Hover'} Card for Details</span>
-      </div>
-      <div>
-        <div>
-          <p>{project.role}</p>
-          <p>{project.type}</p>
-        </div>
-        <div>
-          <span>Tech Stack</span>
+        <Box>
+          <Typography className={classes.title} variant="h3">
+            {project.title}
+          </Typography>
+          <Typography>{project.description}</Typography>
+        </Box>
+      </Box>
+      <Box>
+        <Box>
+          <Typography>{project.role}</Typography>
+          <Typography>{project.type}</Typography>
+        </Box>
+        <Box>
+          <Box component="span">
+            <Typography>Tech Stack</Typography>
+          </Box>
           <ul>
             {project.stack.map((skill, index) => (
               <SkillItem skill={skill} key={index} />
             ))}
           </ul>
-        </div>
+        </Box>
         {project.buttons && (
-          <div>
+          <Box>
             {project.buttons.map((button, index) => (
-              <a
+              <Link
+                className={classes.button}
                 href={button.link}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -38,13 +49,12 @@ const ProjectCard = ({ project }) => {
                 onFocus={() => setFlip(true)}
               >
                 <span>{button.text}</span>
-                {button.icon}
-              </a>
+              </Link>
             ))}
-          </div>
+          </Box>
         )}
-      </div>
-    </div>
+      </Box>
+    </Paper>
   );
 };
 
