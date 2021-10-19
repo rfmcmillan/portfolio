@@ -7,7 +7,7 @@ const About = () => {
   const useStyles = makeStyles({
     root: {
       color: 'black',
-      backgroundColor: theme.palette.primary.main,
+      backgroundColor: 'white',
       paddingTop: 100,
       margin: 'auto',
     },

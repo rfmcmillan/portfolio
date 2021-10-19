@@ -6,10 +6,22 @@ import SkillItem from './SkillItem';
 import SkillSet from './SkillSet';
 
 const Skills = () => {
+  const theme = useTheme();
   const useStyles = makeStyles({
-    root: { textAlign: 'center' },
+    root: {
+      textAlign: 'center',
+      backgroundColor: theme.palette.primary.main,
+    },
     header: { fontSize: 30 },
-    container: { width: '66%', margin: 'auto' },
+    container: {
+      width: '66%',
+      margin: 'auto',
+    },
+    skills: {
+      backgroundColor: theme.palette.primary.main,
+      marginTop: 0,
+      paddingTop: 16,
+    },
   });
   const classes = useStyles();
   return (
@@ -23,7 +35,7 @@ const Skills = () => {
           opportunity to work with.
         </Typography>
       </div>
-      <ul>
+      <ul className={classes.skills}>
         {skillsData.map((skillSet, index) => (
           <SkillSet data={skillSet} key={index} />
         ))}

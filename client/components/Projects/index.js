@@ -14,20 +14,24 @@ const Projects = () => {
   const classes = useStyles();
 
   return (
-    <section>
-      <Box>
+    <Box
+      sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
+    >
+      <Box
+        sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
+      >
         <Typography variant="h2">Projects</Typography>
         <Typography>
           Reinforcing my knowledge practically by applying new skills and
           open-source frameworks to complete personal projects.
         </Typography>
       </Box>
-      <Box className={classes.projects}>
+      <Box className={classes.projects} sx={{ display: 'flex' }}>
         {projectsData.map((project, index) => (
           <ProjectCard project={project} key={index} />
         ))}
       </Box>
-    </section>
+    </Box>
   );
 };
 

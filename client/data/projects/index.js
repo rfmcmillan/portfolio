@@ -8,10 +8,10 @@ export const projectsData = [
   {
     title: 'PomodoroGo',
     description: `A chrome extension that improves productivity by combining a web-site blocker, focus timer and data dashboard.`,
-    image: pomodoroGo,
+    image: './assets/Dashboard.png',
     role: 'Full Stack Developer',
     type: 'Group Project',
-    stack: [react, postgres],
+    stack: [react, postgres, redux],
     buttons: [
       {
         text: 'View Repo',
@@ -27,56 +27,48 @@ export const projectsData = [
       },
     ],
   },
-  // {
-  //   title: 'Taste Test',
-  //   description: `A small application that helps calculate some simple rankings and statistics for family held
-  //    taste tests. Created as project led approach to learning Svelte.`,
-  //   image: tastetest,
-  //   role: 'Front End Developer',
-  //   type: 'Personal Project',
-  //   stack: [],
-  //   buttons: [
-  //     {
-  //       text: 'View Git Project',
-  //       link: 'https://github.com/benlammers/taste-test',
-  //       linkAriaLabel: 'View Github repository for taste test',
-  //       icon: <GithubIcon />,
-  //     },
-  //     {
-  //       text: 'View Site',
-  //       link: 'https://taste-test.vercel.app/',
-  //       linkAriaLabel: 'View the hosted version of Taste Test',
-  //       icon: <ExternalIcon />,
-  //     },
-  //   ],
-  // },
-  // {
-  //   title: 'Unite',
-  //   description: `An application that provides the ability to RSVP and view details for our wedding.
-  //     Developed with a focus on completing my first full stack application and practicing semantic HTML.`,
-  //   image: unite,
-  //   role: 'Full Stack Developer',
-  //   type: 'Personal Project',
-  //   stack: [react, redux, postgres],
-  //   buttons: [
-  //     {
-  //       text: 'View Frontend Repo',
-  //       link: 'https://github.com/benlammers/unite-frontend',
-  //       linkAriaLabel: 'View Github repository for the frontend of Unite',
-  //       icon: <GithubIcon />,
-  //     },
-  //     {
-  //       text: 'View API Repo',
-  //       link: 'https://github.com/benlammers/unite-api',
-  //       linkAriaLabel: 'View Github repository for the API of Unite',
-  //       icon: <GithubIcon />,
-  //     },
-  //     {
-  //       text: 'View Site',
-  //       link: 'https://benandmadison.ca',
-  //       linkAriaLabel: 'View the hosted version of Unite',
-  //       icon: <ExternalIcon />,
-  //     },
-  //   ],
-  // },
+  {
+    title: 'Global Snacker',
+    description: `An e-commerce site that sells snacks from around the world.`,
+    image: './assets/GlobalSnackerHome.png',
+    role: 'Full Stack Developer',
+    type: 'Group Project',
+    stack: [react, postgres, redux],
+    buttons: [
+      {
+        text: 'View Repo',
+        link: 'https://github.com/rfmcmillan/Grace-Shopper-2101',
+        linkAriaLabel: 'View Github repository for Global Snacker',
+        icon: <GithubIcon />,
+      },
+      {
+        text: 'View Site',
+        link: 'https://global-snacker-1.herokuapp.com/',
+        linkAriaLabel: 'View the hosted version of Global Snacker',
+        icon: <ExternalIcon />,
+      },
+    ],
+  },
+  {
+    title: 'PocketTrade',
+    description: `A portfolio management app that allows an investor to quickly rebalance their portfolio.`,
+    image: './assets/PocketTrade.png',
+    role: 'Full Stack Developer',
+    type: 'Group Project',
+    stack: [react, postgres, redux],
+    buttons: [
+      {
+        text: 'View Repo',
+        link: 'https://github.com/rfmcmillan/pocket-trade',
+        linkAriaLabel: 'View Github repository for Global Snacker',
+        icon: <GithubIcon />,
+      },
+      {
+        text: 'View Site',
+        link: 'https://pocket-trade.herokuapp.com/#/',
+        linkAriaLabel: 'View the hosted version of Global Snacker',
+        icon: <ExternalIcon />,
+      },
+    ],
+  },
 ];

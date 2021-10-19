@@ -5,23 +5,35 @@ import SkillItem from '../../Skills/SkillItem';
 
 const ProjectCard = ({ project }) => {
   const useStyles = makeStyles({
-    root: { width: 350 },
-    title: { fontSize: 22, fontWeight: 500 },
+    card: {
+      height: 600,
+    },
+    description: { fontSize: 20 },
+    image: { width: '100%' },
+    root: { width: 350, margin: '1rem' },
+    text: { margin: '1rem' },
+    title: { fontSize: 22, fontWeight: 600, marginBottom: '1rem' },
   });
   const classes = useStyles({ button: { height: 20, width: 20 } });
   console.log('project.buttons:', project.buttons);
   return (
     <Paper className={classes.root}>
-      <Box>
-        <img src={project.image} alt={project.title} />
-        <Box>
+      <Box className={classes.card}>
+        <img
+          className={classes.image}
+          src={project.image}
+          alt={project.title}
+        />
+        <Box className={classes.text}>
           <Typography className={classes.title} variant="h3">
             {project.title}
           </Typography>
-          <Typography>{project.description}</Typography>
+          <Typography className={classes.description}>
+            {project.description}
+          </Typography>
         </Box>
       </Box>
-      <Box>
+      {/* <Box>
         <Box>
           <Typography>{project.role}</Typography>
           <Typography>{project.type}</Typography>
@@ -53,7 +65,7 @@ const ProjectCard = ({ project }) => {
             ))}
           </Box>
         )}
-      </Box>
+      </Box> */}
     </Paper>
   );
 };

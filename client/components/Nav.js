@@ -1,18 +1,19 @@
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import { AppBar, Toolbar, Typography, Grid } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
 
 const SECTIONS = ['About', 'Skills', 'Projects', 'Timeline'];
-const useStyles = makeStyles({
-  root: {
-    color: 'black',
-    backgroundColor: '#C0D9D9',
-  },
-});
 
 const Nav = () => {
   const [ref, inView] = useInView({ threshold: 1, triggerOnce: true });
+  const theme = useTheme();
+  const useStyles = makeStyles({
+    root: {
+      color: theme.palette.secondary.contrastText,
+      backgroundColor: theme.palette.secondary.main,
+    },
+  });
   const classes = useStyles();
   return (
     <AppBar className={classes.root} position="static">
