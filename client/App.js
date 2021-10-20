@@ -21,6 +21,10 @@ const theme = createTheme({
       main: '#202A44',
       contrastText: '#7CD2B3',
     },
+    text: {
+      primary: '#121858',
+      secondary: '#474f97',
+    },
   },
 });
 
@@ -30,7 +34,6 @@ const App = () => {
       <div>
         <Nav />
         <Banner />
-
         <About />
         <Routes />
         <Priorities />

@@ -3,6 +3,16 @@ import { GithubIcon, GmailIcon, LinkedinIcon } from './../img/icons';
 
 export const socialData = [
   {
+    icon: <LinkedinIcon />,
+    aValues: {
+      href: 'https://www.linkedin.com/in/russelmcmillan/',
+      target: '_blank',
+      rel: 'noopener noreferrer',
+      ariaLabel: 'Open LinkedIn profile for Russel McMillan',
+    },
+    className: 'socialLinkedin',
+  },
+  {
     icon: <GithubIcon />,
     aValues: {
       href: 'https://github.com/rfmcmillan',
@@ -19,15 +29,5 @@ export const socialData = [
       ariaLabel: 'Send mail to rfmcmillan@gmail.com',
     },
     className: 'socialGmail',
-  },
-  {
-    icon: <LinkedinIcon />,
-    aValues: {
-      href: 'https://www.linkedin.com/in/russelmcmillan/',
-      target: '_blank',
-      rel: 'noopener noreferrer',
-      ariaLabel: 'Open LinkedIn profile for Russel McMillan',
-    },
-    className: 'socialLinkedin',
   },
 ];
