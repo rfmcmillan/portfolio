@@ -28,8 +28,9 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <div>
-        <Banner />
         <Nav />
+        <Banner />
+
         <About />
         <Routes />
         <Priorities />
