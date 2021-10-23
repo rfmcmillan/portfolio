@@ -5,6 +5,7 @@ import SkillItem from '../../Skills/SkillItem';
 
 const ProjectCard = ({ project }) => {
   const theme = useTheme();
+  const [showSkills, setShowSkills] = useState(false);
   const useStyles = makeStyles({
     button: {
       borderRadius: 30,
@@ -17,15 +18,25 @@ const ProjectCard = ({ project }) => {
     },
     description: { fontSize: 20, minHeight: 130 },
     image: { width: '100%', borderRadius: '.2em .2em 0em 0em', minHeight: 200 },
-    root: { width: 350, margin: '1rem' },
+    root: { width: 350, margin: '1rem', '&:hover': { backgroundColor: 'red' } },
     text: { margin: '1rem' },
     title: { fontSize: 22, fontWeight: 600 },
     type: { marginBottom: '1rem', color: theme.palette.text.secondary },
   });
   const classes = useStyles({ button: { height: 20, width: 20 } });
-  console.log('project.buttons:', project.buttons);
   return (
-    <Paper elevation={3} className={classes.root}>
+    <Paper
+      elevation={3}
+      className={classes.root}
+      onMouseOver={() => {
+        setShowSkills(true);
+        console.log(showSkills);
+      }}
+      onMouseOut={() => {
+        setShowSkills(false);
+        console.log(showSkills);
+      }}
+    >
       <Box className={classes.card}>
         <img
           className={classes.image}

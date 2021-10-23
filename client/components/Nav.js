@@ -13,7 +13,7 @@ const Nav = () => {
   const [ref, inView] = useInView({ threshold: 1, triggerOnce: true });
   const theme = useTheme();
   const useStyles = makeStyles({
-    link: { fontFamily: theme.typography.fontFamily },
+    link: { fontFamily: theme.typography.fontFamily, color: 'black' },
     root: {
       color: 'black',
       backgroundColor: theme.palette.primary.main,
