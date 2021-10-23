@@ -15,6 +15,8 @@ import {
   chai,
   jwt,
   heroku,
+  typescript,
+  aws,
 } from '../img/logos';
 
 export const skillsData = [
@@ -22,25 +24,25 @@ export const skillsData = [
     id: 0,
     phrase: 'I am proficient in',
     items: [
-      css,
-      html,
       javascript,
       nodejs,
       react,
       redux,
       express,
       postgres,
-      sequelize,
       materialUi,
-      git,
+      html,
+      css,
+      sequelize,
       mocha,
       chai,
+      git,
     ],
   },
   { id: 1, phrase: 'familiar with', items: [webpack, jwt, heroku] },
   {
     id: 2,
     phrase: 'and exploring',
-    items: [],
+    items: [typescript, aws],
   },
 ];

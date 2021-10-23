@@ -11,9 +11,9 @@ const SkillItem = ({ skill }) => {
       width: 30,
       padding: 3,
       backgroundColor: 'white',
-      height: '85%',
+      height: '80%',
     },
-    text: { textAlign: 'center', width: '100%' },
+    text: { fontSize: 18, fontWeight: 500, textAlign: 'center', width: '100%' },
   });
 
   const classes = useStyles();

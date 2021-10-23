@@ -1,29 +1,34 @@
 import React from 'react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import { Typography, Grid } from '@material-ui/core';
+import { Grid, Typography } from '@material-ui/core';
 
 const About = () => {
   const theme = useTheme();
   const useStyles = makeStyles({
+    about: {
+      color: theme.palette.text.primary,
+      fontSize: 20,
+      marginBottom: 100,
+      textAlign: 'center',
+      width: '50vw',
+    },
+    name: {
+      color: theme.palette.text.primary,
+      fontSize: 32,
+      fontWeight: 500,
+      marginBottom: '.2em',
+    },
     root: {
       color: 'black',
       backgroundColor: 'white',
       paddingTop: 100,
       margin: 'auto',
     },
-    about: {
-      width: '50vw',
-      marginBottom: 100,
-    },
-    name: {
-      fontSize: 36,
-      marginBottom: 20,
-    },
   });
   const classes = useStyles();
 
   return (
-    <section className="section" id="about">
+    <section className="section" id="about" name="about">
       <div className={classes.root}>
         <Grid container alignItems="center" direction="column">
           <Grid item>
@@ -33,14 +38,13 @@ const About = () => {
           </Grid>
           <Grid item>
             <Typography className={classes.about} variant="body1">
-              A self-motivated and team-minded full stack engineer with a
-              background in architecture. Prior to 2021, I was focused on
-              designing and developing homes that are sustainable, affordable
-              and, of course, wonderful to live in. Now, after completing the
-              26-week software engineering program at Fullstack Academy, I am
-              ready to combine my love of problem-solving with my passion for
-              design to create software that is both powerful and wonderful to
-              use.
+              A full stack engineer with a background in architecture. Prior to
+              2021, I was focused on designing and developing homes that are
+              sustainable, affordable and, of course, wonderful to live in. Now,
+              after completing the 26-week software engineering program at
+              Fullstack Academy, I am ready to combine my love of
+              problem-solving with my passion for design to create software that
+              is both powerful and wonderful to use.
             </Typography>
           </Grid>
         </Grid>

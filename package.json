@@ -31,6 +31,7 @@
     "morgan": "^1.9.1",
     "pg": "^8.5.1",
     "react-intersection-observer": "^8.32.1",
+    "react-scroll": "^1.8.4",
     "sequelize": "^6.3.5"
   },
   "devDependencies": {

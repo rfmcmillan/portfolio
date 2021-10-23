@@ -18,7 +18,7 @@ export const nodejs = {
 };
 export const postgres = {
   logo: require('./postgres.svg'),
-  title: 'PostGres',
+  title: 'PostgreSQL',
 };
 
 export const react = {
@@ -74,4 +74,14 @@ export const jwt = {
 export const heroku = {
   logo: require('./heroku.svg'),
   title: 'Heroku',
+};
+
+export const typescript = {
+  logo: require('./typescript.svg'),
+  title: 'TypeScript',
+};
+
+export const aws = {
+  logo: require('./aws.svg'),
+  title: 'AWS',
 };

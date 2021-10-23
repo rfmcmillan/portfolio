@@ -9,7 +9,7 @@ const Priorities = () => {
   const useStyles = makeStyles({
     contain: { backgroundColor: theme.palette.primary.main, height: 400 },
     root: {
-      color: 'black',
+      color: theme.palette.text.primary,
       width: 720,
       margin: 'auto',
     },

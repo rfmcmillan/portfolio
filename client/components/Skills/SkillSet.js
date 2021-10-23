@@ -7,16 +7,20 @@ import SkillItem from './SkillItem';
 const SkillSet = ({ data }) => {
   const theme = useTheme();
   const useStyles = makeStyles({
-    root: {},
-    container: { width: '66%', margin: 'auto' },
+    container: { width: '50%', margin: 'auto', marginBottom: '1em' },
+    phrase: {
+      color: theme.palette.text.primary,
+      fontSize: 20,
+      textAlign: 'center',
+      fontFamily: theme.typography.fontFamily,
+      paddingBottom: '.4em',
+    },
   });
   const classes = useStyles();
   return (
     <div>
-      <Box display="inline" fontFamily={theme.typography.fontFamily}>
-        {data.phrase}
-      </Box>
-      <Grid className={classes.container} container wrap="wrap" spacing={3}>
+      <Box className={classes.phrase}>{data.phrase}</Box>
+      <Grid className={classes.container} container wrap="wrap" spacing={2}>
         {data.items.map((skill, index) => (
           <Grid item xs={3}>
             <SkillItem skill={skill} key={index} />
