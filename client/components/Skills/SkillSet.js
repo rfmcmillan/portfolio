@@ -20,7 +20,7 @@ const SkillSet = ({ data }) => {
   return (
     <div>
       <Box className={classes.phrase}>{data.phrase}</Box>
-      <Grid className={classes.container} container wrap="wrap" spacing={2}>
+      <Grid className={classes.container} container wrap="wrap">
         {data.items.map((skill, index) => (
           <Grid item xs={3}>
             <SkillItem skill={skill} key={index} />

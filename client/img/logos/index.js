@@ -85,3 +85,23 @@ export const aws = {
   logo: require('./aws.svg'),
   title: 'AWS',
 };
+
+export const chrome = {
+  logo: require('./chrome.svg'),
+  title: 'Chrome API',
+};
+
+export const apexCharts = {
+  logo: '',
+  title: 'Apex Charts',
+};
+
+export const alpaca = {
+  logo: '',
+  title: 'Alpaca',
+};
+
+export const googleMaps = {
+  logo: require('./googleMaps.svg'),
+  title: 'Google Maps',
+};

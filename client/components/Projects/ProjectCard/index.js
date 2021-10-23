@@ -1,5 +1,13 @@
-import React, { useState } from 'react';
-import { Box, Button, List, Link, Paper, Typography } from '@material-ui/core';
+import React, { useState, useEffect } from 'react';
+import {
+  Box,
+  Button,
+  List,
+  Link,
+  Paper,
+  Typography,
+  Fade,
+} from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import SkillItem from '../../Skills/SkillItem';
 
@@ -18,104 +26,118 @@ const ProjectCard = ({ project }) => {
     },
     description: { fontSize: 20, minHeight: 130 },
     image: { width: '100%', borderRadius: '.2em .2em 0em 0em', minHeight: 200 },
-    root: { width: 350, margin: '1rem', '&:hover': { backgroundColor: 'red' } },
+    root: { width: 350, margin: '1rem' },
+    skillList: { width: 225 },
+    stackTitle: { fontSize: 20, textAlign: 'center' },
     text: { margin: '1rem' },
     title: { fontSize: 22, fontWeight: 600 },
     type: { marginBottom: '1rem', color: theme.palette.text.secondary },
   });
   const classes = useStyles({ button: { height: 20, width: 20 } });
+
+  useEffect(() => {
+    setShowSkills(false);
+  }, []);
+
   return (
     <Paper
       elevation={3}
       className={classes.root}
-      onMouseOver={() => {
+      onMouseEnter={() => {
         setShowSkills(true);
-        console.log(showSkills);
       }}
-      onMouseOut={() => {
+      onMouseLeave={() => {
         setShowSkills(false);
-        console.log(showSkills);
       }}
     >
-      <Box className={classes.card}>
-        <img
-          className={classes.image}
-          src={project.image}
-          alt={project.title}
-        />
-        <Box className={classes.text}>
-          <Typography className={classes.title} variant="h3">
-            {project.title}
-          </Typography>
+      {!showSkills ? (
+        // <Fade appear={true} in={true}>
+        <Box className={classes.card}>
+          <img
+            className={classes.image}
+            src={project.image}
+            alt={project.title}
+          />
+          <Box className={classes.text}>
+            <Typography className={classes.title} variant="h3">
+              {project.title}
+            </Typography>
 
-          <Box>
-            <Typography>{project.role}</Typography>
-            <Typography className={classes.type} variant="subtitle2">
-              {project.type}
+            <Box>
+              <Typography>{project.role}</Typography>
+              <Typography className={classes.type} variant="subtitle2">
+                {project.type}
+              </Typography>
+            </Box>
+            <Typography className={classes.description}>
+              {project.description}
             </Typography>
           </Box>
-          <Typography className={classes.description}>
-            {project.description}
-          </Typography>
+          {project.buttons && (
+            <Box
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+              }}
+            >
+              {project.buttons.map((button, index) => (
+                <Button
+                  className={classes.button}
+                  variant="contained"
+                  href={button.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  key={index}
+                  onFocus={() => setFlip(true)}
+                >
+                  {button.text}
+                  {/* {button.icon} */}
+                </Button>
+              ))}
+            </Box>
+          )}
         </Box>
-        {project.buttons && (
-          <Box
-            sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-            }}
-          >
-            {project.buttons.map((button, index) => (
-              <Button
-                className={classes.button}
-                variant="contained"
-                href={button.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                key={index}
-                onFocus={() => setFlip(true)}
-              >
-                {button.text}
-                {/* {button.icon} */}
-              </Button>
-            ))}
-          </Box>
-        )}
-      </Box>
-      {/* <Box>
-        <Box>
-          <Typography>{project.role}</Typography>
-          <Typography>{project.type}</Typography>
-        </Box>
-        <Box>
-          <Box component="span">
-            <Typography>Tech Stack</Typography>
-          </Box>
-          <ul>
-            {project.stack.map((skill, index) => (
-              <SkillItem skill={skill} key={index} />
-            ))}
-          </ul>
-        </Box>
-        {project.buttons && (
+      ) : (
+        // </Fade>
+        <Fade appear={true} in={true} timeout={800}>
           <Box>
-            {project.buttons.map((button, index) => (
-              <Link
-                className={classes.button}
-                href={button.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={button.linkAriaLabel}
-                key={index}
-                onFocus={() => setFlip(true)}
-              >
-                <span>{button.text}</span>
-              </Link>
-            ))}
+            <Box>
+              <Box component="span">
+                <Typography className={classes.stackTitle}>
+                  Tech Stack
+                </Typography>
+              </Box>
+              <ul className={classes.skillList}>
+                {project.stack.map((skill, index) => (
+                  <SkillItem
+                    className={classes.skillItem}
+                    skill={skill}
+                    key={index}
+                  />
+                ))}
+              </ul>
+            </Box>
+            {project.buttons && (
+              <Box>
+                {project.buttons.map((button, index) => (
+                  <Link
+                    className={classes.button}
+                    href={button.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={button.linkAriaLabel}
+                    key={index}
+                    onFocus={() => setFlip(true)}
+                  >
+                    <span>{button.text}</span>
+                  </Link>
+                ))}
+              </Box>
+            )}
           </Box>
-        )}
-      </Box> */}
+        </Fade>
+      )}
     </Paper>
   );
 };
