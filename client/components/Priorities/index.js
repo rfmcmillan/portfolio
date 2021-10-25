@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Card, Grid } from '@material-ui/core';
+import { Card, Fade, Grid } from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { prioritiesData } from '../../data/priorities.js';
 import Priority from './Priority';
@@ -21,9 +21,11 @@ const Priorities = () => {
         <Card className={classes.root} elevation={4}>
           <Grid justifyContent="center" container direction="row">
             {prioritiesData.map((priority, index) => (
-              <Grid item>
-                <Priority priority={priority} index={index} />
-              </Grid>
+              <Fade appear={true} in={true} timeout={800}>
+                <Grid item>
+                  <Priority priority={priority} index={index} />
+                </Grid>
+              </Fade>
             ))}
           </Grid>
         </Card>

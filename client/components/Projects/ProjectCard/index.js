@@ -23,11 +23,12 @@ const ProjectCard = ({ project }) => {
     },
     card: {
       height: 600,
+      justifyContent: 'space-between',
     },
     description: { fontSize: 20, minHeight: 130 },
     image: { width: '100%', borderRadius: '.2em .2em 0em 0em', minHeight: 200 },
     root: { width: 350, margin: '1rem' },
-    skillList: { width: 225 },
+    skillList: { width: 225, height: 430, margin: '10px 0px 20px 0px ' },
     stackTitle: { fontSize: 20, textAlign: 'center' },
     text: { margin: '1rem' },
     title: { fontSize: 22, fontWeight: 600 },
@@ -51,7 +52,7 @@ const ProjectCard = ({ project }) => {
       }}
     >
       {!showSkills ? (
-        // <Fade appear={true} in={true}>
+        // <Fade appear={true} in={true} timeout={800}>
         <Box className={classes.card}>
           <img
             className={classes.image}
@@ -92,23 +93,28 @@ const ProjectCard = ({ project }) => {
                   onFocus={() => setFlip(true)}
                 >
                   {button.text}
-                  {/* {button.icon} */}
                 </Button>
               ))}
             </Box>
           )}
         </Box>
       ) : (
-        // </Fade>
+        /* </Fade> */
         <Fade appear={true} in={true} timeout={800}>
-          <Box>
-            <Box>
+          <Box className={classes.card}>
+            <Box
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+              }}
+            >
               <Box component="span">
                 <Typography className={classes.stackTitle}>
                   Tech Stack
                 </Typography>
               </Box>
-              <ul className={classes.skillList}>
+              <Box className={classes.skillList}>
                 {project.stack.map((skill, index) => (
                   <SkillItem
                     className={classes.skillItem}
@@ -116,22 +122,28 @@ const ProjectCard = ({ project }) => {
                     key={index}
                   />
                 ))}
-              </ul>
+              </Box>
             </Box>
             {project.buttons && (
-              <Box>
+              <Box
+                sx={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                }}
+              >
                 {project.buttons.map((button, index) => (
-                  <Link
+                  <Button
                     className={classes.button}
+                    variant="contained"
                     href={button.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={button.linkAriaLabel}
                     key={index}
                     onFocus={() => setFlip(true)}
                   >
-                    <span>{button.text}</span>
-                  </Link>
+                    {button.text}
+                  </Button>
                 ))}
               </Box>
             )}
