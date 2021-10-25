@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import {
   Box,
   Button,
+  Grid,
   List,
   Link,
   Paper,
@@ -21,18 +22,15 @@ const ProjectCard = ({ project }) => {
       margin: 5,
       width: 300,
     },
-    card: {
-      height: 600,
-      justifyContent: 'space-between',
-    },
+    contain: { height: '100%' },
     description: { fontSize: 20, minHeight: 130 },
-    image: { width: '100%', borderRadius: '.2em .2em 0em 0em', minHeight: 200 },
-    root: { width: 350, margin: '1rem' },
-    skillList: { width: 225, height: 430, margin: '10px 0px 20px 0px ' },
+    image: { width: '100%', borderRadius: '5px 5px 0px 0px', minHeight: 200 },
+    root: { width: 350, height: 600, margin: 15, paddingBottom: 15 },
+    skillList: { width: 225, margin: '10px 0px 20px 0px ' },
     stackTitle: { fontSize: 20, textAlign: 'center' },
-    text: { margin: '1rem' },
+    text: { margin: 15 },
     title: { fontSize: 22, fontWeight: 600 },
-    type: { marginBottom: '1rem', color: theme.palette.text.secondary },
+    type: { marginBottom: 15, color: theme.palette.text.secondary },
   });
   const classes = useStyles({ button: { height: 20, width: 20 } });
 
@@ -51,57 +49,39 @@ const ProjectCard = ({ project }) => {
         setShowSkills(false);
       }}
     >
-      {!showSkills ? (
-        // <Fade appear={true} in={true} timeout={800}>
-        <Box className={classes.card}>
-          <img
-            className={classes.image}
-            src={project.image}
-            alt={project.title}
-          />
-          <Box className={classes.text}>
-            <Typography className={classes.title} variant="h3">
-              {project.title}
-            </Typography>
+      <Grid
+        className={classes.contain}
+        container
+        direction="column"
+        justifyContent="space-between"
+      >
+        {!showSkills ? (
+          // <Fade appear={true} in={true} timeout={800}>
+          <Box>
+            <img
+              className={classes.image}
+              src={project.image}
+              alt={project.title}
+            />
+            <Box className={classes.text}>
+              <Typography className={classes.title} variant="h3">
+                {project.title}
+              </Typography>
 
-            <Box>
-              <Typography>{project.role}</Typography>
-              <Typography className={classes.type} variant="subtitle2">
-                {project.type}
+              <Box>
+                <Typography>{project.role}</Typography>
+                <Typography className={classes.type} variant="subtitle2">
+                  {project.type}
+                </Typography>
+              </Box>
+              <Typography className={classes.description}>
+                {project.description}
               </Typography>
             </Box>
-            <Typography className={classes.description}>
-              {project.description}
-            </Typography>
           </Box>
-          {project.buttons && (
-            <Box
-              sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-              }}
-            >
-              {project.buttons.map((button, index) => (
-                <Button
-                  className={classes.button}
-                  variant="contained"
-                  href={button.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  key={index}
-                  onFocus={() => setFlip(true)}
-                >
-                  {button.text}
-                </Button>
-              ))}
-            </Box>
-          )}
-        </Box>
-      ) : (
-        /* </Fade> */
-        <Fade appear={true} in={true} timeout={800}>
-          <Box className={classes.card}>
+        ) : (
+          /* </Fade> */
+          <Fade appear={true} in={true} timeout={800}>
             <Box
               sx={{
                 display: 'flex',
@@ -124,32 +104,26 @@ const ProjectCard = ({ project }) => {
                 ))}
               </Box>
             </Box>
-            {project.buttons && (
-              <Box
-                sx={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                }}
+          </Fade>
+        )}
+        {project.buttons && (
+          <Grid item container direction="column" alignItems="center">
+            {project.buttons.map((button, index) => (
+              <Button
+                className={classes.button}
+                variant="contained"
+                href={button.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                key={index}
+                onFocus={() => setFlip(true)}
               >
-                {project.buttons.map((button, index) => (
-                  <Button
-                    className={classes.button}
-                    variant="contained"
-                    href={button.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    key={index}
-                    onFocus={() => setFlip(true)}
-                  >
-                    {button.text}
-                  </Button>
-                ))}
-              </Box>
-            )}
-          </Box>
-        </Fade>
-      )}
+                {button.text}
+              </Button>
+            ))}
+          </Grid>
+        )}
+      </Grid>
     </Paper>
   );
 };
