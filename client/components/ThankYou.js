@@ -7,12 +7,13 @@ const ThankYou = () => {
   const theme = useTheme();
   const useStyles = makeStyles({
     root: {
-      backgroundColor: theme.palette.primary.main,
+      backgroundColor: theme.palette.text.primary,
       margin: 'auto',
+      marginTop: 20,
       padding: '20px 60px 20px 60px',
       width: '40%',
     },
-    text: { width: 600, margin: 'auto', textAlign: 'center' },
+    text: { width: 600, margin: 'auto', textAlign: 'center', color: 'white' },
   });
   const classes = useStyles();
   const { ref, inView, entry } = useInView({ threshold: 0 });

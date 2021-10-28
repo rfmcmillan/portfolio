@@ -58,7 +58,7 @@ html {
   height: 50px;
 }
 
-.block-1 {
+#block-1 {
   width: 0%;
   height: inherit;
   background: #ffb510;
@@ -81,7 +81,7 @@ h1 {
   position: relative;
 }
 
-span {
+#dot {
   width: 0px;
   height: 0px;
   -webkit-border-radius: 50%;
@@ -117,7 +117,7 @@ span {
   display: flex;
 }
 
-p {
+#job-function {
   animation: secFadeIn 2s forwards;
   animation-delay: 3.2s;
   opacity: 0;
@@ -270,38 +270,9 @@ i {
   }
 }
 
-/* @keyframes name {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-} */
-/*
-.name {
-  opacity: 1;
-  animation-name: name;
-  animation-duration: 1s;
-}
 
-@keyframes divider {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 30%;
-  }
-}
 
-.divider {
-  width: 0%;
-  opacity: 1;
-  animation-name: divider;
-  animation-delay: 0.2s;
-  animation-duration: 0.5s;
-  animation-fill-mode: forwards;
-}
+
 
 @keyframes socialLinkedin {
   from {

@@ -32,15 +32,15 @@ const Banner = () => {
     <div className="container">
       <div className="box">
         <div className="title">
-          <span className="block-1"></span>
+          <span id="block-1"></span>
           <h1 id="full-name">
-            Russ McMillan<span></span>
+            Russ McMillan<span id="dot"></span>
           </h1>
         </div>
 
         <div className="role">
           <div className="block-2"></div>
-          <p>Full Stack Engineer</p>
+          <p id="job-function">Full Stack Engineer</p>
         </div>
       </div>
     </div>
