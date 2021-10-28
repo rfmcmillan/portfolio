@@ -33,8 +33,8 @@ const Banner = () => {
       <div className="box">
         <div className="title">
           <span className="block-1"></span>
-          <h1>
-            Russel McM<span></span>
+          <h1 id="full-name">
+            Russ McMillan<span></span>
           </h1>
         </div>
 
