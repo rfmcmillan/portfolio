@@ -54,7 +54,15 @@ const Footer = () => {
               <Typography className={classes.credit}>
                 Design Inspired by
               </Typography>
-              <Link className={classes.name}>Ben Lammers</Link>
+              <Link className={classes.name} href="https://www.benlammers.dev/">
+                Ben Lammers
+              </Link>
+              <Link
+                className={classes.name}
+                href="https://codepen.io/KaioRocha/pen/YoEVvZ"
+              >
+                Kaio Almeida
+              </Link>
             </Box>
           </Box>
         </InView>
