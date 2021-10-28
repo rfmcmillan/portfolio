@@ -1,5 +1,14 @@
-import React, { useState } from 'react';
-import { Box, Button, List, Link, Paper, Typography } from '@material-ui/core';
+import React, { useState, useEffect } from 'react';
+import {
+  Box,
+  Button,
+  Grid,
+  List,
+  Link,
+  Paper,
+  Typography,
+  Fade,
+} from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import SkillItem from '../../Skills/SkillItem';
 
@@ -13,110 +22,149 @@ const ProjectCard = ({ project }) => {
       margin: 5,
       width: 300,
     },
-    card: {
-      height: 600,
-    },
+    contain: { height: '100%' },
     description: { fontSize: 20, minHeight: 130 },
-    image: { width: '100%', borderRadius: '.2em .2em 0em 0em', minHeight: 200 },
-    root: { width: 350, margin: '1rem', '&:hover': { backgroundColor: 'red' } },
-    text: { margin: '1rem' },
+    image: { width: '100%', borderRadius: '5px 5px 0px 0px', minHeight: 200 },
+    root: { width: 350, height: 625, margin: 15, paddingBottom: 15 },
+    skillList: { width: 225, margin: '10px 0px 20px 0px ' },
+    stackTitle: {
+      fontSize: 22,
+      fontWeight: 500,
+      textAlign: 'center',
+      marginTop: 15,
+    },
+    text: { margin: 15 },
     title: { fontSize: 22, fontWeight: 600 },
-    type: { marginBottom: '1rem', color: theme.palette.text.secondary },
+    type: { marginBottom: 15, color: theme.palette.text.secondary },
   });
   const classes = useStyles({ button: { height: 20, width: 20 } });
-  return (
-    <Paper
-      elevation={3}
-      className={classes.root}
-      onMouseOver={() => {
-        setShowSkills(true);
-        console.log(showSkills);
-      }}
-      onMouseOut={() => {
-        setShowSkills(false);
-        console.log(showSkills);
-      }}
-    >
-      <Box className={classes.card}>
-        <img
-          className={classes.image}
-          src={project.image}
-          alt={project.title}
-        />
-        <Box className={classes.text}>
-          <Typography className={classes.title} variant="h3">
-            {project.title}
-          </Typography>
 
-          <Box>
-            <Typography>{project.role}</Typography>
-            <Typography className={classes.type} variant="subtitle2">
-              {project.type}
-            </Typography>
-          </Box>
-          <Typography className={classes.description}>
-            {project.description}
-          </Typography>
-        </Box>
-        {project.buttons && (
-          <Box
-            sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-            }}
+  useEffect(() => {
+    setShowSkills(false);
+  }, []);
+
+  return (
+    <div id="card-container">
+      <div id="product-card">
+        <Paper
+          id="side-a"
+          elevation={3}
+          className={classes.root}
+          onMouseEnter={() => {
+            setShowSkills(true);
+          }}
+          onMouseLeave={() => {
+            setShowSkills(false);
+          }}
+        >
+          <Grid
+            className={classes.contain}
+            container
+            direction="column"
+            justifyContent="space-between"
           >
-            {project.buttons.map((button, index) => (
-              <Button
-                className={classes.button}
-                variant="contained"
-                href={button.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                key={index}
-                onFocus={() => setFlip(true)}
-              >
-                {button.text}
-                {/* {button.icon} */}
-              </Button>
-            ))}
-          </Box>
-        )}
-      </Box>
-      {/* <Box>
-        <Box>
-          <Typography>{project.role}</Typography>
-          <Typography>{project.type}</Typography>
-        </Box>
-        <Box>
-          <Box component="span">
-            <Typography>Tech Stack</Typography>
-          </Box>
-          <ul>
-            {project.stack.map((skill, index) => (
-              <SkillItem skill={skill} key={index} />
-            ))}
-          </ul>
-        </Box>
-        {project.buttons && (
-          <Box>
-            {project.buttons.map((button, index) => (
-              <Link
-                className={classes.button}
-                href={button.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={button.linkAriaLabel}
-                key={index}
-                onFocus={() => setFlip(true)}
-              >
-                <span>{button.text}</span>
-              </Link>
-            ))}
-          </Box>
-        )}
-      </Box> */}
-    </Paper>
+            <Box>
+              <img
+                className={classes.image}
+                src={project.image}
+                alt={project.title}
+              />
+              <Box className={classes.text}>
+                <Typography className={classes.title} variant="h3">
+                  {project.title}
+                </Typography>
+
+                <Box>
+                  <Typography>{project.role}</Typography>
+                  <Typography className={classes.type} variant="subtitle2">
+                    {project.type}
+                  </Typography>
+                </Box>
+                <Typography className={classes.description}>
+                  {project.description}
+                </Typography>
+              </Box>
+            </Box>
+            {project.buttons && (
+              <Grid item container direction="column" alignItems="center">
+                {project.buttons.map((button, index) => (
+                  <Button
+                    className={classes.button}
+                    variant="contained"
+                    href={button.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    key={index}
+                    onFocus={() => setFlip(true)}
+                  >
+                    {button.text}
+                  </Button>
+                ))}
+              </Grid>
+            )}
+          </Grid>
+        </Paper>
+        <Paper
+          id="side-b"
+          elevation={3}
+          className={classes.root}
+          onMouseEnter={() => {
+            setShowSkills(true);
+          }}
+          onMouseLeave={() => {
+            setShowSkills(false);
+          }}
+        >
+          <Grid
+            className={classes.contain}
+            container
+            direction="column"
+            justifyContent="space-between"
+          >
+            <Box
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+              }}
+            >
+              <Box component="span">
+                <Typography className={classes.stackTitle}>
+                  Tech Stack
+                </Typography>
+              </Box>
+              <Box className={classes.skillList}>
+                {project.stack.map((skill, index) => (
+                  <SkillItem
+                    className={classes.skillItem}
+                    skill={skill}
+                    key={index}
+                  />
+                ))}
+              </Box>
+            </Box>
+
+            {project.buttons && (
+              <Grid item container direction="column" alignItems="center">
+                {project.buttons.map((button, index) => (
+                  <Button
+                    className={classes.button}
+                    variant="contained"
+                    href={button.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    key={index}
+                    onFocus={() => setFlip(true)}
+                  >
+                    {button.text}
+                  </Button>
+                ))}
+              </Grid>
+            )}
+          </Grid>
+        </Paper>
+      </div>
+    </div>
   );
 };
 

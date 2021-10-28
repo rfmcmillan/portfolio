@@ -6,12 +6,12 @@ const SkillItem = ({ skill }) => {
   let { logo, title } = skill;
   const theme = useTheme();
   const useStyles = makeStyles({
-    root: { backgroundColor: '#EEEEEE', height: 35 },
+    root: { backgroundColor: '#EEEEEE', height: 35, margin: 8 },
     image: {
-      width: 30,
-      padding: 3,
       backgroundColor: 'white',
       height: '80%',
+      minWidth: 30,
+      padding: 3,
     },
     text: { fontSize: 18, fontWeight: 500, textAlign: 'center', width: '100%' },
   });
@@ -27,11 +27,15 @@ const SkillItem = ({ skill }) => {
           height: '100%',
         }}
       >
-        <img
-          className={classes.image}
-          src={logo ? logo : ''}
-          alt={logo ? `${title} logo` : ''}
-        />
+        {logo ? (
+          <img
+            className={classes.image}
+            src={logo ? logo : ''}
+            alt={logo ? `${title} logo` : ''}
+          />
+        ) : (
+          <Box className={classes.image} />
+        )}
 
         <Typography
           className={classes.text}

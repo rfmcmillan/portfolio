@@ -6,6 +6,8 @@ import About from './components/About';
 import Priorities from './components/Priorities';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
+import ThankYou from './components/ThankYou';
+import Footer from './components/Footer';
 import { ThemeProvider, createTheme } from '@material-ui/core/styles';
 
 const theme = createTheme({
@@ -35,10 +37,12 @@ const App = () => {
         <Nav />
         <Banner />
         <About />
+        <Projects />
         <Routes />
         <Priorities />
         <Skills />
-        <Projects />
+        <ThankYou />
+        <Footer />
       </div>
     </ThemeProvider>
   );

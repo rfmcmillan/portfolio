@@ -6,14 +6,11 @@ const Banner = () => {
   const theme = useTheme();
   const useStyles = makeStyles({
     root: {
-      color: 'black',
-
       backgroundColor: theme.palette.primary.main,
+      color: 'black',
       height: '100vh',
     },
-    divider: {
-      width: '30%',
-    },
+
     name: {
       paddingTop: 'calc(50% - 35em)',
       textAlign: 'center',
@@ -23,9 +20,13 @@ const Banner = () => {
   return (
     <div className={classes.root}>
       <Grid className={classes.name}>
-        <Typography variant="h1">Russel McMillan</Typography>
-        <hr color="black" className={classes.divider} />
-        <Typography variant="h2">Full Stack Developer</Typography>
+        <Typography className="name" variant="h1">
+          Russel McMillan
+        </Typography>
+        <hr className="divider" color="black" />
+        <Typography className="name" variant="h2">
+          Full Stack Developer
+        </Typography>
       </Grid>
     </div>
   );

@@ -2,7 +2,27 @@ import React from 'react';
 import { pomodoroGo, pocketTrade, globalSnacker } from '../../img/projects';
 
 import { ExternalIcon, GithubIcon } from '../../img/icons';
-import { postgres, react, redux } from '../../img/logos';
+import {
+  postgres,
+  react,
+  redux,
+  express,
+  materialUi,
+  chai,
+  mocha,
+  html,
+  css,
+  nodejs,
+  git,
+  sequelize,
+  webpack,
+  jwt,
+  heroku,
+  chrome,
+  alpaca,
+  apexCharts,
+  googleMaps,
+} from '../../img/logos';
 
 export const projectsData = [
   {
@@ -11,7 +31,18 @@ export const projectsData = [
     image: './assets/Dashboard.png',
     role: 'Full Stack Developer',
     type: 'Group Project',
-    stack: [react, postgres, redux],
+    stack: [
+      nodejs,
+      react,
+      postgres,
+      redux,
+      express,
+      materialUi,
+      apexCharts,
+      jwt,
+      mocha,
+      chrome,
+    ],
     buttons: [
       {
         text: 'View Site',
@@ -33,7 +64,17 @@ export const projectsData = [
     image: './assets/GlobalSnackerHome.png',
     role: 'Full Stack Developer',
     type: 'Group Project',
-    stack: [react, postgres, redux],
+    stack: [
+      nodejs,
+      react,
+      postgres,
+      redux,
+      express,
+      materialUi,
+      googleMaps,
+      jwt,
+      mocha,
+    ],
     buttons: [
       {
         text: 'View Site',
@@ -55,7 +96,7 @@ export const projectsData = [
     image: './assets/PocketTrade - Home.png',
     role: 'Full Stack Developer',
     type: 'Solo Project/Hackathon',
-    stack: [react, postgres, redux],
+    stack: [nodejs, react, postgres, redux, express, materialUi, alpaca],
     buttons: [
       {
         text: 'View Site',

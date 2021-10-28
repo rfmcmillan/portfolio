@@ -1,8 +1,8 @@
 import React from 'react';
-import { skillsData } from '../../data/skills.js';
-import { Grid, Box, Typography } from '@material-ui/core';
+import { Grid, Box } from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import SkillItem from './SkillItem';
+import { useInView, InView } from 'react-intersection-observer';
 
 const SkillSet = ({ data }) => {
   const theme = useTheme();
@@ -17,16 +17,25 @@ const SkillSet = ({ data }) => {
     },
   });
   const classes = useStyles();
+  const { ref, inView, entry } = useInView({ threshold: 0 });
+
   return (
     <div>
       <Box className={classes.phrase}>{data.phrase}</Box>
-      <Grid className={classes.container} container wrap="wrap" spacing={2}>
-        {data.items.map((skill, index) => (
-          <Grid item xs={3}>
-            <SkillItem skill={skill} key={index} />
-          </Grid>
-        ))}
-      </Grid>
+      <InView
+        as="div"
+        onChange={(inView, entry) => {
+          if (inView) entry.target.id = 'skills';
+        }}
+      >
+        <Grid className={classes.container} container wrap="wrap">
+          {data.items.map((skill, index) => (
+            <Grid item xs={3}>
+              <SkillItem skill={skill} key={index} />
+            </Grid>
+          ))}
+        </Grid>
+      </InView>
     </div>
   );
 };

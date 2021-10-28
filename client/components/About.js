@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { Grid, Typography } from '@material-ui/core';
+import { useInView, InView } from 'react-intersection-observer';
 
 const About = () => {
   const theme = useTheme();
@@ -8,7 +9,6 @@ const About = () => {
     about: {
       color: theme.palette.text.primary,
       fontSize: 20,
-      marginBottom: 100,
       textAlign: 'center',
       width: '50vw',
     },
@@ -21,33 +21,41 @@ const About = () => {
     root: {
       color: 'black',
       backgroundColor: 'white',
-      paddingTop: 100,
+
+      padding: '100px 0 100px 0',
       margin: 'auto',
     },
   });
   const classes = useStyles();
+  const { ref, inView, entry } = useInView({ threshold: 0 });
 
   return (
     <section className="section" id="about" name="about">
-      <div className={classes.root}>
-        <Grid container alignItems="center" direction="column">
-          <Grid item>
-            <Typography className={classes.name} variant="h2">
-              Hi, I'm Russel
-            </Typography>
+      <div ref={ref} className={classes.root}>
+        <InView
+          as="div"
+          onChange={(inView, entry) => {
+            if (inView) entry.target.id = 'description';
+          }}
+        >
+          <Grid container alignItems="center" direction="column">
+            <Grid item>
+              <Typography className={classes.name} variant="h2">
+                Hi, I'm Russel
+              </Typography>
+            </Grid>
+            <Grid item>
+              <Typography className={classes.about} variant="body1">
+                A full stack engineer with a background in architecture. Prior
+                to 2021, I was focused on designing homes. Now, after completing
+                the 26-week software engineering program at Fullstack Academy, I
+                am ready to combine my love of problem-solving with my passion
+                for clean and simple design to create software that is both
+                powerful and wonderful to use.
+              </Typography>
+            </Grid>
           </Grid>
-          <Grid item>
-            <Typography className={classes.about} variant="body1">
-              A full stack engineer with a background in architecture. Prior to
-              2021, I was focused on designing and developing homes that are
-              sustainable, affordable and, of course, wonderful to live in. Now,
-              after completing the 26-week software engineering program at
-              Fullstack Academy, I am ready to combine my love of
-              problem-solving with my passion for design to create software that
-              is both powerful and wonderful to use.
-            </Typography>
-          </Grid>
-        </Grid>
+        </InView>
       </div>
     </section>
   );

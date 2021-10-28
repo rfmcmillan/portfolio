@@ -6,18 +6,17 @@ const useStyles = makeStyles({
   root: {
     width: '50px',
     height: '50px',
-  },
-  linkedin: {
-    width: '30px',
+    border: '2px solid #262626',
+    borderRadius: '30px',
+    margin: 3,
   },
 });
 
 const Social = ({ icon, aValues, classNames = [] }) => {
   const { ariaLabel, ...otherAValues } = aValues;
-
   const classes = useStyles();
   return (
-    <Grid item className={classes.root}>
+    <Grid item id={classNames[0]} className={classes.root}>
       <a aria-label={ariaLabel} {...otherAValues}>
         {icon}
       </a>
