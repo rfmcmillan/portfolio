@@ -25,9 +25,14 @@ const ProjectCard = ({ project }) => {
     contain: { height: '100%' },
     description: { fontSize: 20, minHeight: 130 },
     image: { width: '100%', borderRadius: '5px 5px 0px 0px', minHeight: 200 },
-    root: { width: 350, height: 600, margin: 15, paddingBottom: 15 },
+    root: { width: 350, height: 625, margin: 15, paddingBottom: 15 },
     skillList: { width: 225, margin: '10px 0px 20px 0px ' },
-    stackTitle: { fontSize: 20, textAlign: 'center' },
+    stackTitle: {
+      fontSize: 22,
+      fontWeight: 500,
+      textAlign: 'center',
+      marginTop: 15,
+    },
     text: { margin: 15 },
     title: { fontSize: 22, fontWeight: 600 },
     type: { marginBottom: 15, color: theme.palette.text.secondary },
@@ -39,49 +44,83 @@ const ProjectCard = ({ project }) => {
   }, []);
 
   return (
-    <Paper
-      elevation={3}
-      className={classes.root}
-      onMouseEnter={() => {
-        setShowSkills(true);
-      }}
-      onMouseLeave={() => {
-        setShowSkills(false);
-      }}
-    >
-      <Grid
-        className={classes.contain}
-        container
-        direction="column"
-        justifyContent="space-between"
-      >
-        {!showSkills ? (
-          // <Fade appear={true} in={true} timeout={800}>
-          <Box>
-            <img
-              className={classes.image}
-              src={project.image}
-              alt={project.title}
-            />
-            <Box className={classes.text}>
-              <Typography className={classes.title} variant="h3">
-                {project.title}
-              </Typography>
+    <div id="card-container">
+      <div id="product-card">
+        <Paper
+          id="side-a"
+          elevation={3}
+          className={classes.root}
+          onMouseEnter={() => {
+            setShowSkills(true);
+          }}
+          onMouseLeave={() => {
+            setShowSkills(false);
+          }}
+        >
+          <Grid
+            className={classes.contain}
+            container
+            direction="column"
+            justifyContent="space-between"
+          >
+            <Box>
+              <img
+                className={classes.image}
+                src={project.image}
+                alt={project.title}
+              />
+              <Box className={classes.text}>
+                <Typography className={classes.title} variant="h3">
+                  {project.title}
+                </Typography>
 
-              <Box>
-                <Typography>{project.role}</Typography>
-                <Typography className={classes.type} variant="subtitle2">
-                  {project.type}
+                <Box>
+                  <Typography>{project.role}</Typography>
+                  <Typography className={classes.type} variant="subtitle2">
+                    {project.type}
+                  </Typography>
+                </Box>
+                <Typography className={classes.description}>
+                  {project.description}
                 </Typography>
               </Box>
-              <Typography className={classes.description}>
-                {project.description}
-              </Typography>
             </Box>
-          </Box>
-        ) : (
-          /* </Fade> */
-          <Fade appear={true} in={true} timeout={800}>
+            {project.buttons && (
+              <Grid item container direction="column" alignItems="center">
+                {project.buttons.map((button, index) => (
+                  <Button
+                    className={classes.button}
+                    variant="contained"
+                    href={button.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    key={index}
+                    onFocus={() => setFlip(true)}
+                  >
+                    {button.text}
+                  </Button>
+                ))}
+              </Grid>
+            )}
+          </Grid>
+        </Paper>
+        <Paper
+          id="side-b"
+          elevation={3}
+          className={classes.root}
+          onMouseEnter={() => {
+            setShowSkills(true);
+          }}
+          onMouseLeave={() => {
+            setShowSkills(false);
+          }}
+        >
+          <Grid
+            className={classes.contain}
+            container
+            direction="column"
+            justifyContent="space-between"
+          >
             <Box
               sx={{
                 display: 'flex',
@@ -104,27 +143,28 @@ const ProjectCard = ({ project }) => {
                 ))}
               </Box>
             </Box>
-          </Fade>
-        )}
-        {project.buttons && (
-          <Grid item container direction="column" alignItems="center">
-            {project.buttons.map((button, index) => (
-              <Button
-                className={classes.button}
-                variant="contained"
-                href={button.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                key={index}
-                onFocus={() => setFlip(true)}
-              >
-                {button.text}
-              </Button>
-            ))}
+
+            {project.buttons && (
+              <Grid item container direction="column" alignItems="center">
+                {project.buttons.map((button, index) => (
+                  <Button
+                    className={classes.button}
+                    variant="contained"
+                    href={button.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    key={index}
+                    onFocus={() => setFlip(true)}
+                  >
+                    {button.text}
+                  </Button>
+                ))}
+              </Grid>
+            )}
           </Grid>
-        )}
-      </Grid>
-    </Paper>
+        </Paper>
+      </div>
+    </div>
   );
 };
 

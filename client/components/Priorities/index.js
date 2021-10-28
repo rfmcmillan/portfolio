@@ -3,6 +3,7 @@ import { Card, Fade, Grid } from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { prioritiesData } from '../../data/priorities.js';
 import Priority from './Priority';
+import { useInView, InView } from 'react-intersection-observer';
 
 const Priorities = () => {
   const theme = useTheme();
@@ -15,19 +16,27 @@ const Priorities = () => {
     },
   });
   const classes = useStyles();
+  const { ref, inView, entry } = useInView({ threshold: 0 });
+
   return (
     <div>
       <Grid className={classes.contain} container alignItems="center">
-        <Card className={classes.root} elevation={4}>
-          <Grid justifyContent="center" container direction="row">
-            {prioritiesData.map((priority, index) => (
-              <Fade appear={true} in={true} timeout={800}>
+        <Card ref={ref} className={classes.root} elevation={4}>
+          <InView
+            as="div"
+            onChange={(inView, entry) => {
+              console.log(inView);
+              if (inView) entry.target.id = 'priorities';
+            }}
+          >
+            <Grid justifyContent="center" container direction="row">
+              {prioritiesData.map((priority, index) => (
                 <Grid item>
                   <Priority priority={priority} index={index} />
                 </Grid>
-              </Fade>
-            ))}
-          </Grid>
+              ))}
+            </Grid>
+          </InView>
         </Card>
       </Grid>
     </div>

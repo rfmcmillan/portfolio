@@ -24,40 +24,38 @@ const Nav = () => {
   });
   const classes = useStyles();
 
-  console.log('socialData:', socialData);
   return (
     <AppBar className={classes.root} position="static">
-      <Slide direction="down" in={true} container>
-        <Toolbar>
-          <Grid className={classes.socials} container spacing={2}>
-            {socialData.map((social, index) => (
-              <Social
-                classNames={[social.className, 'socialAccent']}
-                icon={social.icon}
-                aValues={social.aValues}
-                key={index}
-              />
-            ))}
-          </Grid>
-          <Grid container direction="row" justifyContent="flex-end">
-            {SECTIONS.map((section, index) => {
-              return (
-                <Grid item key={index}>
-                  <Button>
-                    <Link
-                      className={classes.link}
-                      to={section.toLowerCase()}
-                      smooth={true}
-                    >
-                      {section}
-                    </Link>
-                  </Button>
-                </Grid>
-              );
-            })}
-          </Grid>
-        </Toolbar>
-      </Slide>
+      <Toolbar>
+        <Grid className={classes.socials} container spacing={2}>
+          {socialData.map((social, index) => (
+            <Social
+              classNames={[social.className, 'socialAccent']}
+              icon={social.icon}
+              aValues={social.aValues}
+              key={index}
+            />
+          ))}
+        </Grid>
+        <Grid container direction="row" justifyContent="flex-end">
+          {SECTIONS.map((section, index) => {
+            return (
+              <Grid item key={index}>
+                <Button>
+                  <Link
+                    id="nav"
+                    className={classes.link}
+                    to={section.toLowerCase()}
+                    smooth={true}
+                  >
+                    {section}
+                  </Link>
+                </Button>
+              </Grid>
+            );
+          })}
+        </Grid>
+      </Toolbar>
     </AppBar>
   );
 };

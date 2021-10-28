@@ -3,6 +3,7 @@ import { Typography, Box } from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import ProjectCard from './ProjectCard';
 import { projectsData } from '../../data/projects';
+import { useInView, InView } from 'react-intersection-observer';
 
 const Projects = () => {
   const theme = useTheme();
@@ -25,6 +26,7 @@ const Projects = () => {
     },
   });
   const classes = useStyles();
+  const { ref, inView, entry } = useInView({ threshold: 0 });
 
   return (
     <Box
@@ -47,11 +49,18 @@ const Projects = () => {
           Some examples of my work during my time at Fullstack Academy.
         </Typography>
       </Box>
-      <Box className={classes.projects} sx={{ display: 'flex' }}>
-        {projectsData.map((project, index) => (
-          <ProjectCard project={project} key={index} />
-        ))}
-      </Box>
+      <InView
+        as="div"
+        onChange={(inView, entry) => {
+          if (inView) entry.target.id = 'projects';
+        }}
+      >
+        <Box className={classes.projects} sx={{ display: 'flex' }}>
+          {projectsData.map((project, index) => (
+            <ProjectCard project={project} key={index} />
+          ))}
+        </Box>
+      </InView>
     </Box>
   );
 };

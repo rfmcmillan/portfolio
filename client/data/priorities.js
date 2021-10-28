@@ -17,6 +17,6 @@ export const prioritiesData = [
     title: 'Agile',
     icon: Group,
     altText: 'Two People',
-    text: 'Use agile methodologies to work effectively on a team.',
+    text: 'Learning about agile methodologies to work effectively on a team.',
   },
 ];

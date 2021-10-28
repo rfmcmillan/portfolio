@@ -19,3 +19,208 @@ form div {
   margin: 1em;
   display: inline-block;
 }
+
+@keyframes name {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.name {
+  opacity: 1;
+  animation-name: name;
+  animation-duration: 1s;
+}
+
+@keyframes divider {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 30%;
+  }
+}
+
+.divider {
+  width: 0%;
+  opacity: 1;
+  animation-name: divider;
+  animation-delay: 0.2s;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes socialLinkedin {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#socialLinkedin {
+  opacity: 0;
+  animation-name: socialLinkedin;
+  animation-delay: 0.5s;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes socialGithub {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#socialGithub {
+  opacity: 0;
+  animation-name: socialGithub;
+  animation-delay: 1s;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes socialGmail {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#socialGmail {
+  opacity: 0;
+  animation-name: socialGmail;
+  animation-delay: 1.5s;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+@keyframes nav {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#nav {
+  opacity: 0;
+  animation-name: nav;
+  animation-delay: 0.5s;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes description {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#description {
+  opacity: 0;
+  animation-name: description;
+  animation-delay: 0.3s;
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+  visibility: visible;
+}
+
+@keyframes priorities {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#priorities {
+  opacity: 0;
+  animation-name: priorities;
+  animation-delay: 0.3s;
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+  visibility: visible;
+}
+
+@keyframes skills {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#skills {
+  opacity: 0;
+  animation-name: skills;
+  animation-delay: 0.3s;
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+  visibility: visible;
+}
+
+@keyframes projects {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#projects {
+  opacity: 0;
+  animation-name: projects;
+  animation-delay: 0.3s;
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+  visibility: visible;
+}
+
+#card-container {
+  perspective: 1000px;
+}
+
+#product-card {
+  transition: transform 1s cubic-bezier(0.55, -0.62, 0.27, 1.2);
+  transform-style: preserve-3d;
+}
+
+#product-card:hover {
+  transform: rotateY(-180deg);
+}
+
+#side-a,
+#side-b {
+  backface-visibility: hidden;
+}
+
+#side-a {
+  position: relative;
+  z-index: 100;
+}
+
+#side-b {
+  transform: rotateY(180deg);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin-top: 0;
+}

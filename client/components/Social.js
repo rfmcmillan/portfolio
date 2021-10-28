@@ -7,17 +7,14 @@ const useStyles = makeStyles({
     width: '50px',
     height: '50px',
   },
-  linkedin: {
-    width: '30px',
-  },
 });
 
 const Social = ({ icon, aValues, classNames = [] }) => {
   const { ariaLabel, ...otherAValues } = aValues;
-
+  console.log('classNames:', classNames[0]);
   const classes = useStyles();
   return (
-    <Grid item className={classes.root}>
+    <Grid item id={classNames[0]} className={classes.root}>
       <a aria-label={ariaLabel} {...otherAValues}>
         {icon}
       </a>
