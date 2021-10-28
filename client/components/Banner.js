@@ -6,8 +6,8 @@ const Banner = () => {
   const theme = useTheme();
   const useStyles = makeStyles({
     root: {
-      color: 'black',
       backgroundColor: theme.palette.primary.main,
+      color: 'black',
       height: '100vh',
     },
 

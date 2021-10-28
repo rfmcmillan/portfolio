@@ -7,13 +7,22 @@ import { Link, animateScroll as scroll } from 'react-scroll';
 import { socialData } from '../data/social.js';
 import Social from './Social.js';
 
-const SECTIONS = ['About', 'Skills', 'Projects'];
+const SECTIONS = [
+  { name: 'About', offset: 0 },
+  { name: 'Projects', offset: -100 },
+  { name: 'Skills', offset: 0 },
+];
 
 const Nav = () => {
   const [ref, inView] = useInView({ threshold: 1, triggerOnce: true });
   const theme = useTheme();
   const useStyles = makeStyles({
-    link: { fontFamily: theme.typography.fontFamily, color: 'black' },
+    link: {
+      color: 'black',
+      fontFamily: theme.typography.fontFamily,
+      fontSize: 18,
+      textTransform: 'none',
+    },
     root: {
       color: 'black',
       backgroundColor: theme.palette.primary.main,
@@ -45,10 +54,11 @@ const Nav = () => {
                   <Link
                     id="nav"
                     className={classes.link}
-                    to={section.toLowerCase()}
+                    to={section.name.toLowerCase()}
                     smooth={true}
+                    offset={section.offset}
                   >
-                    {section}
+                    {section.name}
                   </Link>
                 </Button>
               </Grid>

@@ -65,9 +65,16 @@ form div {
 #socialLinkedin {
   opacity: 0;
   animation-name: socialLinkedin;
-  animation-delay: 0.5s;
-  animation-duration: 0.5s;
+  animation-delay: 0.4s;
+  animation-duration: 0.4s;
   animation-fill-mode: forwards;
+  transition: fill 0.5s, background-color 0.5s, transform 0.4s;
+}
+
+#socialLinkedin:hover {
+  fill: #0a66c2;
+  background-color: black;
+  transform: scale(1.1);
 }
 
 @keyframes socialGithub {
@@ -82,9 +89,16 @@ form div {
 #socialGithub {
   opacity: 0;
   animation-name: socialGithub;
-  animation-delay: 1s;
-  animation-duration: 0.5s;
+  animation-delay: 0.8s;
+  animation-duration: 0.4s;
   animation-fill-mode: forwards;
+  transition: fill 0.5s, background-color 0.5s, transform 0.4s;
+}
+
+#socialGithub:hover {
+  fill: #7cd2b3;
+  background-color: black;
+  transform: scale(1.1);
 }
 
 @keyframes socialGmail {
@@ -99,10 +113,18 @@ form div {
 #socialGmail {
   opacity: 0;
   animation-name: socialGmail;
-  animation-delay: 1.5s;
-  animation-duration: 0.5s;
+  animation-delay: 1.2s;
+  animation-duration: 0.4s;
   animation-fill-mode: forwards;
+  transition: fill 0.5s, background-color 0.5s, transform 0.4s;
 }
+
+#socialGmail:hover {
+  fill: #d44638;
+  background-color: black;
+  transform: scale(1.1);
+}
+
 @keyframes nav {
   from {
     opacity: 0;

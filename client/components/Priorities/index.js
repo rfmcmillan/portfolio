@@ -9,7 +9,7 @@ const Priorities = () => {
   const theme = useTheme();
   const useStyles = makeStyles({
     contain: { backgroundColor: theme.palette.primary.main, height: 400 },
-    root: {
+    card: {
       color: theme.palette.text.primary,
       width: 720,
       margin: 'auto',
@@ -21,7 +21,7 @@ const Priorities = () => {
   return (
     <div>
       <Grid className={classes.contain} container alignItems="center">
-        <Card ref={ref} className={classes.root} elevation={4}>
+        <Card ref={ref} className={classes.card} elevation={4}>
           <InView
             as="div"
             onChange={(inView, entry) => {

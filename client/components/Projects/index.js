@@ -8,15 +8,15 @@ import { useInView, InView } from 'react-intersection-observer';
 const Projects = () => {
   const theme = useTheme();
   const useStyles = makeStyles({
-    projects: {
-      margin: 20,
-    },
     description: {
       color: theme.palette.text.primary,
       fontSize: 20,
       textAlign: 'center',
       paddingBottom: '1em',
       width: '100%',
+    },
+    projects: {
+      margin: 20,
     },
     title: {
       color: theme.palette.text.primary,
@@ -31,30 +31,36 @@ const Projects = () => {
   return (
     <Box
       sx={{
+        alignItems: 'center',
+        backgroundColor: theme.palette.primary.main,
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center',
-        marginTop: '7em',
-        paddingBottom: '12em',
+        paddingBottom: '6em',
+        paddingTop: '50px',
       }}
       name="projects"
     >
-      <Box
-        sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
-      >
-        <Typography className={classes.title} variant="h2">
-          Projects
-        </Typography>
-        <Typography className={classes.description}>
-          Some examples of my work during my time at Fullstack Academy.
-        </Typography>
-      </Box>
       <InView
         as="div"
         onChange={(inView, entry) => {
           if (inView) entry.target.id = 'projects';
         }}
       >
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
+        >
+          <Typography className={classes.title} variant="h2">
+            Projects
+          </Typography>
+          <Typography className={classes.description}>
+            Some examples of my work during my time at Fullstack Academy.
+          </Typography>
+        </Box>
+
         <Box className={classes.projects} sx={{ display: 'flex' }}>
           {projectsData.map((project, index) => (
             <ProjectCard project={project} key={index} />
