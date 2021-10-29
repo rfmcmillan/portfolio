@@ -9,8 +9,8 @@ import Social from './Social.js';
 
 const SECTIONS = [
   { name: 'About', offset: 0 },
-  { name: 'Projects', offset: -100 },
-  { name: 'Skills', offset: 0 },
+  { name: 'Skills', offset: 130 },
+  { name: 'Projects', offset: 0 },
 ];
 
 const Nav = () => {

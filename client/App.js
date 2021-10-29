@@ -1,5 +1,4 @@
 import React from 'react';
-import Routes from './Routes';
 import Banner from './components/Banner';
 import Nav from './components/Nav';
 import About from './components/About';
@@ -37,10 +36,9 @@ const App = () => {
         <Nav />
         <Banner />
         <About />
-        <Projects />
-        <Routes />
         <Priorities />
         <Skills />
+        <Projects />
         <ThankYou />
         <Footer />
       </div>

@@ -12,7 +12,7 @@ const Skills = () => {
       textAlign: 'center',
       backgroundColor: theme.palette.primary.main,
       paddingBottom: '4em',
-      paddingTop: '4em',
+      paddingTop: 200,
     },
     header: {
       color: theme.palette.text.primary,

@@ -29,9 +29,9 @@ const SkillSet = ({ data }) => {
         }}
       >
         <Grid className={classes.container} container wrap="wrap">
-          {data.items.map((skill, index) => (
-            <Grid item xs={3}>
-              <SkillItem skill={skill} key={index} />
+          {data.items.map((skill) => (
+            <Grid key={skill.title} item xs={3}>
+              <SkillItem skill={skill} />
             </Grid>
           ))}
         </Grid>

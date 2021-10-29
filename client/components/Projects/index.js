@@ -32,35 +32,34 @@ const Projects = () => {
     <Box
       sx={{
         alignItems: 'center',
-        backgroundColor: theme.palette.primary.main,
+        backgroundColor: 'white',
         display: 'flex',
         flexDirection: 'column',
-        paddingBottom: '6em',
-        paddingTop: '50px',
+        paddingTop: '75px',
+        paddingBottom: '50px',
       }}
       name="projects"
     >
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+        }}
+      >
+        <Typography className={classes.title} variant="h2">
+          Projects
+        </Typography>
+        <Typography className={classes.description}>
+          Some examples of my work during my time at Fullstack Academy.
+        </Typography>
+      </Box>
       <InView
         as="div"
         onChange={(inView, entry) => {
           if (inView) entry.target.id = 'projects';
         }}
       >
-        <Box
-          sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-          }}
-        >
-          <Typography className={classes.title} variant="h2">
-            Projects
-          </Typography>
-          <Typography className={classes.description}>
-            Some examples of my work during my time at Fullstack Academy.
-          </Typography>
-        </Box>
-
         <Box className={classes.projects} sx={{ display: 'flex' }}>
           {projectsData.map((project, index) => (
             <ProjectCard project={project} key={index} />
