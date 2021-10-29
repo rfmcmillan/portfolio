@@ -19,30 +19,30 @@ const ThankYou = () => {
   });
   const classes = useStyles();
   const { ref, inView, entry } = useInView({ threshold: 0 });
-
+  console.log(inView);
   return (
     <section className={classes.root}>
-      <Grid className={classes.contain}>
-        <Paper
-          className={classes.card}
-          elevation={4}
-          id="thank-you"
-          name="thank-you"
+      <Grid ref={ref} className={classes.contain}>
+        <InView
+          as="div"
+          onChange={(inView, entry) => {
+            if (inView) entry.target.id = 'thank-you';
+          }}
         >
-          <div ref={ref}>
-            <InView
-              as="div"
-              onChange={(inView, entry) => {
-                if (inView) entry.target.id = 'thank-you';
-              }}
-            >
+          <Paper
+            className={classes.card}
+            elevation={4}
+            id="thank-you"
+            name="thank-you"
+          >
+            <div ref={ref}>
               <Typography variant="h6" className={classes.text}>
                 Thank you to Jen for supporting me while I learn and to Stew for
                 introducing me to programming.
               </Typography>
-            </InView>
-          </div>
-        </Paper>
+            </div>
+          </Paper>
+        </InView>
       </Grid>
     </section>
   );

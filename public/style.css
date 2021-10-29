@@ -1,36 +1,9 @@
-/* body {
-  font-family: sans-serif;
-}
-
-a {
-  text-decoration: none;
-}
-
-label {
-  display: block;
-}
-
-nav a {
-  display: inline-block;
-  margin: 1em;
-}
-
-form div {
-  margin: 1em;
-  display: inline-block;
-} */
-
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400|Poppins:300,400,800&display=swap');
 
 * {
   margin: 0;
   padding: 0;
 }
-
-/* body,
-html {
-  overflow: hidden;
-} */
 
 .container {
   width: 100%;
@@ -226,15 +199,6 @@ footer {
   animation-delay: 4s;
 }
 
-/* span {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 12px;
-  color: #232323;
-  font-family: 'Poppins';
-} */
-
 i {
   margin-right: 25px;
   font-size: 22px;
@@ -269,10 +233,6 @@ i {
     bottom: 0px;
   }
 }
-
-
-
-
 
 @keyframes socialLinkedin {
   from {
@@ -435,18 +395,27 @@ i {
   visibility: visible;
 }
 
+@keyframes thank-you {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#thank-you {
+  opacity: 0;
+  animation-name: thank-you;
+  animation-delay: 0.3s;
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+  visibility: visible;
+}
+
 #card-container {
   perspective: 1000px;
 }
-
-/* #product-card {
-  transition: transform 1s cubic-bezier(0.55, -0.62, 0.27, 1.2);
-  transform-style: preserve-3d;
-}
-
-#product-card:hover {
-  transform: rotateY(-180deg);
-} */
 
 #side-a,
 #side-b {
