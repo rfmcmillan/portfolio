@@ -8,10 +8,24 @@ import Social from './Social.js';
 const Footer = () => {
   const theme = useTheme();
   const useStyles = makeStyles({
+    and: {
+      fontSize: 22,
+      fontWeight: 400,
+      color: theme.palette.text.primary,
+      padding: '0px 6px 0px 6px',
+    },
     credit: { fontSize: 22, fontWeight: 500 },
-    name: { fontSize: 22, fontWeight: 200, textDecoration: 'underline' },
+    name: {
+      fontSize: 22,
+      fontWeight: 200,
+      textDecoration: 'underline',
+      color: theme.palette.text.primary,
+      fontFamily: theme.typography.fontFamily,
+      fontWeight: 400,
+    },
     root: {
-      margin: '30px 150px 30px 150px',
+      padding: '30px 150px 30px 150px',
+      backgroundColor: theme.palette.primary.main,
     },
   });
   const classes = useStyles();
@@ -45,7 +59,7 @@ const Footer = () => {
             </Grid>
             <Box
               sx={{
-                width: 250,
+                width: 425,
                 display: 'flex',
                 alignItems: 'flex-end',
                 flexDirection: 'column',
@@ -54,15 +68,21 @@ const Footer = () => {
               <Typography className={classes.credit}>
                 Design Inspired by
               </Typography>
-              <Link className={classes.name} href="https://www.benlammers.dev/">
-                Ben Lammers
-              </Link>
-              <Link
-                className={classes.name}
-                href="https://codepen.io/KaioRocha/pen/YoEVvZ"
-              >
-                Kaio Almeida
-              </Link>
+              <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                <Link
+                  className={classes.name}
+                  href="https://www.benlammers.dev/"
+                >
+                  Ben Lammers
+                </Link>
+                <Typography className={classes.and}>and</Typography>
+                <Link
+                  className={classes.name}
+                  href="https://codepen.io/KaioRocha/pen/YoEVvZ"
+                >
+                  Kaio Almeida
+                </Link>
+              </Box>
             </Box>
           </Box>
         </InView>

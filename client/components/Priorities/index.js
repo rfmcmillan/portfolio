@@ -8,31 +8,31 @@ import { useInView, InView } from 'react-intersection-observer';
 const Priorities = () => {
   const theme = useTheme();
   const useStyles = makeStyles({
-    contain: { backgroundColor: theme.palette.primary.main, height: 400 },
+    contain: { backgroundColor: 'white', height: 150 },
     card: {
       color: theme.palette.text.primary,
       width: 720,
       margin: 'auto',
     },
+    root: {},
   });
   const classes = useStyles();
   const { ref, inView, entry } = useInView({ threshold: 0 });
 
   return (
-    <div>
+    <div className={classes.root}>
       <Grid className={classes.contain} container alignItems="center">
         <Card ref={ref} className={classes.card} elevation={4}>
           <InView
             as="div"
             onChange={(inView, entry) => {
-              console.log(inView);
               if (inView) entry.target.id = 'priorities';
             }}
           >
             <Grid justifyContent="center" container direction="row">
               {prioritiesData.map((priority, index) => (
-                <Grid item>
-                  <Priority priority={priority} index={index} />
+                <Grid item key={priority.title}>
+                  <Priority priority={priority} />
                 </Grid>
               ))}
             </Grid>

@@ -3,11 +3,9 @@ import {
   Box,
   Button,
   Grid,
-  List,
-  Link,
   Paper,
+  Tooltip,
   Typography,
-  Fade,
 } from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import SkillItem from '../../Skills/SkillItem';
@@ -24,11 +22,11 @@ const ProjectCard = ({ project }) => {
       width: 300,
     },
     contain: { height: '100%' },
-    description: { fontSize: 20, minHeight: 130 },
+    description: { fontSize: 20, minHeight: 120 },
     image: { width: '100%', borderRadius: '5px 5px 0px 0px', minHeight: 200 },
-    root: { width: 350, height: 700, margin: 15, paddingBottom: 15 },
+    root: { width: 350, height: 650, margin: 15, paddingBottom: 15 },
     rootSkills: { width: 350, height: 650, margin: 15, paddingBottom: 15 },
-    skillList: { width: 225, margin: '10px 0px 20px 0px ' },
+    skills: {},
     stackTitle: {
       fontSize: 22,
       fontWeight: 500,
@@ -81,10 +79,19 @@ const ProjectCard = ({ project }) => {
                 </Typography>
               </Box>
             </Box>
-            <Grid container>
+            <Grid
+              className={classes.skills}
+              item
+              container
+              justifyContent="center"
+            >
               {project.stack.map((skill) =>
                 skill.logo ? (
-                  <SkillBubble logo={skill.logo} title={skill.title} />
+                  <SkillBubble
+                    key={skill.title}
+                    logo={skill.logo}
+                    title={skill.title}
+                  />
                 ) : (
                   ''
                 )
