@@ -67,7 +67,7 @@ h1 {
   animation: popIn 0.8s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
   animation-delay: 2s;
   margin-left: 5px;
-  margin-top: -10px;
+  margin-top: -8px;
   margin-bottom: 10px;
   position: absolute;
   bottom: 13px;
@@ -159,7 +159,7 @@ h1 {
     height: 10px;
     background: #e9d856;
     opacity: 1;
-    bottom: 45px;
+    bottom: 64px;
   }
   65% {
     width: 7px;
@@ -177,7 +177,7 @@ h1 {
     height: 7px;
     background: #e9d856;
     border: 0px solid #222;
-    bottom: 13px;
+    bottom: 15px;
   }
 }
 
@@ -252,7 +252,7 @@ i {
   left: 0;
   right: 0;
   animation-name: arrow-container;
-  animation-delay: 4.5s;
+  animation-delay: 4s;
   animation-duration: 2s;
   animation-fill-mode: forwards;
   opacity: 0;
@@ -268,6 +268,7 @@ i {
 }
 
 .arrow-2{
+  cursor: pointer;
   width: 60px;
   height: 60px;
   background: #00BCD4;

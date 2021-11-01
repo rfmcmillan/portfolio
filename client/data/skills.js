@@ -43,6 +43,6 @@ export const skillsData = [
   {
     id: 2,
     phrase: 'and exploring',
-    items: [typescript, aws],
+    items: [typescript],
   },
 ];
