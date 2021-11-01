@@ -15,9 +15,10 @@
 }
 
 .box {
-  width: 280px;
+  width: 488px;
   height: 250px;
   position: relative;
+  bottom: 64px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -28,7 +29,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  height: 50px;
+  height: 60px;
 }
 
 #block-1 {
@@ -38,12 +39,13 @@
   position: absolute;
   animation: mainBlock 2s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
   display: flex;
+  margin-bottom: 10px;
 }
 
 h1 {
   font-family: 'Poppins';
   color: #fff;
-  font-size: 32px;
+  font-size: 64px;
   -webkit-animation: mainFadeIn 2s forwards;
   -o-animation: mainFadeIn 2s forwards;
   animation: mainFadeIn 2s forwards;
@@ -66,6 +68,7 @@ h1 {
   animation-delay: 2s;
   margin-left: 5px;
   margin-top: -10px;
+  margin-bottom: 10px;
   position: absolute;
   bottom: 13px;
   right: -12px;
@@ -77,7 +80,7 @@ h1 {
   display: flex;
   align-items: center;
   height: 30px;
-  margin-top: -10px;
+  margin-top: -5px;
 }
 
 .block-2 {
@@ -88,6 +91,7 @@ h1 {
   animation: secBlock 2s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
   animation-delay: 2s;
   display: flex;
+  margin-left: 3px;
 }
 
 #job-function {
@@ -100,6 +104,7 @@ h1 {
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 5px;
+  margin-left: 3px;
 }
 
 @keyframes mainBlock {
