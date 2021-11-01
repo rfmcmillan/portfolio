@@ -43,6 +43,12 @@ const Banner = () => {
           <p id="job-function">Full Stack Engineer</p>
         </div>
       </div>
+      <div class="arrow-container animated fadeInDown">
+        <div class="arrow-2">
+          <i class="fa fa-angle-down"></i>
+        </div>
+        <div class="arrow-1 animated hinge infinite zoomIn"></div>
+      </div>
     </div>
   );
 };
