@@ -19,9 +19,8 @@ const About = () => {
       marginBottom: '.2em',
     },
     root: {
-      color: 'black',
-      backgroundColor: 'white',
-
+      color: theme.palette.text.primary,
+      backgroundColor: theme.palette.secondary.contrastText,
       padding: '100px 0 100px 0',
       margin: 'auto',
     },

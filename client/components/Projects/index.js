@@ -32,7 +32,7 @@ const Projects = () => {
     <Box
       sx={{
         alignItems: 'center',
-        backgroundColor: 'white',
+        backgroundColor: theme.palette.secondary.contrastText,
         display: 'flex',
         flexDirection: 'column',
         paddingTop: '75px',

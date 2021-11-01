@@ -15,7 +15,7 @@ const Skills = () => {
       paddingTop: 200,
     },
     header: {
-      color: theme.palette.text.primary,
+      color: theme.palette.primary.contrastText,
       fontSize: 32,
       fontWeight: 500,
       marginBottom: '.2em',
@@ -29,7 +29,7 @@ const Skills = () => {
       paddingInlineStart: 0,
     },
     subTitle: {
-      color: theme.palette.text.primary,
+      color: theme.palette.primary.contrastText,
       fontSize: 20,
       textAlign: 'center',
       paddingBottom: '1em',

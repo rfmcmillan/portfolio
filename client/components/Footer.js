@@ -25,7 +25,7 @@ const Footer = () => {
     },
     root: {
       padding: '30px 150px 30px 150px',
-      backgroundColor: theme.palette.primary.main,
+      backgroundColor: theme.palette.secondary.main,
     },
   });
   const classes = useStyles();

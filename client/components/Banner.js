@@ -9,7 +9,7 @@ const Banner = () => {
   const useStyles = makeStyles({
     root: {
       backgroundColor: theme.palette.primary.main,
-      color: 'black',
+      color: theme.palette.text.primary,
       height: '100vh',
     },
 

@@ -8,7 +8,10 @@ import { useInView, InView } from 'react-intersection-observer';
 const Priorities = () => {
   const theme = useTheme();
   const useStyles = makeStyles({
-    contain: { backgroundColor: 'white', height: 150 },
+    contain: {
+      backgroundColor: theme.palette.secondary.contrastText,
+      height: 150,
+    },
     card: {
       color: theme.palette.text.primary,
       width: 720,

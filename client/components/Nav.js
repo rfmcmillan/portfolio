@@ -18,13 +18,12 @@ const Nav = () => {
   const theme = useTheme();
   const useStyles = makeStyles({
     link: {
-      color: 'black',
+      color: theme.palette.primary.contrastText,
       fontFamily: theme.typography.fontFamily,
       fontSize: 18,
       textTransform: 'none',
     },
     root: {
-      color: 'black',
       backgroundColor: theme.palette.primary.main,
     },
     socials: {
