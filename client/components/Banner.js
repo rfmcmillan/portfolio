@@ -36,7 +36,7 @@ const Banner = () => {
       <div className="arrow-container animated fadeInDown">
         <div className="arrow-2">
           <i className="fa fa-angle-down">
-            <Link to={'about'} smooth={true}>
+            <Link to={'about'} smooth={true} duration={700}>
               <KeyboardArrowDown />
             </Link>
           </i>

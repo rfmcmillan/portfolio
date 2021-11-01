@@ -56,6 +56,7 @@ const Nav = () => {
                     to={section.name.toLowerCase()}
                     smooth={true}
                     offset={section.offset}
+                    duration={700}
                   >
                     {section.name}
                   </Link>
