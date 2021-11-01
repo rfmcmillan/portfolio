@@ -41,7 +41,7 @@ const About = () => {
           <Grid container alignItems="center" direction="column">
             <Grid item>
               <Typography className={classes.name} variant="h2">
-                Hi, I'm Russel
+                Hi, I'm Russ
               </Typography>
             </Grid>
             <Grid item>
