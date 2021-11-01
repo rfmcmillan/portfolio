@@ -38,7 +38,7 @@ const ThankYou = () => {
             <div ref={ref}>
               <Typography variant="h6" className={classes.text}>
                 Thank you to Jen for supporting me while I learn and to Stew for
-                introducing me to programming.
+                taking the leap first and showing me a better way.
               </Typography>
             </div>
           </Paper>

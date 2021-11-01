@@ -41,16 +41,17 @@ const About = () => {
           <Grid container alignItems="center" direction="column">
             <Grid item>
               <Typography className={classes.name} variant="h2">
-                Hi, I'm Russel
+                Hi, I'm Russ
               </Typography>
             </Grid>
             <Grid item>
               <Typography className={classes.about} variant="body1">
                 A full stack engineer with a background in architecture. Prior
-                to 2021, I was focused on designing homes. Now, after completing
-                the 26-week software engineering program at Fullstack Academy, I
-                am ready to combine my love of problem-solving with my passion
-                for clean and simple design to create software that is both
+                to 2021, I was focused on designing homes that are sustainable,
+                affordable and, of course, wonderful to live in. Now, after
+                completing the 26-week software engineering program at Fullstack
+                Academy, I am ready to put my passion for problem-solving to
+                full use so that I can help create software that is both
                 powerful and wonderful to use.
               </Typography>
             </Grid>
