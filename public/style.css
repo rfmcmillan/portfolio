@@ -251,6 +251,11 @@ i {
   bottom: 25px;
   left: 0;
   right: 0;
+  animation-name: arrow-container;
+  animation-delay: 4.5s;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  opacity: 0;
 }
 
 .arrow-1{
@@ -275,6 +280,7 @@ i {
 }
 
 .arrow-2:before{
+
   width: 52px;
   height: 52px;
   content: "";
@@ -286,11 +292,22 @@ i {
 }
 
 .arrow-2 i.fa{
-  font-size: 30px;
+  transform: scale(1.5);
+  width: 60px;
   display: table-cell;
+  padding-top: 5px;
   vertical-align: middle;
   text-align: center;
   color: #006064;
+}
+
+@keyframes arrow-container {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Custom Animate.css */
@@ -298,6 +315,7 @@ i {
 .animated.hinge {
   -webkit-animation-duration: 2s;
           animation-duration: 2s;
+          animation-iteration-count: infinite;
 }
 
 @-webkit-keyframes zoomIn {

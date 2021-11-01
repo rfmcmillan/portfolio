@@ -1,6 +1,7 @@
 import React from 'react';
 import { Typography, Grid } from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { KeyboardArrowDown } from '@material-ui/icons';
 
 const Banner = () => {
   const theme = useTheme();
@@ -45,7 +46,9 @@ const Banner = () => {
       </div>
       <div class="arrow-container animated fadeInDown">
         <div class="arrow-2">
-          <i class="fa fa-angle-down"></i>
+          <i class="fa fa-angle-down">
+            <KeyboardArrowDown />
+          </i>
         </div>
         <div class="arrow-1 animated hinge infinite zoomIn"></div>
       </div>
