@@ -15,19 +15,19 @@ const theme = createTheme({
   },
   palette: {
     primary: {
-      main: '#023047',
-      contrastText: '#8ECAE6',
+      main: '#2A9D8F',
+      contrastText: '#264653',
     },
     secondary: {
-      main: '#219EBC',
-      contrastText: '#FB8500',
+      main: '#2A9D8F',
+      contrastText: '#264653',
     },
     text: {
-      primary: '#1D3557',
-      secondary: '#457B9D',
+      primary: '#264653',
+      secondary: '#2A9D8F',
     },
     info: {
-      main: '#FFB703',
+      main: '#2A9D8F',
     },
   },
 });

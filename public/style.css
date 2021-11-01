@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400|Poppins:300,400,800&display=swap');
 
 :root {
-  --primary-main: #023047;
-  --primary-contrast-text: #8ECAE6;
-  --secondary-main: #219EBC;
-  --secondary-contrast-text: #FB8500;
-  --text-primary: #1D3557;
-  --text-secondary: #457B9D;
-  --info-main: #FFB703;
+  --primary-main: #2A9D8F;
+  --primary-contrast-text: #264653;
+  --secondary-main: #2A9D8F;
+  --secondary-contrast-text: 264653;
+  --text-primary: #2A9D8F;
+  --text-secondary: #2A9D8F;
+  --info-main: #E76F51;
 }
 
 * {
@@ -45,7 +45,7 @@
 #block-1 {
   width: 0%;
   height: inherit;
-  background: var(--secondary-main);
+  background: var(--info-main);
   position: absolute;
   animation: mainBlock 2s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
   display: flex;
@@ -160,14 +160,14 @@ h1 {
   0% {
     width: 0px;
     height: 0px;
-    background: var(--secondary-main);;
+    background: var(--info-main);;
     border: 0px solid #ddd;
     opacity: 0;
   }
   50% {
     width: 10px;
     height: 10px;
-    background: var(--secondary-main);;
+    background: var(--info-main);;
     opacity: 1;
     bottom: 64px;
   }
@@ -185,7 +185,7 @@ h1 {
   100% {
     width: 7px;
     height: 7px;
-    background: var(--secondary-main);;
+    background: var(--info-main);;
     border: 0px solid #222;
     bottom: 15px;
   }
