@@ -10,7 +10,8 @@ const ThankYou = () => {
     card: {
       backgroundColor: theme.palette.text.primary,
       margin: 'auto',
-      marginBottom: 75,
+      marginBottom: '75px',
+      marginTop: '75px',
       padding: '20px 60px 20px 60px',
       width: '40%',
     },
