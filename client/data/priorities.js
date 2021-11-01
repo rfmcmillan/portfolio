@@ -11,7 +11,7 @@ export const prioritiesData = [
     title: 'Team-Oriented',
     icon: Group,
     altText: 'Two People',
-    text: 'Passionate about helping to create an atmosphere of positivity and hard work.',
+    text: 'Currently learning Agile so that I can work effectively on a team.',
   },
   {
     title: 'Full Stack',
