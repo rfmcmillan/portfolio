@@ -1,6 +1,6 @@
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
-import { AppBar, Button, Grid, Slide, Toolbar } from '@material-ui/core';
+import { AppBar, Button, Grid, Toolbar } from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import * as Scroll from 'react-scroll';
 import { Link, animateScroll as scroll } from 'react-scroll';
@@ -39,7 +39,7 @@ const Nav = () => {
           {socialData.map((social, index) => (
             <Social
               classNames={[social.className, 'socialAccent']}
-              icon={social.icon}
+              fileName={social.fileName}
               aValues={social.aValues}
               key={index}
             />
