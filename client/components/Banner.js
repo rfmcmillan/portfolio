@@ -24,19 +24,18 @@ const Banner = () => {
       <div className="box">
         <div className="title">
           <span id="block-1"></span>
-          <h1 id="full-name">
-            Russ McMillan<span id="dot"></span>
-          </h1>
+          <h1 id="full-name">Russ McMillan</h1>
         </div>
         <div className="role">
           <div className="block-2"></div>
+          <div className="block-2-remain"></div>
           <p id="job-function">Full Stack Engineer</p>
         </div>
       </div>
       <div className="arrow-container animated fadeInDown">
         <div className="arrow-2">
           <i className="fa fa-angle-down">
-            <Link to={'about'} smooth={true} duration={700}>
+            <Link to={'intro'} smooth={true} duration={700}>
               <KeyboardArrowDown />
             </Link>
           </i>
