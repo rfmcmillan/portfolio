@@ -91,9 +91,9 @@ export const projectsData = [
     ],
   },
   {
-    title: 'PocketTrade',
+    title: 'RapidRebalance',
     description: `A portfolio management app that allows an investor to quickly rebalance their portfolio.`,
-    image: './assets/PocketTrade - Home.png',
+    image: './assets/RapidRebalance - Home.png',
     role: 'Full Stack Developer',
     type: 'Solo Project/Hackathon',
     stack: [nodejs, react, postgres, redux, express, materialUi, alpaca],
@@ -101,13 +101,13 @@ export const projectsData = [
       {
         text: 'View Site',
         link: 'https://pocket-trade.herokuapp.com/#/',
-        linkAriaLabel: 'View the hosted version of Global Snacker',
+        linkAriaLabel: 'View the hosted version of RapidRebalance',
         icon: <ExternalIcon />,
       },
       {
         text: 'View Repo',
-        link: 'https://github.com/rfmcmillan/pocket-trade',
-        linkAriaLabel: 'View Github repository for Global Snacker',
+        link: 'https://github.com/rfmcmillan/project-unit-1',
+        linkAriaLabel: 'View Github repository for Rapid-Rebalance',
         icon: <GithubIcon />,
       },
     ],

@@ -25,7 +25,7 @@ const ProjectCard = ({ project }) => {
     description: { fontSize: 20, minHeight: 120 },
     image: {
       width: '100%',
-      borderRadius: '5px 5px 0px 0px',
+      borderRadius: '3px 3px 0px 0px',
       minHeight: 200,
       borderBottom: `1px solid #e8e8e8`,
     },
