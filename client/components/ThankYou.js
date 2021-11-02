@@ -6,20 +6,26 @@ import { useInView, InView } from 'react-intersection-observer';
 const ThankYou = () => {
   const theme = useTheme();
   const useStyles = makeStyles({
-    root: {},
+    root: {
+      backgroundColor: theme.palette.primary.contrastText,
+      paddingBottom: '25px',
+      paddingTop: '25px',
+      height: '75px',
+    },
     card: {
-      backgroundColor: theme.palette.text.primary,
+      backgroundColor: theme.palette.secondary.main,
+      color: theme.palette.text.primary,
       margin: 'auto',
-      marginBottom: 75,
       padding: '20px 60px 20px 60px',
       width: '40%',
+      position: 'relative',
+      top: '50px',
     },
     contain: {},
-    text: { width: 600, margin: 'auto', textAlign: 'center', color: 'white' },
+    text: { width: 600, margin: 'auto', textAlign: 'center' },
   });
   const classes = useStyles();
   const { ref, inView, entry } = useInView({ threshold: 0 });
-  console.log(inView);
   return (
     <section className={classes.root}>
       <Grid ref={ref} className={classes.contain}>
@@ -38,7 +44,7 @@ const ThankYou = () => {
             <div ref={ref}>
               <Typography variant="h6" className={classes.text}>
                 Thank you to Jen for supporting me while I learn and to Stew for
-                taking the leap first and showing me a better way.
+                encouraging me to pursue software engineering.
               </Typography>
             </div>
           </Paper>

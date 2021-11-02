@@ -9,7 +9,6 @@ const Projects = () => {
   const theme = useTheme();
   const useStyles = makeStyles({
     description: {
-      color: theme.palette.text.primary,
       fontSize: 20,
       textAlign: 'center',
       paddingBottom: '1em',
@@ -19,7 +18,6 @@ const Projects = () => {
       margin: 20,
     },
     title: {
-      color: theme.palette.text.primary,
       fontSize: 32,
       fontWeight: 500,
       marginBottom: '.2em',
@@ -32,11 +30,12 @@ const Projects = () => {
     <Box
       sx={{
         alignItems: 'center',
-        backgroundColor: 'white',
+        backgroundColor: theme.palette.primary.contrastText,
+        color: theme.palette.primary.main,
         display: 'flex',
         flexDirection: 'column',
         paddingTop: '75px',
-        paddingBottom: '50px',
+        paddingBottom: '0px',
       }}
       name="projects"
     >

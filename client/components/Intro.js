@@ -3,25 +3,22 @@ import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { Grid, Typography } from '@material-ui/core';
 import { useInView, InView } from 'react-intersection-observer';
 
-const About = () => {
+const Intro = () => {
   const theme = useTheme();
   const useStyles = makeStyles({
     about: {
-      color: theme.palette.text.primary,
       fontSize: 20,
       textAlign: 'center',
       width: '50vw',
     },
     name: {
-      color: theme.palette.text.primary,
       fontSize: 32,
       fontWeight: 500,
       marginBottom: '.2em',
     },
     root: {
-      color: 'black',
-      backgroundColor: 'white',
-
+      color: theme.palette.primary.main,
+      backgroundColor: theme.palette.primary.contrastText,
       padding: '100px 0 100px 0',
       margin: 'auto',
     },
@@ -30,7 +27,7 @@ const About = () => {
   const { ref, inView, entry } = useInView({ threshold: 0 });
 
   return (
-    <section className="section" id="about" name="about">
+    <section className="section" id="intro" name="intro">
       <div ref={ref} className={classes.root}>
         <InView
           as="div"
@@ -62,4 +59,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Intro;

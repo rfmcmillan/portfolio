@@ -1,8 +1,7 @@
 import React from 'react';
 import Banner from './components/Banner';
 import Nav from './components/Nav';
-import About from './components/About';
-import Priorities from './components/Priorities';
+import Intro from './components/Intro';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import ThankYou from './components/ThankYou';
@@ -15,16 +14,19 @@ const theme = createTheme({
   },
   palette: {
     primary: {
-      main: '#7CD2B3',
-      contrastText: 'black',
+      main: '#264653',
+      contrastText: '#fafafa',
     },
     secondary: {
-      main: '#202A44',
-      contrastText: '#7CD2B3',
+      main: '#2A9D8F',
+      contrastText: '#264653',
     },
     text: {
-      primary: '#121858',
-      secondary: '#474f97',
+      primary: '#264653',
+      secondary: '#2A9D8F',
+    },
+    info: {
+      main: '#2A9D8F',
     },
   },
 });
@@ -35,8 +37,7 @@ const App = () => {
       <div>
         <Nav />
         <Banner />
-        <About />
-        <Priorities />
+        <Intro />
         <Skills />
         <Projects />
         <ThankYou />

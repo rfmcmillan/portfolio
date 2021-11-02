@@ -1,25 +1,35 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { Grid } from '@material-ui/core';
 
-const useStyles = makeStyles({
-  root: {
-    width: '50px',
-    height: '50px',
-    border: '2px solid #262626',
-    borderRadius: '30px',
-    margin: 3,
-  },
-});
-
-const Social = ({ icon, aValues, classNames = [] }) => {
+const Social = ({ fileName, aValues, classNames = [] }) => {
   const { ariaLabel, ...otherAValues } = aValues;
+
+  const theme = useTheme();
+  const useStyles = makeStyles({
+    image: {
+      filter:
+        'invert(100%) sepia(0%) saturate(0%) hue-rotate(75deg) brightness(111%) contrast(96%);',
+    },
+    root: {
+      width: '50px',
+      height: '50px',
+      border: `2px solid ${theme.palette.primary.contrastText}`,
+      borderRadius: '30px',
+      margin: 3,
+      fill: theme.palette.primary.contrastText,
+      color: theme.palette.primary.contrastText,
+    },
+  });
   const classes = useStyles();
   return (
     <Grid item id={classNames[0]} className={classes.root}>
-      <a aria-label={ariaLabel} {...otherAValues}>
-        {icon}
-      </a>
+      <img
+        className={classes.image}
+        src={fileName}
+        aria-label={ariaLabel}
+        {...otherAValues}
+      />
     </Grid>
   );
 };
