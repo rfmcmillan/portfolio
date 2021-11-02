@@ -1,8 +1,7 @@
 import React from 'react';
 import Banner from './components/Banner';
 import Nav from './components/Nav';
-import About from './components/About';
-import Priorities from './components/Priorities';
+import Intro from './components/Intro';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import ThankYou from './components/ThankYou';
@@ -16,7 +15,7 @@ const theme = createTheme({
   palette: {
     primary: {
       main: '#264653',
-      contrastText: '#c7fff0',
+      contrastText: '#fafafa',
     },
     secondary: {
       main: '#2A9D8F',
@@ -38,8 +37,7 @@ const App = () => {
       <div>
         <Nav />
         <Banner />
-        <About />
-        {/* <Priorities /> */}
+        <Intro />
         <Skills />
         <Projects />
         <ThankYou />

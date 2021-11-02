@@ -3,7 +3,7 @@ import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { Grid, Typography } from '@material-ui/core';
 import { useInView, InView } from 'react-intersection-observer';
 
-const About = () => {
+const Intro = () => {
   const theme = useTheme();
   const useStyles = makeStyles({
     about: {
@@ -17,8 +17,8 @@ const About = () => {
       marginBottom: '.2em',
     },
     root: {
-      color: theme.palette.primary.contrastText,
-      backgroundColor: theme.palette.secondary.contrastText,
+      color: theme.palette.primary.main,
+      backgroundColor: theme.palette.primary.contrastText,
       padding: '100px 0 100px 0',
       margin: 'auto',
     },
@@ -59,4 +59,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Intro;

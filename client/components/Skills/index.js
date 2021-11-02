@@ -21,7 +21,6 @@ const Skills = () => {
       marginBottom: '.2em',
     },
     skills: {
-      backgroundColor: theme.palette.secondary.main,
       marginTop: 0,
       paddingTop: 16,
       marginLeft: 0,

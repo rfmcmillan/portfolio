@@ -30,12 +30,12 @@ const Projects = () => {
     <Box
       sx={{
         alignItems: 'center',
-        backgroundColor: theme.palette.secondary.contrastText,
-        color: theme.palette.primary.contrastText,
+        backgroundColor: theme.palette.primary.contrastText,
+        color: theme.palette.primary.main,
         display: 'flex',
         flexDirection: 'column',
         paddingTop: '75px',
-        paddingBottom: '50px',
+        paddingBottom: '0px',
       }}
       name="projects"
     >

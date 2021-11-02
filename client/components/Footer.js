@@ -23,7 +23,7 @@ const Footer = () => {
       fontWeight: 400,
     },
     root: {
-      padding: '30px 150px 30px 150px',
+      padding: '45px 150px 30px 150px',
       backgroundColor: theme.palette.primary.main,
       color: theme.palette.primary.contrastText,
     },

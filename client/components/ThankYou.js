@@ -7,17 +7,19 @@ const ThankYou = () => {
   const theme = useTheme();
   const useStyles = makeStyles({
     root: {
-      backgroundColor: theme.palette.secondary.main,
-      paddingBottom: '75px',
-      paddingTop: '75px',
+      backgroundColor: theme.palette.primary.contrastText,
+      paddingBottom: '25px',
+      paddingTop: '25px',
+      height: '75px',
     },
     card: {
-      backgroundColor: theme.palette.text.primary,
+      backgroundColor: theme.palette.secondary.main,
       color: theme.palette.primary.contrastText,
       margin: 'auto',
-
       padding: '20px 60px 20px 60px',
       width: '40%',
+      position: 'relative',
+      top: '50px',
     },
     contain: {},
     text: { width: 600, margin: 'auto', textAlign: 'center' },
