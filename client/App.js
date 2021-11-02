@@ -10,7 +10,7 @@ import { ThemeProvider, createTheme } from '@material-ui/core/styles';
 
 const theme = createTheme({
   typography: {
-    fontFamily: ['Roboto', 'sans-serif'].join(','),
+    fontFamily: ['Poppins', 'sans-serif'].join(','),
   },
   palette: {
     primary: {

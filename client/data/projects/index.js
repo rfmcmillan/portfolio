@@ -100,13 +100,13 @@ export const projectsData = [
     buttons: [
       {
         text: 'View Site',
-        link: 'https://pocket-trade.herokuapp.com/#/',
+        link: 'https://rapid-rebalance.herokuapp.com/#/',
         linkAriaLabel: 'View the hosted version of RapidRebalance',
         icon: <ExternalIcon />,
       },
       {
         text: 'View Repo',
-        link: 'https://github.com/rfmcmillan/project-unit-1',
+        link: 'https://github.com/rfmcmillan/rapid-rebalance',
         linkAriaLabel: 'View Github repository for Rapid-Rebalance',
         icon: <GithubIcon />,
       },
