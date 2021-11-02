@@ -6,13 +6,16 @@ import { useInView, InView } from 'react-intersection-observer';
 const ThankYou = () => {
   const theme = useTheme();
   const useStyles = makeStyles({
-    root: {},
+    root: {
+      backgroundColor: theme.palette.secondary.main,
+      paddingBottom: '75px',
+      paddingTop: '75px',
+    },
     card: {
       backgroundColor: theme.palette.text.primary,
-      color: '#c7fff8',
+      color: theme.palette.primary.contrastText,
       margin: 'auto',
-      marginBottom: '75px',
-      marginTop: '75px',
+
       padding: '20px 60px 20px 60px',
       width: '40%',
     },
@@ -21,7 +24,6 @@ const ThankYou = () => {
   });
   const classes = useStyles();
   const { ref, inView, entry } = useInView({ threshold: 0 });
-  console.log(inView);
   return (
     <section className={classes.root}>
       <Grid ref={ref} className={classes.contain}>

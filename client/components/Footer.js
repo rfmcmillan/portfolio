@@ -11,7 +11,6 @@ const Footer = () => {
     and: {
       fontSize: 22,
       fontWeight: 400,
-      color: theme.palette.text.primary,
       padding: '0px 6px 0px 6px',
     },
     credit: { fontSize: 22, fontWeight: 500 },
@@ -19,13 +18,14 @@ const Footer = () => {
       fontSize: 22,
       fontWeight: 200,
       textDecoration: 'underline',
-      color: theme.palette.text.primary,
       fontFamily: theme.typography.fontFamily,
+      color: theme.palette.primary.contrastText,
       fontWeight: 400,
     },
     root: {
       padding: '30px 150px 30px 150px',
-      backgroundColor: theme.palette.secondary.main,
+      backgroundColor: theme.palette.primary.main,
+      color: theme.palette.primary.contrastText,
     },
   });
   const classes = useStyles();

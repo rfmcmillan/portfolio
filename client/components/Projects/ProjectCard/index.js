@@ -23,7 +23,12 @@ const ProjectCard = ({ project }) => {
     },
     contain: { height: '100%' },
     description: { fontSize: 20, minHeight: 120 },
-    image: { width: '100%', borderRadius: '5px 5px 0px 0px', minHeight: 200 },
+    image: {
+      width: '100%',
+      borderRadius: '5px 5px 0px 0px',
+      minHeight: 200,
+      borderBottom: `1px solid #e8e8e8`,
+    },
     root: { width: 350, height: 650, margin: 15, paddingBottom: 15 },
     rootSkills: { width: 350, height: 650, margin: 15, paddingBottom: 15 },
     skills: {},

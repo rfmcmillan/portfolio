@@ -8,8 +8,8 @@ import { socialData } from '../data/social.js';
 import Social from './Social.js';
 
 const SECTIONS = [
-  { name: 'About', offset: 0 },
-  { name: 'Skills', offset: 130 },
+  { name: 'Intro', offset: 0 },
+  { name: 'Skills', offset: 0 },
   { name: 'Projects', offset: 0 },
 ];
 
@@ -33,7 +33,7 @@ const Nav = () => {
   const classes = useStyles();
 
   return (
-    <AppBar className={classes.root} position="static">
+    <AppBar className={classes.root} position="fixed">
       <Toolbar>
         <Grid className={classes.socials} container spacing={2}>
           {socialData.map((social, index) => (

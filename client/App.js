@@ -39,7 +39,7 @@ const App = () => {
         <Nav />
         <Banner />
         <About />
-        <Priorities />
+        {/* <Priorities /> */}
         <Skills />
         <Projects />
         <ThankYou />

@@ -13,7 +13,7 @@ const Skills = () => {
       backgroundColor: theme.palette.secondary.main,
       color: theme.palette.secondary.contrastText,
       paddingBottom: '4em',
-      paddingTop: 200,
+      paddingTop: 100,
     },
     header: {
       fontSize: 32,
