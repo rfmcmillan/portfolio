@@ -22,7 +22,7 @@ const ProjectCard = ({ project }) => {
       width: 300,
     },
     contain: { height: '100%' },
-    description: { fontSize: 20, minHeight: 120 },
+    description: { fontSize: 18, minHeight: 120 },
     image: {
       width: '100%',
       borderRadius: '3px 3px 0px 0px',
@@ -39,7 +39,7 @@ const ProjectCard = ({ project }) => {
       marginTop: 15,
     },
     text: { margin: 15 },
-    title: { fontSize: 22, fontWeight: 600 },
+    title: { fontSize: 22, fontWeight: 500 },
     type: { marginBottom: 15, color: theme.palette.text.secondary },
   });
   const classes = useStyles({ button: { height: 20, width: 20 } });
