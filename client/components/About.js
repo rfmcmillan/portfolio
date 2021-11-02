@@ -7,19 +7,17 @@ const About = () => {
   const theme = useTheme();
   const useStyles = makeStyles({
     about: {
-      color: theme.palette.text.primary,
       fontSize: 20,
       textAlign: 'center',
       width: '50vw',
     },
     name: {
-      color: theme.palette.text.primary,
       fontSize: 32,
       fontWeight: 500,
       marginBottom: '.2em',
     },
     root: {
-      color: theme.palette.text.primary,
+      color: theme.palette.primary.contrastText,
       backgroundColor: theme.palette.secondary.contrastText,
       padding: '100px 0 100px 0',
       margin: 'auto',

@@ -9,7 +9,7 @@ const Social = ({ fileName, aValues, classNames = [] }) => {
   const useStyles = makeStyles({
     image: {
       filter:
-        'invert(21%) sepia(8%) saturate(3419%) hue-rotate(152deg) brightness(89%) contrast(80%)',
+        'invert(67%) sepia(7%) saturate(3032%) hue-rotate(183deg) brightness(148%) contrast(112%)',
     },
     root: {
       width: '50px',

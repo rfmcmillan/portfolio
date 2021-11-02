@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400|Poppins:300,400,800&display=swap');
 
 :root {
-  --primary-main: #2A9D8F;
-  --primary-contrast-text: #264653;
+  --primary-main: #264653;
+  --primary-contrast-text: #c7fff0;
   --secondary-main: #2A9D8F;
-  --secondary-contrast-text: 264653;
+  --secondary-contrast-text: #264653;
   --text-primary: #2A9D8F;
   --text-secondary: #2A9D8F;
   --info-main: #E76F51;

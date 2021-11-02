@@ -10,18 +10,18 @@ const Skills = () => {
   const useStyles = makeStyles({
     root: {
       textAlign: 'center',
-      backgroundColor: theme.palette.primary.main,
+      backgroundColor: theme.palette.secondary.main,
+      color: theme.palette.secondary.contrastText,
       paddingBottom: '4em',
       paddingTop: 200,
     },
     header: {
-      color: theme.palette.primary.contrastText,
       fontSize: 32,
       fontWeight: 500,
       marginBottom: '.2em',
     },
     skills: {
-      backgroundColor: theme.palette.primary.main,
+      backgroundColor: theme.palette.secondary.main,
       marginTop: 0,
       paddingTop: 16,
       marginLeft: 0,
@@ -29,7 +29,6 @@ const Skills = () => {
       paddingInlineStart: 0,
     },
     subTitle: {
-      color: theme.palette.primary.contrastText,
       fontSize: 20,
       textAlign: 'center',
       paddingBottom: '1em',

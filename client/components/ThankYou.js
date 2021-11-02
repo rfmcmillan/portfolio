@@ -9,6 +9,7 @@ const ThankYou = () => {
     root: {},
     card: {
       backgroundColor: theme.palette.text.primary,
+      color: '#c7fff8',
       margin: 'auto',
       marginBottom: '75px',
       marginTop: '75px',
@@ -16,7 +17,7 @@ const ThankYou = () => {
       width: '40%',
     },
     contain: {},
-    text: { width: 600, margin: 'auto', textAlign: 'center', color: 'white' },
+    text: { width: 600, margin: 'auto', textAlign: 'center' },
   });
   const classes = useStyles();
   const { ref, inView, entry } = useInView({ threshold: 0 });

@@ -51,7 +51,7 @@ const Footer = () => {
               {socialData.map((social, index) => (
                 <Social
                   classNames={[social.className, 'socialAccent']}
-                  icon={social.icon}
+                  fileName={social.fileName}
                   aValues={social.aValues}
                   key={index}
                 />
