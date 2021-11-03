@@ -9,13 +9,13 @@ const Footer = () => {
   const theme = useTheme();
   const useStyles = makeStyles({
     and: {
-      fontSize: 22,
+      fontSize: 20,
       fontWeight: 400,
       padding: '0px 6px 0px 6px',
     },
-    credit: { fontSize: 22, fontWeight: 500 },
+    credit: { fontSize: 20, fontWeight: 500 },
     name: {
-      fontSize: 22,
+      fontSize: 20,
       fontWeight: 200,
       textDecoration: 'underline',
       fontFamily: theme.typography.fontFamily,

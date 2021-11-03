@@ -9,6 +9,7 @@ const SkillSet = ({ data }) => {
   const useStyles = makeStyles({
     container: { width: '50%', margin: 'auto', marginBottom: '1em' },
     phrase: {
+      color: theme.palette.text.primary,
       fontSize: 20,
       textAlign: 'center',
       fontFamily: theme.typography.fontFamily,

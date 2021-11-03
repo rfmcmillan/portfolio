@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import { Paper, Typography, Box } from '@material-ui/core';
+import { Paper, Typography, Box, Slide } from '@material-ui/core';
+import { useInView, InView } from 'react-intersection-observer';
 
 const SkillItem = ({ skill }) => {
   let { logo, title } = skill;
@@ -15,8 +16,9 @@ const SkillItem = ({ skill }) => {
     },
     text: { fontSize: 18, fontWeight: 500, textAlign: 'center', width: '100%' },
   });
-
   const classes = useStyles();
+  const { ref, inView, entry } = useInView({ threshold: 0 });
+
   return (
     <Paper className={classes.root} square>
       <Box
