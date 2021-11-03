@@ -9,6 +9,7 @@ const SkillSet = ({ data }) => {
   const useStyles = makeStyles({
     container: { width: '50%', margin: 'auto', marginBottom: '1em' },
     phrase: {
+      color: theme.palette.text.primary,
       fontSize: 20,
       textAlign: 'center',
       fontFamily: theme.typography.fontFamily,
@@ -21,27 +22,20 @@ const SkillSet = ({ data }) => {
   return (
     <div>
       <Box className={classes.phrase}>{data.phrase}</Box>
-      {/* <InView
+      <InView
         as="div"
         onChange={(inView, entry) => {
           if (inView) entry.target.id = 'skills';
         }}
-      > */}
-      <Grid className={classes.container} container wrap="wrap">
-        {data.items.map((skill) => (
-          <Grid key={skill.title} item xs={3}>
-            <InView
-              as="div"
-              onChange={(inView, entry) => {
-                if (inView) entry.target.id = 'skillItem';
-              }}
-            >
-              <SkillItem skill={skill} id="skillItem" />
-            </InView>
-          </Grid>
-        ))}
-      </Grid>
-      {/* </InView> */}
+      >
+        <Grid className={classes.container} container wrap="wrap">
+          {data.items.map((skill) => (
+            <Grid key={skill.title} item xs={3}>
+              <SkillItem skill={skill} />
+            </Grid>
+          ))}
+        </Grid>
+      </InView>
     </div>
   );
 };

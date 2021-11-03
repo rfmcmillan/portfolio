@@ -475,7 +475,7 @@ i {
   visibility: visible;
 }
 
-/* @keyframes skills {
+@keyframes skills {
   from {
     opacity: 0;
   }
@@ -491,35 +491,7 @@ i {
   animation-duration: 0.7s;
   animation-fill-mode: forwards;
   visibility: visible;
-}*/
-
-#skillItem-temp {
-  opacity: 0
 }
-
-@keyframes skillItem {
-  0% {
-    opacity: 0;
-    right: 50px
-  }
-  100% {
-    opacity: 1;
-    right: 0px;
-  }
-}
-
-#skillItem {
-  opacity: 0;
-  animation-name: skillItem;
-  animation-delay: 0.5s;
-  animation-duration: 0.7s;
-  animation-fill-mode: forwards;
-  visibility: visible;
-  position: relative;
-  right: 50px;
-}
-
-
 
 @keyframes projects {
   from {
