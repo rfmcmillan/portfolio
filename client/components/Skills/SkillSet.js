@@ -7,7 +7,11 @@ import { useInView, InView } from 'react-intersection-observer';
 const SkillSet = ({ data }) => {
   const theme = useTheme();
   const useStyles = makeStyles({
-    container: { width: '50%', margin: 'auto', marginBottom: '1em' },
+    container: {
+      width: 925,
+      margin: 'auto',
+      marginBottom: '1em',
+    },
     phrase: {
       color: theme.palette.text.primary,
       fontSize: 20,

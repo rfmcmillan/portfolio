@@ -10,19 +10,19 @@ const ThankYou = () => {
       backgroundColor: theme.palette.primary.contrastText,
       paddingBottom: '25px',
       paddingTop: '25px',
-      height: '75px',
+      height: '80px',
     },
     card: {
       backgroundColor: theme.palette.secondary.main,
       color: theme.palette.text.primary,
       margin: 'auto',
       padding: '20px 60px 20px 60px',
-      width: '40%',
+      width: '40vw',
       position: 'relative',
       top: '50px',
     },
     contain: {},
-    text: { width: 600, margin: 'auto', textAlign: 'center' },
+    text: { width: '80%', margin: 'auto', textAlign: 'center' },
   });
   const classes = useStyles();
   const { ref, inView, entry } = useInView({ threshold: 0 });

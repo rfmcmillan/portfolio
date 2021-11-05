@@ -182,19 +182,7 @@ h1 {
   }
 }
 
-footer {
-  width: 350px;
-  height: 80px;
-  background: #ffb510;
-  position: absolute;
-  right: 0;
-  bottom: -80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  animation: top 0.8s forwards;
-  animation-delay: 4s;
-}
+
 
 i {
   margin-right: 25px;

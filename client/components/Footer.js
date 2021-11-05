@@ -59,7 +59,7 @@ const Footer = () => {
             </Grid>
             <Box
               sx={{
-                width: 425,
+                width: 600,
                 display: 'flex',
                 alignItems: 'flex-end',
                 flexDirection: 'column',
