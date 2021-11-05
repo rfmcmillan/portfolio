@@ -19,7 +19,7 @@ const Intro = () => {
     root: {
       color: theme.palette.primary.main,
       backgroundColor: theme.palette.primary.contrastText,
-      padding: '100px 0 100px 0',
+      padding: '75px 0 75px 0',
       margin: 'auto',
     },
   });
