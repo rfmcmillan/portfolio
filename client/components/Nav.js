@@ -18,7 +18,7 @@ const Nav = () => {
   const theme = useTheme();
   const useStyles = makeStyles({
     link: {
-      color: '#00BCD4',
+      color: theme.palette.secondary.main,
       fontFamily: theme.typography.fontFamily,
       fontSize: 18,
       textTransform: 'none',

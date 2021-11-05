@@ -14,7 +14,7 @@ const Banner = () => {
     },
 
     name: {
-      paddingTop: 'calc(50% - 35em)',
+      // paddingTop: 'calc(50% - 35em)',
       textAlign: 'center',
     },
   });

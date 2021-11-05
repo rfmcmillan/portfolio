@@ -63,11 +63,13 @@ const ProjectCard = ({ project }) => {
             justifyContent="space-between"
           >
             <Box>
-              <img
-                className={classes.image}
-                src={project.image}
-                alt={project.title}
-              />
+              <a href={project.buttons[0].link}>
+                <img
+                  className={classes.image}
+                  src={project.image}
+                  alt={project.title}
+                />
+              </a>
               <Box className={classes.text}>
                 <Typography className={classes.title} variant="h3">
                   {project.title}

@@ -10,16 +10,15 @@ const Social = ({ fileName, aValues, classNames = [] }) => {
     image: {
       filter:
         // 'invert(100%) sepia(0%) saturate(0%) hue-rotate(75deg) brightness(111%) contrast(96%)',
-        'invert(64%) sepia(43%) saturate(6086%) hue-rotate(149deg) brightness(100%) contrast(101%)',
+        // 'invert(64%) sepia(43%) saturate(6086%) hue-rotate(149deg) brightness(100%) contrast(101%)',
+        'invert(52%) sepia(40%) saturate(688%) hue-rotate(123deg) brightness(93%) contrast(88%)',
     },
     root: {
       width: '50px',
       height: '50px',
-      border: `2px solid #00BCD4`,
+      border: `2px solid ${theme.palette.secondary.main}`,
       borderRadius: '30px',
       margin: 3,
-      fill: theme.palette.primary.contrastText,
-      color: theme.palette.primary.contrastText,
     },
   });
   const classes = useStyles();
