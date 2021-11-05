@@ -3,7 +3,7 @@ import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { Grid } from '@material-ui/core';
 
 const Social = ({ fileName, aValues, classNames = [] }) => {
-  const { ariaLabel, ...otherAValues } = aValues;
+  const { ariaLabel, href, ...otherAValues } = aValues;
 
   const theme = useTheme();
   const useStyles = makeStyles({
@@ -24,12 +24,14 @@ const Social = ({ fileName, aValues, classNames = [] }) => {
   const classes = useStyles();
   return (
     <Grid item id={classNames[0]} className={classes.root}>
-      <img
-        className={classes.image}
-        src={fileName}
-        aria-label={ariaLabel}
-        {...otherAValues}
-      />
+      <a href={href}>
+        <img
+          className={classes.image}
+          src={fileName}
+          aria-label={ariaLabel}
+          {...otherAValues}
+        />
+      </a>
     </Grid>
   );
 };
