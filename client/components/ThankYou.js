@@ -20,6 +20,9 @@ const ThankYou = () => {
       width: '40vw',
       position: 'relative',
       top: '50px',
+      [theme.breakpoints.up('md')]: {
+        width: '60vw',
+      },
     },
     contain: {},
     text: { width: '80%', margin: 'auto', textAlign: 'center' },

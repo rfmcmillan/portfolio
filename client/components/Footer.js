@@ -23,7 +23,7 @@ const Footer = () => {
       fontWeight: 400,
     },
     root: {
-      padding: '45px 150px 30px 150px',
+      padding: '90px 150px 60px 150px',
       backgroundColor: theme.palette.primary.main,
       color: theme.palette.primary.contrastText,
     },
@@ -32,8 +32,8 @@ const Footer = () => {
   const { ref, inView, entry } = useInView({ threshold: 0 });
 
   return (
-    <section className={classes.root} id="footer" name="footer">
-      <div ref={ref} className={classes.root}>
+    <section className={classes.root} name="footer">
+      <div ref={ref}>
         <InView
           as="div"
           onChange={(inView, entry) => {

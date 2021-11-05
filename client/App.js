@@ -9,8 +9,14 @@ import Footer from './components/Footer';
 import { ThemeProvider, createTheme } from '@material-ui/core/styles';
 
 const theme = createTheme({
-  typography: {
-    fontFamily: ['Poppins', 'sans-serif'].join(','),
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 900,
+      lg: 1200,
+      xl: 1536,
+    },
   },
   palette: {
     primary: {
@@ -28,6 +34,9 @@ const theme = createTheme({
     info: {
       main: '#2A9D8F',
     },
+  },
+  typography: {
+    fontFamily: ['Poppins', 'sans-serif'].join(','),
   },
 });
 

@@ -517,6 +517,24 @@ i {
   visibility: visible;
 }
 
+@keyframes footer {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#footer {
+  opacity: 0;
+  animation-name: description;
+  animation-delay: 0.3s;
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+  visibility: visible;
+}
+
 #card-container {
   perspective: 1000px;
 }
