@@ -18,22 +18,25 @@ const Nav = () => {
   const theme = useTheme();
   const useStyles = makeStyles({
     link: {
-      color: theme.palette.primary.contrastText,
+      color: '#00BCD4',
       fontFamily: theme.typography.fontFamily,
       fontSize: 18,
       textTransform: 'none',
     },
     root: {
-      backgroundColor: theme.palette.primary.main,
+      // backgroundColor: theme.palette.primary.main
+      backgroundColor: '#232323',
+      boxShadow: '0px 0px 0px transparent',
+      paddingTop: 5,
     },
     socials: {
-      marginLeft: 5,
+      // marginLeft: 5,
     },
   });
   const classes = useStyles();
 
   return (
-    <AppBar className={classes.root} position="fixed">
+    <AppBar className={classes.root} position="static">
       <Toolbar>
         <Grid className={classes.socials} container spacing={2}>
           {socialData.map((social, index) => (
