@@ -43,13 +43,11 @@ const Intro = () => {
             </Grid>
             <Grid item>
               <Typography className={classes.about} variant="body1">
-                A full stack engineer with a background in architecture. Prior
-                to 2021, I was focused on designing homes that are sustainable,
-                affordable and, of course, wonderful to live in. Now, after
-                completing the 26-week software engineering program at Fullstack
-                Academy, I am ready to put my passion for problem-solving to
-                full use so that I can help create software that is both
-                powerful and wonderful to use.
+                Hi, I'm Russel, a full-stack engineer with a background in
+                architecture. Prior to 2021, I was focused on designing
+                sustainable homes. Now, after completing the 26-week software
+                engineering program at Fullstack Academy I am ready to begin my
+                career in software development.
               </Typography>
             </Grid>
           </Grid>
