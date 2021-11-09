@@ -65,9 +65,7 @@ const Footer = () => {
                 flexDirection: 'column',
               }}
             >
-              <Typography className={classes.credit}>
-                Design Inspired by
-              </Typography>
+              <Typography className={classes.credit}>Design by</Typography>
               <Box sx={{ display: 'flex', alignItems: 'center' }}>
                 <Link
                   className={classes.name}

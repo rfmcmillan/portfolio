@@ -22,7 +22,7 @@ import {
 export const skillsData = [
   {
     id: 0,
-    phrase: 'I am proficient in',
+    phrase: 'I am proficient in...',
     items: [
       javascript,
       nodejs,
@@ -39,10 +39,10 @@ export const skillsData = [
       git,
     ],
   },
-  { id: 1, phrase: 'familiar with', items: [webpack, jwt, heroku] },
-  {
-    id: 2,
-    phrase: 'and exploring',
-    items: [typescript],
-  },
+  { id: 1, phrase: '...and familiar with', items: [webpack, jwt, heroku] },
+  // {
+  //   id: 2,
+  //   phrase: 'and exploring',
+  //   items: [],
+  // },
 ];
