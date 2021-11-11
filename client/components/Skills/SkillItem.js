@@ -7,7 +7,11 @@ const SkillItem = ({ skill }) => {
   let { logo, title } = skill;
   const theme = useTheme();
   const useStyles = makeStyles({
-    root: { backgroundColor: '#EEEEEE', height: 35, margin: 8 },
+    root: {
+      backgroundColor: theme.palette.primary.contrastText,
+      height: 35,
+      margin: 8,
+    },
     image: {
       backgroundColor: 'white',
       height: '80%',
