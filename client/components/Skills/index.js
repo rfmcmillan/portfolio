@@ -10,7 +10,7 @@ const Skills = () => {
   const useStyles = makeStyles({
     root: {
       textAlign: 'center',
-      backgroundColor: '#e0e0e0',
+      backgroundColor: '#f0f0f0',
       color: theme.palette.secondary.contrastText,
       paddingBottom: 75,
       paddingTop: 75,

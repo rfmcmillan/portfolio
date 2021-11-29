@@ -59,6 +59,28 @@ export const projectsData = [
     ],
   },
   {
+    title: 'RapidRebalance',
+    description: `A portfolio management app that allows an investor to quickly rebalance their portfolio.`,
+    image: './assets/RapidRebalance - Home.png',
+    role: 'Full Stack Developer',
+    type: 'Solo Project/Hackathon',
+    stack: [nodejs, react, postgres, redux, express, materialUi, alpaca],
+    buttons: [
+      {
+        text: 'View Site',
+        link: 'https://rapid-rebalance.herokuapp.com/#/',
+        linkAriaLabel: 'View the hosted version of RapidRebalance',
+        icon: <ExternalIcon />,
+      },
+      {
+        text: 'View Repo',
+        link: 'https://github.com/rfmcmillan/rapid-rebalance',
+        linkAriaLabel: 'View Github repository for Rapid-Rebalance',
+        icon: <GithubIcon />,
+      },
+    ],
+  },
+  {
     title: 'Global Snacker',
     description: `An e-commerce site that sells snacks from around the world.`,
     image: './assets/GlobalSnackerHome.png',
@@ -86,28 +108,6 @@ export const projectsData = [
         text: 'View Repo',
         link: 'https://github.com/rfmcmillan/Grace-Shopper-2101',
         linkAriaLabel: 'View Github repository for Global Snacker',
-        icon: <GithubIcon />,
-      },
-    ],
-  },
-  {
-    title: 'RapidRebalance',
-    description: `A portfolio management app that allows an investor to quickly rebalance their portfolio.`,
-    image: './assets/RapidRebalance - Home.png',
-    role: 'Full Stack Developer',
-    type: 'Solo Project/Hackathon',
-    stack: [nodejs, react, postgres, redux, express, materialUi, alpaca],
-    buttons: [
-      {
-        text: 'View Site',
-        link: 'https://rapid-rebalance.herokuapp.com/#/',
-        linkAriaLabel: 'View the hosted version of RapidRebalance',
-        icon: <ExternalIcon />,
-      },
-      {
-        text: 'View Repo',
-        link: 'https://github.com/rfmcmillan/rapid-rebalance',
-        linkAriaLabel: 'View Github repository for Rapid-Rebalance',
         icon: <GithubIcon />,
       },
     ],
