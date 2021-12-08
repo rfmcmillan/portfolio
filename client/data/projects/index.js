@@ -27,7 +27,7 @@ import {
 export const projectsData = [
   {
     title: 'PomodoroGo',
-    description: `A chrome extension that improves productivity by combining a web-site blocker, focus timer and data dashboard.`,
+    description: `A Chrome extension that improves productivity by combining a web-site blocker, focus timer and data dashboard.`,
     image: './assets/Dashboard.png',
     role: 'Full Stack Developer',
     type: 'Group Project',
