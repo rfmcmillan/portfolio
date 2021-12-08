@@ -1,8 +1,8 @@
 import React from 'react';
 import { skillsData } from '../../data/skills.js';
-import { Grid, Box, Typography } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import SkillItem from './SkillItem';
+
 import SkillSet from './SkillSet';
 
 const Skills = () => {

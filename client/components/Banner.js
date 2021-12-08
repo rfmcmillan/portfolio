@@ -12,9 +12,7 @@ const Banner = () => {
       color: theme.palette.text.primary,
       height: '100vh',
     },
-
     name: {
-      // paddingTop: 'calc(50% - 35em)',
       textAlign: 'center',
     },
   });

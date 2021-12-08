@@ -19,6 +19,7 @@ const Social = ({ fileName, aValues, classNames = [] }) => {
       border: `2px solid ${theme.palette.secondary.main}`,
       borderRadius: '30px',
       margin: 3,
+      [theme.breakpoints.down('sm')]: { width: '40px', height: '40px' },
     },
   });
   const classes = useStyles();
