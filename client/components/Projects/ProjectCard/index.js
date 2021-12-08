@@ -49,7 +49,7 @@ const ProjectCard = ({ project }) => {
   }, []);
 
   return (
-    <div id="card-container">
+    <Grid item id="card-container">
       <div id="product-card">
         <Paper
           id="side-a"
@@ -124,7 +124,7 @@ const ProjectCard = ({ project }) => {
           </Grid>
         </Paper>
       </div>
-    </div>
+    </Grid>
   );
 };
 

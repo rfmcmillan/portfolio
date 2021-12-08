@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import { Paper, Typography, Box, Slide } from '@material-ui/core';
+import { Box, Grid, Paper, Typography, Slide } from '@material-ui/core';
 import { useInView, InView } from 'react-intersection-observer';
 
 const SkillItem = ({ skill }) => {
@@ -24,33 +24,35 @@ const SkillItem = ({ skill }) => {
   const { ref, inView, entry } = useInView({ threshold: 0 });
 
   return (
-    <Paper className={classes.root} square>
-      <Box
-        sx={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          height: '100%',
-        }}
-      >
-        {logo ? (
-          <img
-            className={classes.image}
-            src={logo ? logo : ''}
-            alt={logo ? `${title} logo` : ''}
-          />
-        ) : (
-          <Box className={classes.image} />
-        )}
-
-        <Typography
-          className={classes.text}
-          fontFamily={theme.typography.fontFamily}
+    <Grid item>
+      <Paper className={classes.root} square>
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            height: '100%',
+          }}
         >
-          {title}
-        </Typography>
-      </Box>
-    </Paper>
+          {logo ? (
+            <img
+              className={classes.image}
+              src={logo ? logo : ''}
+              alt={logo ? `${title} logo` : ''}
+            />
+          ) : (
+            <Box className={classes.image} />
+          )}
+
+          <Typography
+            className={classes.text}
+            fontFamily={theme.typography.fontFamily}
+          >
+            {title}
+          </Typography>
+        </Box>
+      </Paper>
+    </Grid>
   );
 };
 

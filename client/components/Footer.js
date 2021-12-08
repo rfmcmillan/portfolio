@@ -13,6 +13,7 @@ const Footer = () => {
       fontWeight: 400,
       padding: '0px 6px 0px 6px',
     },
+    contain: {},
     credit: { fontSize: 20, fontWeight: 500 },
     name: {
       fontSize: 20,
@@ -26,6 +27,9 @@ const Footer = () => {
       padding: '90px 150px 60px 150px',
       backgroundColor: theme.palette.primary.main,
       color: theme.palette.primary.contrastText,
+      [theme.breakpoints.down('sm')]: {
+        padding: '90px 10px 60px 10px',
+      },
     },
   });
   const classes = useStyles();
@@ -40,14 +44,13 @@ const Footer = () => {
             if (inView) entry.target.id = 'footer';
           }}
         >
-          <Box
-            sx={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-            }}
+          <Grid
+            container
+            className={classes.contain}
+            justifyContent="space-between"
+            alignItems="center"
           >
-            <Grid className={classes.socials} container spacing={2}>
+            <Grid className={classes.socials} item container spacing={2} xs={6}>
               {socialData.map((social, index) => (
                 <Social
                   classNames={[social.className, 'socialAccent']}
@@ -57,32 +60,39 @@ const Footer = () => {
                 />
               ))}
             </Grid>
-            <Box
-              sx={{
-                width: 600,
-                display: 'flex',
-                alignItems: 'flex-end',
-                flexDirection: 'column',
-              }}
+            <Grid
+              item
+              container
+              alignItems="flex-end"
+              direction="column"
+              xs={6}
             >
-              <Typography className={classes.credit}>Design by</Typography>
-              <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                <Link
-                  className={classes.name}
-                  href="https://www.benlammers.dev/"
-                >
-                  Ben Lammers
-                </Link>
-                <Typography className={classes.and}>and</Typography>
-                <Link
-                  className={classes.name}
-                  href="https://codepen.io/KaioRocha/pen/YoEVvZ"
-                >
-                  Kaio Almeida
-                </Link>
-              </Box>
-            </Box>
-          </Box>
+              <Grid item xs={6}>
+                <Typography className={classes.credit}>Design by</Typography>
+              </Grid>
+              <Grid item container xs={6}>
+                <Grid item>
+                  <Link
+                    className={classes.name}
+                    href="https://www.benlammers.dev/"
+                  >
+                    Ben Lammers
+                  </Link>
+                </Grid>
+                <Grid item>
+                  <Typography className={classes.and}>and</Typography>
+                </Grid>
+                <Grid item>
+                  <Link
+                    className={classes.name}
+                    href="https://codepen.io/KaioRocha/pen/YoEVvZ"
+                  >
+                    Kaio Almeida
+                  </Link>
+                </Grid>
+              </Grid>
+            </Grid>
+          </Grid>
         </InView>
       </div>
     </section>

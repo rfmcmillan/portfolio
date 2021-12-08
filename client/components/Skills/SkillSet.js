@@ -8,7 +8,7 @@ const SkillSet = ({ data }) => {
   const theme = useTheme();
   const useStyles = makeStyles({
     container: {
-      width: 925,
+      width: '66vw',
       margin: 'auto',
       marginBottom: '1em',
     },
@@ -18,6 +18,9 @@ const SkillSet = ({ data }) => {
       textAlign: 'center',
       fontFamily: theme.typography.fontFamily,
       paddingBottom: '.4em',
+    },
+    [theme.breakpoints.down('sm')]: {
+      width: '100vw',
     },
   });
   const classes = useStyles();

@@ -59,11 +59,11 @@ const Projects = () => {
           if (inView) entry.target.id = 'projects';
         }}
       >
-        <Box className={classes.projects} sx={{ display: 'flex' }}>
+        <Grid className={classes.projects} container>
           {projectsData.map((project, index) => (
             <ProjectCard project={project} key={index} />
           ))}
-        </Box>
+        </Grid>
       </InView>
     </Box>
   );
