@@ -43,7 +43,12 @@ const Nav = () => {
       paddingTop: 5,
     },
     socials: {},
-    toolBar: { paddingLeft: 16, paddingRight: 8 },
+    toolBar: {
+      [theme.breakpoints.down('sm')]: {
+        paddingLeft: 16,
+        paddingRight: 8,
+      },
+    },
   });
   const classes = useStyles();
 

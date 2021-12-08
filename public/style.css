@@ -24,6 +24,12 @@
   align-items: center;
 }
 
+@media screen and (max-width: 600px) {
+  .container {
+    width: 100vw;
+  }
+}
+
 .box {
   width: 477px;
   height: 250px;
@@ -34,12 +40,22 @@
   bottom: 75px;
 }
 
+
+
 .title {
   width: 100%;
   position: relative;
   display: flex;
   align-items: center;
   height: 60px;
+}
+
+@media screen and (max-width: 600px) {
+  #full-name {
+    font-size: 50px;
+    padding-left: 16px;
+  }
+
 }
 
 #block-1 {
@@ -50,7 +66,16 @@
   animation: mainBlock 2s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
   display: flex;
   margin-bottom: 10px;
+}
 
+@media screen and (max-width: 600px) {
+  #full-name {
+    font-size: 50px;
+    text-align: center;
+  }
+  .title {
+    text-align: center;
+  }
 }
 
 h1 {
@@ -98,6 +123,13 @@ h1 {
   text-transform: uppercase;
   letter-spacing: 5px;
   margin-left: 3px;
+}
+
+@media screen and (max-width: 600px) {
+
+  #job-function {
+    padding-left: 16px;
+  }
 }
 
 @keyframes mainBlock {
@@ -237,6 +269,13 @@ i {
   animation-duration: 2s;
   animation-fill-mode: forwards;
   opacity: 0;
+}
+
+@media screen and (max-width: 600px) {
+
+  .arrow-container {
+    position: absolute;
+    bottom: 50px;
 }
 
 .arrow-1{
