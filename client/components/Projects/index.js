@@ -13,6 +13,9 @@ const Projects = () => {
       textAlign: 'center',
       paddingBottom: '1em',
       width: '100%',
+      [theme.breakpoints.down('xs')]: {
+        fontSize: 16,
+      },
     },
     projects: {
       // margin: 20,
@@ -21,6 +24,10 @@ const Projects = () => {
       fontSize: 32,
       fontWeight: 500,
       marginBottom: '.2em',
+      [theme.breakpoints.down('xs')]: {
+        marginBottom: '.4em',
+        fontSize: 24,
+      },
     },
   });
   const classes = useStyles();

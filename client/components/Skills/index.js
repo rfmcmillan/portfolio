@@ -19,6 +19,10 @@ const Skills = () => {
       fontSize: 32,
       fontWeight: 500,
       marginBottom: '.2em',
+      [theme.breakpoints.down('xs')]: {
+        marginBottom: '.4em',
+        fontSize: 24,
+      },
     },
     skills: {
       marginTop: 0,
@@ -31,6 +35,9 @@ const Skills = () => {
       fontSize: 20,
       textAlign: 'center',
       paddingBottom: '1em',
+      [theme.breakpoints.down('xs')]: {
+        fontSize: 16,
+      },
     },
   });
   const classes = useStyles();
@@ -41,8 +48,7 @@ const Skills = () => {
           Skill Set
         </Typography>
         <Typography className={classes.subTitle} variant="body1">
-          A variety of frameworks, libraries and languages that I have had the
-          opportunity to work with.
+          A variety of frameworks, libraries and languages that I work with.
         </Typography>
       </div>
       <ul className={classes.skills}>

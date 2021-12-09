@@ -11,6 +11,9 @@ const SkillItem = ({ skill }) => {
       backgroundColor: theme.palette.primary.contrastText,
       height: 35,
       margin: 8,
+      [theme.breakpoints.down('xs')]: {
+        width: '57vw',
+      },
     },
     image: {
       backgroundColor: 'white',
@@ -18,7 +21,15 @@ const SkillItem = ({ skill }) => {
       minWidth: 30,
       padding: 3,
     },
-    text: { fontSize: 18, fontWeight: 500, textAlign: 'center', width: '100%' },
+    text: {
+      fontSize: 18,
+      fontWeight: 500,
+      textAlign: 'center',
+      width: '100%',
+      [theme.breakpoints.down('xs')]: {
+        fontSize: 16,
+      },
+    },
   });
   const classes = useStyles();
   const { ref, inView, entry } = useInView({ threshold: 0 });

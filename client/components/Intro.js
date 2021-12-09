@@ -10,11 +10,19 @@ const Intro = () => {
       fontSize: 20,
       textAlign: 'center',
       width: '50vw',
+      [theme.breakpoints.down('xs')]: {
+        fontSize: 16,
+        width: '75vw',
+      },
     },
     name: {
       fontSize: 32,
       fontWeight: 500,
       marginBottom: '.2em',
+      [theme.breakpoints.down('xs')]: {
+        marginBottom: '.4em',
+        fontSize: 24,
+      },
     },
     root: {
       color: theme.palette.primary.main,

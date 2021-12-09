@@ -1,14 +1,15 @@
 import React from 'react';
-import { Grid, Box } from '@material-ui/core';
+import { Grid, Box, useMediaQuery } from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import SkillItem from './SkillItem';
 import { useInView, InView } from 'react-intersection-observer';
 
 const SkillSet = ({ data }) => {
   const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.down('sm'));
   const useStyles = makeStyles({
     container: {
-      width: '66vw',
+      width: '60vw',
       margin: 'auto',
       marginBottom: '1em',
     },
@@ -18,6 +19,9 @@ const SkillSet = ({ data }) => {
       textAlign: 'center',
       fontFamily: theme.typography.fontFamily,
       paddingBottom: '.4em',
+      [theme.breakpoints.down('xs')]: {
+        fontSize: 16,
+      },
     },
     [theme.breakpoints.down('sm')]: {
       width: '100vw',
@@ -35,7 +39,12 @@ const SkillSet = ({ data }) => {
           if (inView) entry.target.id = 'skills';
         }}
       >
-        <Grid className={classes.container} container wrap="wrap">
+        <Grid
+          className={classes.container}
+          container
+          direction={matches ? 'column' : 'row'}
+          wrap="wrap"
+        >
           {data.items.map((skill) => (
             <Grid key={skill.title} item xs={3}>
               <SkillItem skill={skill} />
