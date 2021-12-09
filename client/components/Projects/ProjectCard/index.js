@@ -29,7 +29,17 @@ const ProjectCard = ({ project }) => {
       minHeight: 200,
       borderBottom: `1px solid #e8e8e8`,
     },
-    root: { width: 350, height: 650, margin: 15, paddingBottom: 15 },
+    root: {
+      width: 350,
+      height: 650,
+      margin: 15,
+      paddingBottom: 15,
+      [theme.breakpoints.down('xs')]: {
+        width: 305,
+        margin: 5,
+        height: 700,
+      },
+    },
     rootSkills: { width: 350, height: 650, margin: 15, paddingBottom: 15 },
     skills: {},
     stackTitle: {

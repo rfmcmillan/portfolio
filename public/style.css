@@ -40,6 +40,18 @@
   bottom: 75px;
 }
 
+@media screen and (max-width: 600px) {
+  .box {
+    width: 383px;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .box {
+    width: 225px;
+  }
+}
+
 .title {
   width: 100%;
   position: relative;
@@ -48,10 +60,34 @@
   height: 60px;
 }
 
+@media screen and (max-width: 330px) {
+  .title {
+    height: 35px;
+  }
+}
+
 @media screen and (max-width: 600px) {
   #full-name {
     font-size: 50px;
-    padding-left: 16px;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  #full-name {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .title {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .title {
+    width: 230px;
+    text-align: center;
   }
 }
 
@@ -63,16 +99,6 @@
   animation: mainBlock 2s cubic-bezier(0.74, 0.06, 0.4, 0.92) forwards;
   display: flex;
   margin-bottom: 10px;
-}
-
-@media screen and (max-width: 600px) {
-  #full-name {
-    font-size: 50px;
-    text-align: center;
-  }
-  .title {
-    text-align: center;
-  }
 }
 
 h1 {
@@ -124,7 +150,12 @@ h1 {
 
 @media screen and (max-width: 600px) {
   #job-function {
-    padding-left: 16px;
+  }
+}
+@media screen and (max-width: 330px) {
+  #job-function {
+    padding-left: 0px;
+    margin-left: 0px;
   }
 }
 

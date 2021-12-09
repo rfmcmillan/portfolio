@@ -27,6 +27,15 @@ const Nav = () => {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down('sm'));
   const useStyles = makeStyles({
+    button: {
+      [theme.breakpoints.down('xs')]: {
+        paddingLeft: 3,
+        paddingRight: 3,
+        // maxWidth: 50,
+        maxWidth: 70,
+        minWidth: 30,
+      },
+    },
     link: {
       color: theme.palette.secondary.main,
       fontFamily: theme.typography.fontFamily,
@@ -35,7 +44,16 @@ const Nav = () => {
       [theme.breakpoints.down('sm')]: {
         fontSize: 16,
       },
+      [theme.breakpoints.down('xs')]: {
+        // fontSize: 12,
+        // maxWidth: 40,
+      },
     },
+    // linkGrid: {
+    //   [theme.breakpoints.down('xs')]: {
+    //     maxWidth: 50,
+    //   },
+    // },
     menuButton: { fontSize: 40, fill: theme.palette.secondary.main },
     root: {
       backgroundColor: '#232323',
@@ -76,7 +94,7 @@ const Nav = () => {
           <Grid item container direction="row" justifyContent="flex-end" xs={7}>
             {SECTIONS.map((section, index) => {
               return (
-                <Grid item key={index}>
+                <Grid className={classes.linkGrid} item key={index}>
                   <Button className={classes.button}>
                     <Link
                       id="nav"
