@@ -70,7 +70,7 @@ const Footer = () => {
               <Grid item xs={6}>
                 <Typography className={classes.credit}>Design by</Typography>
               </Grid>
-              <Grid item container xs={6}>
+              <Grid item container xs={6} justifyContent="flex-end">
                 <Grid item>
                   <Link
                     className={classes.name}

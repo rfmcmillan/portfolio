@@ -49,8 +49,8 @@ const ProjectCard = ({ project }) => {
   }, []);
 
   return (
-    <Grid item id="card-container">
-      <div id="product-card">
+    <Grid item>
+      <div>
         <Paper
           id="side-a"
           elevation={3}

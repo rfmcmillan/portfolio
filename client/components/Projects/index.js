@@ -14,9 +14,7 @@ const Projects = () => {
       paddingBottom: '1em',
       width: '100%',
     },
-    projects: {
-      margin: 20,
-    },
+    projects: {},
     title: {
       fontSize: 32,
       fontWeight: 500,
