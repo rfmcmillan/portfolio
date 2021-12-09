@@ -19,7 +19,10 @@ const ProjectCard = ({ project }) => {
       borderRadius: 30,
       color: theme.palette.text.primary,
       margin: 5,
-      width: 300,
+      width: '90%',
+      // [theme.breakpoints.down('xs')]: {
+      //   width: '90%',
+      // },
     },
     contain: { height: '100%' },
     description: { fontSize: 18, minHeight: 120 },
@@ -28,6 +31,9 @@ const ProjectCard = ({ project }) => {
       borderRadius: '3px 3px 0px 0px',
       minHeight: 200,
       borderBottom: `1px solid #e8e8e8`,
+      [theme.breakpoints.down('xs')]: {
+        minHeight: 0,
+      },
     },
     root: {
       width: 350,
@@ -35,7 +41,7 @@ const ProjectCard = ({ project }) => {
       margin: 15,
       paddingBottom: 15,
       [theme.breakpoints.down('xs')]: {
-        width: 305,
+        width: '90vw',
         margin: 5,
         height: 700,
       },

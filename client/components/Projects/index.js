@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography, Box, Grid } from '@material-ui/core';
+import { Typography, Box, Grid, useMediaQuery } from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import ProjectCard from './ProjectCard';
 import { projectsData } from '../../data/projects';
@@ -7,6 +7,7 @@ import { useInView, InView } from 'react-intersection-observer';
 
 const Projects = () => {
   const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.down('sm'));
   const useStyles = makeStyles({
     description: {
       fontSize: 20,
@@ -15,10 +16,13 @@ const Projects = () => {
       width: '100%',
       [theme.breakpoints.down('xs')]: {
         fontSize: 16,
+        width: '90vw',
       },
     },
     projects: {
-      // margin: 20,
+      [theme.breakpoints.down('xs')]: {
+        margin: 5,
+      },
     },
     title: {
       fontSize: 32,
@@ -66,7 +70,12 @@ const Projects = () => {
           if (inView) entry.target.id = 'projects';
         }}
       >
-        <Grid className={classes.projects} container>
+        <Grid
+          className={classes.projects}
+          alignItems={matches ? 'center' : ''}
+          direction={matches ? 'column' : ''}
+          container
+        >
           {projectsData.map((project, index) => (
             <ProjectCard project={project} key={index} />
           ))}
