@@ -51,6 +51,9 @@ const Nav = () => {
       backgroundColor: '#232323',
       boxShadow: '0px 0px 0px transparent',
       paddingTop: 5,
+      [theme.breakpoints.down('sm')]: {
+        paddingTop: 0,
+      },
     },
     socials: {},
     toolBar: {
