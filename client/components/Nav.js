@@ -31,7 +31,6 @@ const Nav = () => {
       [theme.breakpoints.down('xs')]: {
         paddingLeft: 3,
         paddingRight: 3,
-        // maxWidth: 50,
         maxWidth: 70,
         minWidth: 30,
       },
@@ -44,16 +43,9 @@ const Nav = () => {
       [theme.breakpoints.down('sm')]: {
         fontSize: 16,
       },
-      [theme.breakpoints.down('xs')]: {
-        // fontSize: 12,
-        // maxWidth: 40,
-      },
+      [theme.breakpoints.down('xs')]: {},
     },
-    // linkGrid: {
-    //   [theme.breakpoints.down('xs')]: {
-    //     maxWidth: 50,
-    //   },
-    // },
+
     menuButton: { fontSize: 40, fill: theme.palette.secondary.main },
     root: {
       backgroundColor: '#232323',
@@ -79,7 +71,7 @@ const Nav = () => {
             item
             container
             alignItems="center"
-            spacing={2}
+            spacing={matches ? 1 : 2}
             xs={5}
           >
             {socialData.map((social, index) => (

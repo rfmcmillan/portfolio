@@ -47,9 +47,6 @@ const Skills = () => {
         <Typography className={classes.header} variant="h2">
           Skill Set
         </Typography>
-        <Typography className={classes.subTitle} variant="body1">
-          A variety of frameworks, libraries and languages that I work with.
-        </Typography>
       </div>
       <ul className={classes.skills}>
         {skillsData.map((skillSet, index) => (

@@ -14,7 +14,7 @@ export const javascript = {
 
 export const nodejs = {
   logo: require('./nodejs.svg'),
-  title: 'Node JS',
+  title: 'Node',
 };
 export const postgres = {
   logo: require('./postgres.svg'),

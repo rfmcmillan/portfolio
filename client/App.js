@@ -49,7 +49,6 @@ const App = () => {
         <Intro />
         <Skills />
         <Projects />
-        <ThankYou />
         <Footer />
       </div>
     </ThemeProvider>

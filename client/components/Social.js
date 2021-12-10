@@ -21,10 +21,11 @@ const Social = ({ fileName, aValues, classNames = [] }) => {
       margin: 3,
       [theme.breakpoints.down('sm')]: { width: '40px', height: '40px' },
       [theme.breakpoints.down('xs')]: {
-        width: '35px',
-        height: '35px',
+        width: '40px',
+        height: '40px',
         border: '1px solid ${theme.palette.secondary.main}',
         margin: 3,
+        // border: '0px',
       },
     },
   });

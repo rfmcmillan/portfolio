@@ -1,20 +1,34 @@
 import React from 'react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import { Box, Grid, Link, Typography } from '@material-ui/core';
+import { Grid, Link, Typography, useMediaQuery } from '@material-ui/core';
 import { useInView, InView } from 'react-intersection-observer';
 import { socialData } from '../data/social.js';
 import Social from './Social.js';
 
 const Footer = () => {
   const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.down('sm'));
   const useStyles = makeStyles({
     and: {
       fontSize: 20,
       fontWeight: 400,
-      padding: '0px 6px 0px 6px',
+      [theme.breakpoints.down('sm')]: {
+        fontSize: 16,
+      },
     },
     contain: {},
-    credit: { fontSize: 20, fontWeight: 500 },
+    credit: {
+      fontSize: 20,
+      fontWeight: 500,
+      [theme.breakpoints.down('sm')]: {
+        fontSize: 16,
+      },
+    },
+    designCredit: {
+      [theme.breakpoints.down('sm')]: {
+        marginTop: 15,
+      },
+    },
     name: {
       fontSize: 20,
       fontWeight: 200,
@@ -22,15 +36,20 @@ const Footer = () => {
       fontFamily: theme.typography.fontFamily,
       color: theme.palette.primary.contrastText,
       fontWeight: 400,
+      [theme.breakpoints.down('sm')]: {
+        fontSize: 16,
+      },
     },
     root: {
-      padding: '90px 150px 60px 150px',
+      padding: '30px 150px 30px 150px',
       backgroundColor: theme.palette.primary.main,
       color: theme.palette.primary.contrastText,
       [theme.breakpoints.down('sm')]: {
-        padding: '90px 10px 60px 10px',
+        padding: '50px 10px 50px 10px',
+        fontSize: 16,
       },
     },
+    socials: { width: '150px', paddingBottom: 20 },
   });
   const classes = useStyles();
   const { ref, inView, entry } = useInView({ threshold: 0 });
@@ -49,8 +68,17 @@ const Footer = () => {
             className={classes.contain}
             justifyContent="space-between"
             alignItems="center"
+            direction={matches ? 'column' : undefined}
           >
-            <Grid className={classes.socials} item container spacing={2} xs={6}>
+            <Grid
+              className={classes.socials}
+              item
+              container
+              spacing={matches ? 1 : 2}
+              xs={matches ? undefined : 6}
+              alignItems="center"
+              justifyContent={matches ? 'space-between' : undefined}
+            >
               {socialData.map((social, index) => (
                 <Social
                   classNames={[social.className, 'socialAccent']}
@@ -60,17 +88,19 @@ const Footer = () => {
                 />
               ))}
             </Grid>
-            <Grid
-              item
-              container
-              alignItems="flex-end"
-              direction="column"
-              xs={6}
-            >
-              <Grid item xs={6}>
-                <Typography className={classes.credit}>Design by</Typography>
-              </Grid>
-              <Grid item container xs={6} justifyContent="flex-end">
+
+            {matches ? (
+              <Grid
+                className={classes.designCredit}
+                item
+                container
+                alignItems="center"
+                justifyContent="center"
+                direction="column"
+              >
+                <Grid item>
+                  <Typography className={classes.credit}>Design by</Typography>
+                </Grid>
                 <Grid item>
                   <Link
                     className={classes.name}
@@ -91,7 +121,47 @@ const Footer = () => {
                   </Link>
                 </Grid>
               </Grid>
-            </Grid>
+            ) : (
+              <Grid
+                className={classes.designCredit}
+                item
+                container
+                alignItems="flex-end"
+                direction={matches ? 'row' : 'column'}
+                xs={matches ? undefined : 6}
+              >
+                <Grid item xs={6}>
+                  <Typography className={classes.credit}>Design by</Typography>
+                </Grid>
+                <Grid
+                  item
+                  container
+                  xs={6}
+                  justifyContent="flex-end"
+                  spacing={1}
+                >
+                  <Grid item>
+                    <Link
+                      className={classes.name}
+                      href="https://www.benlammers.dev/"
+                    >
+                      Ben Lammers
+                    </Link>
+                  </Grid>
+                  <Grid item>
+                    <Typography className={classes.and}>and</Typography>
+                  </Grid>
+                  <Grid item>
+                    <Link
+                      className={classes.name}
+                      href="https://codepen.io/KaioRocha/pen/YoEVvZ"
+                    >
+                      Kaio Almeida
+                    </Link>
+                  </Grid>
+                </Grid>
+              </Grid>
+            )}
           </Grid>
         </InView>
       </div>

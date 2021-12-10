@@ -46,7 +46,7 @@ const Projects = () => {
         display: 'flex',
         flexDirection: 'column',
         paddingTop: '75px',
-        paddingBottom: '0px',
+        paddingBottom: '75px',
       }}
       name="projects"
     >
@@ -72,8 +72,8 @@ const Projects = () => {
       >
         <Grid
           className={classes.projects}
-          alignItems={matches ? 'center' : ''}
-          direction={matches ? 'column' : ''}
+          alignItems={matches ? 'center' : undefined}
+          direction={matches ? 'column' : 'row'}
           container
         >
           {projectsData.map((project, index) => (
