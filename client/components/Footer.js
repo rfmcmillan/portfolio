@@ -49,7 +49,13 @@ const Footer = () => {
         fontSize: 16,
       },
     },
-    socials: { width: '150px', paddingBottom: 20 },
+    socials: {
+      width: '150px',
+
+      [theme.breakpoints.down('sm')]: {
+        paddingBottom: 20,
+      },
+    },
   });
   const classes = useStyles();
   const { ref, inView, entry } = useInView({ threshold: 0 });
@@ -133,13 +139,7 @@ const Footer = () => {
                 <Grid item xs={6}>
                   <Typography className={classes.credit}>Design by</Typography>
                 </Grid>
-                <Grid
-                  item
-                  container
-                  xs={6}
-                  justifyContent="flex-end"
-                  spacing={1}
-                >
+                <Grid item container justifyContent="flex-end" spacing={1}>
                   <Grid item>
                     <Link
                       className={classes.name}
