@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useInView } from 'react-intersection-observer';
-import { AppBar, Button, Grid, Toolbar } from '@material-ui/core';
+import {
+  AppBar,
+  Button,
+  Drawer,
+  Grid,
+  Menu,
+  MenuItem,
+  Toolbar,
+  useMediaQuery,
+} from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import * as Scroll from 'react-scroll';
+import MenuIcon from '@material-ui/icons/Menu';
 import { Link, animateScroll as scroll } from 'react-scroll';
 import { socialData } from '../data/social.js';
 import Social from './Social.js';
@@ -16,57 +25,87 @@ const SECTIONS = [
 const Nav = () => {
   const [ref, inView] = useInView({ threshold: 1, triggerOnce: true });
   const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.down('sm'));
   const useStyles = makeStyles({
+    button: {
+      [theme.breakpoints.down('xs')]: {
+        paddingLeft: 3,
+        paddingRight: 3,
+        maxWidth: 70,
+        minWidth: 30,
+      },
+    },
     link: {
       color: theme.palette.secondary.main,
       fontFamily: theme.typography.fontFamily,
       fontSize: 18,
       textTransform: 'none',
+      [theme.breakpoints.down('sm')]: {
+        fontSize: 16,
+      },
+      [theme.breakpoints.down('xs')]: {},
     },
+
+    menuButton: { fontSize: 40, fill: theme.palette.secondary.main },
     root: {
-      // backgroundColor: theme.palette.primary.main
       backgroundColor: '#232323',
       boxShadow: '0px 0px 0px transparent',
       paddingTop: 5,
+      [theme.breakpoints.down('sm')]: {
+        paddingTop: 0,
+      },
     },
-    socials: {
-      // marginLeft: 5,
+    socials: {},
+    toolBar: {
+      [theme.breakpoints.down('sm')]: {
+        paddingLeft: 16,
+        paddingRight: 8,
+      },
     },
   });
   const classes = useStyles();
 
   return (
     <AppBar className={classes.root} position="static">
-      <Toolbar>
-        <Grid className={classes.socials} container spacing={2}>
-          {socialData.map((social, index) => (
-            <Social
-              classNames={[social.className, 'socialAccent']}
-              fileName={social.fileName}
-              aValues={social.aValues}
-              key={index}
-            />
-          ))}
-        </Grid>
-        <Grid container direction="row" justifyContent="flex-end">
-          {SECTIONS.map((section, index) => {
-            return (
-              <Grid item key={index}>
-                <Button>
-                  <Link
-                    id="nav"
-                    className={classes.link}
-                    to={section.name.toLowerCase()}
-                    smooth={true}
-                    offset={section.offset}
-                    duration={700}
-                  >
-                    {section.name}
-                  </Link>
-                </Button>
-              </Grid>
-            );
-          })}
+      <Toolbar className={classes.toolBar}>
+        <Grid container justifyContent="space-between">
+          <Grid
+            className={classes.socials}
+            item
+            container
+            alignItems="center"
+            spacing={matches ? 1 : 2}
+            xs={5}
+          >
+            {socialData.map((social, index) => (
+              <Social
+                classNames={[social.className, 'socialAccent']}
+                fileName={social.fileName}
+                aValues={social.aValues}
+                key={index}
+              />
+            ))}
+          </Grid>
+          <Grid item container direction="row" justifyContent="flex-end" xs={7}>
+            {SECTIONS.map((section, index) => {
+              return (
+                <Grid className={classes.linkGrid} item key={index}>
+                  <Button className={classes.button}>
+                    <Link
+                      id="nav"
+                      className={classes.link}
+                      to={section.name.toLowerCase()}
+                      smooth={true}
+                      offset={section.offset}
+                      duration={700}
+                    >
+                      {section.name}
+                    </Link>
+                  </Button>
+                </Grid>
+              );
+            })}
+          </Grid>
         </Grid>
       </Toolbar>
     </AppBar>

@@ -12,9 +12,7 @@ const Banner = () => {
       color: theme.palette.text.primary,
       height: '100vh',
     },
-
     name: {
-      // paddingTop: 'calc(50% - 35em)',
       textAlign: 'center',
     },
   });
@@ -32,7 +30,7 @@ const Banner = () => {
           <p id="job-function">Full Stack Engineer</p>
         </div>
       </div>
-      <div className="arrow-container animated fadeInDown">
+      <div id="arrow-container" className="animated fadeInDown">
         <div className="arrow-2">
           <i className="fa fa-angle-down">
             <Link to={'intro'} smooth={true} duration={700}>

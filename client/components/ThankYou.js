@@ -23,6 +23,9 @@ const ThankYou = () => {
       [theme.breakpoints.up('md')]: {
         width: '60vw',
       },
+      [theme.breakpoints.down('sm')]: {
+        display: 'none',
+      },
     },
     contain: {},
     text: { width: '80%', margin: 'auto', textAlign: 'center' },

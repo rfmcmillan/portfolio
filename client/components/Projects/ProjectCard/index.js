@@ -19,7 +19,10 @@ const ProjectCard = ({ project }) => {
       borderRadius: 30,
       color: theme.palette.text.primary,
       margin: 5,
-      width: 300,
+      width: '90%',
+      // [theme.breakpoints.down('xs')]: {
+      //   width: '90%',
+      // },
     },
     contain: { height: '100%' },
     description: { fontSize: 18, minHeight: 120 },
@@ -28,8 +31,21 @@ const ProjectCard = ({ project }) => {
       borderRadius: '3px 3px 0px 0px',
       minHeight: 200,
       borderBottom: `1px solid #e8e8e8`,
+      [theme.breakpoints.down('xs')]: {
+        minHeight: 0,
+      },
     },
-    root: { width: 350, height: 650, margin: 15, paddingBottom: 15 },
+    root: {
+      width: 350,
+      height: 650,
+      margin: 15,
+      paddingBottom: 15,
+      [theme.breakpoints.down('xs')]: {
+        width: '90vw',
+        margin: 5,
+        height: 700,
+      },
+    },
     rootSkills: { width: 350, height: 650, margin: 15, paddingBottom: 15 },
     skills: {},
     stackTitle: {
@@ -49,8 +65,8 @@ const ProjectCard = ({ project }) => {
   }, []);
 
   return (
-    <div id="card-container">
-      <div id="product-card">
+    <Grid item>
+      <div>
         <Paper
           id="side-a"
           elevation={3}
@@ -124,7 +140,7 @@ const ProjectCard = ({ project }) => {
           </Grid>
         </Paper>
       </div>
-    </div>
+    </Grid>
   );
 };
 

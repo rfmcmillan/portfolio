@@ -11,7 +11,7 @@ import { ThemeProvider, createTheme } from '@material-ui/core/styles';
 const theme = createTheme({
   breakpoints: {
     values: {
-      xs: 0,
+      xs: 330,
       sm: 600,
       md: 900,
       lg: 1200,
@@ -49,7 +49,6 @@ const App = () => {
         <Intro />
         <Skills />
         <Projects />
-        <ThankYou />
         <Footer />
       </div>
     </ThemeProvider>

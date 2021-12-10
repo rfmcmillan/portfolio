@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import { Paper, Typography, Box, Slide } from '@material-ui/core';
+import { Box, Grid, Paper, Typography, Slide } from '@material-ui/core';
 import { useInView, InView } from 'react-intersection-observer';
 
 const SkillItem = ({ skill }) => {
@@ -11,6 +11,9 @@ const SkillItem = ({ skill }) => {
       backgroundColor: theme.palette.primary.contrastText,
       height: 35,
       margin: 8,
+      [theme.breakpoints.down('xs')]: {
+        width: '57vw',
+      },
     },
     image: {
       backgroundColor: 'white',
@@ -18,39 +21,49 @@ const SkillItem = ({ skill }) => {
       minWidth: 30,
       padding: 3,
     },
-    text: { fontSize: 18, fontWeight: 500, textAlign: 'center', width: '100%' },
+    text: {
+      fontSize: 18,
+      fontWeight: 500,
+      textAlign: 'center',
+      width: '100%',
+      [theme.breakpoints.down('xs')]: {
+        fontSize: 16,
+      },
+    },
   });
   const classes = useStyles();
   const { ref, inView, entry } = useInView({ threshold: 0 });
 
   return (
-    <Paper className={classes.root} square>
-      <Box
-        sx={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          height: '100%',
-        }}
-      >
-        {logo ? (
-          <img
-            className={classes.image}
-            src={logo ? logo : ''}
-            alt={logo ? `${title} logo` : ''}
-          />
-        ) : (
-          <Box className={classes.image} />
-        )}
-
-        <Typography
-          className={classes.text}
-          fontFamily={theme.typography.fontFamily}
+    <Grid item>
+      <Paper className={classes.root} square>
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            height: '100%',
+          }}
         >
-          {title}
-        </Typography>
-      </Box>
-    </Paper>
+          {logo ? (
+            <img
+              className={classes.image}
+              src={logo ? logo : ''}
+              alt={logo ? `${title} logo` : ''}
+            />
+          ) : (
+            <Box className={classes.image} />
+          )}
+
+          <Typography
+            className={classes.text}
+            fontFamily={theme.typography.fontFamily}
+          >
+            {title}
+          </Typography>
+        </Box>
+      </Paper>
+    </Grid>
   );
 };
 

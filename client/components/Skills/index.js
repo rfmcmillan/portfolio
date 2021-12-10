@@ -1,8 +1,8 @@
 import React from 'react';
 import { skillsData } from '../../data/skills.js';
-import { Grid, Box, Typography } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import SkillItem from './SkillItem';
+
 import SkillSet from './SkillSet';
 
 const Skills = () => {
@@ -19,6 +19,10 @@ const Skills = () => {
       fontSize: 32,
       fontWeight: 500,
       marginBottom: '.2em',
+      [theme.breakpoints.down('xs')]: {
+        marginBottom: '.4em',
+        fontSize: 24,
+      },
     },
     skills: {
       marginTop: 0,
@@ -31,6 +35,9 @@ const Skills = () => {
       fontSize: 20,
       textAlign: 'center',
       paddingBottom: '1em',
+      [theme.breakpoints.down('xs')]: {
+        fontSize: 16,
+      },
     },
   });
   const classes = useStyles();
@@ -39,10 +46,6 @@ const Skills = () => {
       <div>
         <Typography className={classes.header} variant="h2">
           Skill Set
-        </Typography>
-        <Typography className={classes.subTitle} variant="body1">
-          A variety of frameworks, libraries and languages that I have had the
-          opportunity to work with.
         </Typography>
       </div>
       <ul className={classes.skills}>

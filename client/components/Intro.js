@@ -10,11 +10,19 @@ const Intro = () => {
       fontSize: 20,
       textAlign: 'center',
       width: '50vw',
+      [theme.breakpoints.down('xs')]: {
+        fontSize: 16,
+        width: '75vw',
+      },
     },
     name: {
       fontSize: 32,
       fontWeight: 500,
       marginBottom: '.2em',
+      [theme.breakpoints.down('xs')]: {
+        marginBottom: '.4em',
+        fontSize: 24,
+      },
     },
     root: {
       color: theme.palette.primary.main,
@@ -45,9 +53,8 @@ const Intro = () => {
               <Typography className={classes.about} variant="body1">
                 a full-stack engineer with a background in architecture. Prior
                 to 2021, I was focused on designing sustainable homes. Now,
-                after completing the 26-week software engineering program at
-                Fullstack Academy I am ready to begin my career in software
-                development.
+                after completing the software engineering program at Fullstack
+                Academy I am ready to begin my career in software development.
               </Typography>
             </Grid>
           </Grid>
