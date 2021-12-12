@@ -25,7 +25,13 @@ const ProjectCard = ({ project }) => {
       // },
     },
     contain: { height: '100%' },
-    description: { fontSize: 18, minHeight: 120 },
+    description: {
+      fontSize: 18,
+      minHeight: 120,
+      [theme.breakpoints.down('xs')]: {
+        fontSize: 16,
+      },
+    },
     image: {
       width: '100%',
       borderRadius: '3px 3px 0px 0px',
