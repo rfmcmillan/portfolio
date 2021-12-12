@@ -30,6 +30,7 @@ const ProjectCard = ({ project }) => {
       minHeight: 120,
       [theme.breakpoints.down('xs')]: {
         fontSize: 16,
+        minHeight: 0,
       },
     },
     image: {
@@ -43,13 +44,13 @@ const ProjectCard = ({ project }) => {
     },
     root: {
       width: 350,
-      height: 650,
+      minHeight: 650,
       margin: 15,
       paddingBottom: 15,
       [theme.breakpoints.down('xs')]: {
         width: '90vw',
         margin: 5,
-        height: 700,
+        minHeight: 300,
       },
     },
     rootSkills: { width: 350, height: 650, margin: 15, paddingBottom: 15 },

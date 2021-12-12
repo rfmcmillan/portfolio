@@ -12,7 +12,7 @@ const SkillItem = ({ skill }) => {
       height: 35,
       margin: 8,
       [theme.breakpoints.down('xs')]: {
-        width: '57vw',
+        width: 175,
       },
     },
     image: {
