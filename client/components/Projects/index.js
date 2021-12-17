@@ -38,50 +38,52 @@ const Projects = () => {
   const { ref, inView, entry } = useInView({ threshold: 0 });
 
   return (
-    <Box
-      sx={{
-        alignItems: 'center',
-        backgroundColor: theme.palette.primary.contrastText,
-        color: theme.palette.primary.main,
-        display: 'flex',
-        flexDirection: 'column',
-        paddingTop: '75px',
-        paddingBottom: '75px',
-      }}
-      name="projects"
-    >
+    <section id="projects" title="Projects">
       <Box
         sx={{
+          alignItems: 'center',
+          backgroundColor: theme.palette.primary.contrastText,
+          color: theme.palette.primary.main,
           display: 'flex',
           flexDirection: 'column',
-          alignItems: 'center',
+          paddingTop: '75px',
+          paddingBottom: '75px',
         }}
+        name="projects"
       >
-        <Typography className={classes.title} variant="h2">
-          Projects
-        </Typography>
-        <Typography className={classes.description}>
-          Some examples of my work during my time at Fullstack Academy.
-        </Typography>
-      </Box>
-      <InView
-        as="div"
-        onChange={(inView, entry) => {
-          if (inView) entry.target.id = 'projects';
-        }}
-      >
-        <Grid
-          className={classes.projects}
-          alignItems={matches ? 'center' : undefined}
-          direction={matches ? 'column' : 'row'}
-          container
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+          }}
         >
-          {projectsData.map((project, index) => (
-            <ProjectCard project={project} key={index} />
-          ))}
-        </Grid>
-      </InView>
-    </Box>
+          <Typography className={classes.title} variant="h2">
+            Projects
+          </Typography>
+          <Typography className={classes.description}>
+            Some examples of my work during my time at Fullstack Academy.
+          </Typography>
+        </Box>
+        <InView
+          as="div"
+          onChange={(inView, entry) => {
+            if (inView) entry.target.id = 'projects';
+          }}
+        >
+          <Grid
+            className={classes.projects}
+            alignItems={matches ? 'center' : undefined}
+            direction={matches ? 'column' : 'row'}
+            container
+          >
+            {projectsData.map((project, index) => (
+              <ProjectCard project={project} key={index} />
+            ))}
+          </Grid>
+        </InView>
+      </Box>
+    </section>
   );
 };
 

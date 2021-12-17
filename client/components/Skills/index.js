@@ -42,7 +42,7 @@ const Skills = () => {
   });
   const classes = useStyles();
   return (
-    <section className={classes.root} name="skills">
+    <section id="skills" title="Skills" className={classes.root}>
       <div>
         <Typography className={classes.header} variant="h2">
           Skill Set
