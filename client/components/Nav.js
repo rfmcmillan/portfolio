@@ -22,6 +22,7 @@ const Nav = () => {
   const matches = useMediaQuery(theme.breakpoints.down('sm'));
   const useStyles = makeStyles({
     button: {
+      color: theme.palette.secondary.main,
       [theme.breakpoints.down('xs')]: {
         paddingLeft: 3,
         paddingRight: 3,
@@ -39,7 +40,7 @@ const Nav = () => {
       },
       [theme.breakpoints.down('xs')]: {},
     },
-    menuButton: { fontSize: 40, fill: theme.palette.secondary.main },
+    menuButton: { fontSize: 40, color: theme.palette.secondary.main },
     root: {
       backgroundColor: '#232323',
       boxShadow: '0px 0px 0px transparent',
@@ -78,7 +79,7 @@ const Nav = () => {
   return (
     <AppBar className={classes.root} position="static">
       <Toolbar className={classes.toolBar}>
-        <Grid container justifyContent="space-between">
+        <Grid container alignItems="center" justifyContent="space-between">
           <Grid
             className={classes.socials}
             item
@@ -98,9 +99,9 @@ const Nav = () => {
           </Grid>
 
           {matches ? (
-            <div>
+            <div id="nav">
               <Button onClick={handleClick}>
-                <MenuIcon />
+                <MenuIcon className={classes.menuButton} />
               </Button>
               <Menu
                 keepMounted
@@ -122,6 +123,7 @@ const Nav = () => {
             </div>
           ) : (
             <Grid
+              id="nav"
               item
               container
               direction="row"
@@ -130,7 +132,7 @@ const Nav = () => {
             >
               {sectionElements.map((section, index) => {
                 return (
-                  <Grid className={classes.linkGrid} item key={index}>
+                  <Grid item key={index}>
                     <Button
                       onClick={() => handleScroll(section.offsetTop)}
                       className={classes.button}
