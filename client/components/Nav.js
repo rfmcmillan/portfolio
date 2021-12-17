@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import {
   AppBar,
   Button,
-  Drawer,
   Grid,
   Menu,
   MenuItem,
@@ -12,17 +11,12 @@ import {
 } from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import MenuIcon from '@material-ui/icons/Menu';
-import { Link, animateScroll as scroll } from 'react-scroll';
 import { socialData } from '../data/social.js';
 import Social from './Social.js';
 
-const SECTIONS = [
-  { name: 'Intro', offset: 0 },
-  { name: 'Skills', offset: 0 },
-  { name: 'Projects', offset: 0 },
-];
-
 const Nav = () => {
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [sectionElements, setSectionElements] = useState([]);
   const [ref, inView] = useInView({ threshold: 1, triggerOnce: true });
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down('sm'));
@@ -64,6 +58,23 @@ const Nav = () => {
   });
   const classes = useStyles();
 
+  useEffect(() => {
+    const array = Array.from(document.getElementsByTagName('section'));
+    setSectionElements(array);
+  }, []);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const handleScroll = (scrollY) => {
+    window.scroll({ top: scrollY, left: 0, behavior: 'smooth' });
+  };
+
   return (
     <AppBar className={classes.root} position="static">
       <Toolbar className={classes.toolBar}>
@@ -85,26 +96,52 @@ const Nav = () => {
               />
             ))}
           </Grid>
-          <Grid item container direction="row" justifyContent="flex-end" xs={7}>
-            {SECTIONS.map((section, index) => {
-              return (
-                <Grid className={classes.linkGrid} item key={index}>
-                  <Button className={classes.button}>
-                    <Link
-                      id="nav"
-                      className={classes.link}
-                      to={section.name.toLowerCase()}
-                      smooth={true}
-                      offset={section.offset}
-                      duration={700}
+
+          {matches ? (
+            <div>
+              <Button onClick={handleClick}>
+                <MenuIcon />
+              </Button>
+              <Menu
+                keepMounted
+                onClick={handleClose}
+                open={Boolean(anchorEl)}
+                anchorEl={anchorEl}
+              >
+                {sectionElements.map((section, index) => {
+                  return (
+                    <MenuItem
+                      onClick={() => handleScroll(section.offsetTop)}
+                      key={index}
                     >
-                      {section.name}
-                    </Link>
-                  </Button>
-                </Grid>
-              );
-            })}
-          </Grid>
+                      {section.title}
+                    </MenuItem>
+                  );
+                })}
+              </Menu>
+            </div>
+          ) : (
+            <Grid
+              item
+              container
+              direction="row"
+              justifyContent="flex-end"
+              xs={7}
+            >
+              {sectionElements.map((section, index) => {
+                return (
+                  <Grid className={classes.linkGrid} item key={index}>
+                    <Button
+                      onClick={() => handleScroll(section.offsetTop)}
+                      className={classes.button}
+                    >
+                      {section.title}
+                    </Button>
+                  </Grid>
+                );
+              })}
+            </Grid>
+          )}
         </Grid>
       </Toolbar>
     </AppBar>

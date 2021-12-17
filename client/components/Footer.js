@@ -61,7 +61,7 @@ const Footer = () => {
   const { ref, inView, entry } = useInView({ threshold: 0 });
 
   return (
-    <section className={classes.root} name="footer">
+    <div className={classes.root} name="footer">
       <div ref={ref}>
         <InView
           as="div"
@@ -165,7 +165,7 @@ const Footer = () => {
           </Grid>
         </InView>
       </div>
-    </section>
+    </div>
   );
 };
 
