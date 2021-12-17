@@ -47,7 +47,11 @@ const ProjectCard = ({ project }) => {
       [theme.breakpoints.down('xs')]: {
         width: '90vw',
         margin: 5,
+        marginBottom: 15,
         minHeight: 300,
+      },
+      [theme.breakpoints.down('sm')]: {
+        marginBottom: 15,
       },
     },
     stackTitle: {
