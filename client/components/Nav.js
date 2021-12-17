@@ -45,7 +45,6 @@ const Nav = () => {
       },
       [theme.breakpoints.down('xs')]: {},
     },
-
     menuButton: { fontSize: 40, fill: theme.palette.secondary.main },
     root: {
       backgroundColor: '#232323',

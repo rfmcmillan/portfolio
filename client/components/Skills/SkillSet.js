@@ -43,10 +43,10 @@ const SkillSet = ({ data }) => {
           className={classes.container}
           container
           direction={matches ? 'column' : 'row'}
-          wrap="wrap"
+          alignItems="center"
         >
           {data.items.map((skill) => (
-            <Grid key={skill.title} item xs={3}>
+            <Grid key={skill.title} item xs={matches ? undefined : 3}>
               <SkillItem skill={skill} />
             </Grid>
           ))}

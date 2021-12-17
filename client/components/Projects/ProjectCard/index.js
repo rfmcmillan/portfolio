@@ -25,7 +25,14 @@ const ProjectCard = ({ project }) => {
       // },
     },
     contain: { height: '100%' },
-    description: { fontSize: 18, minHeight: 120 },
+    description: {
+      fontSize: 18,
+      minHeight: 120,
+      [theme.breakpoints.down('xs')]: {
+        fontSize: 16,
+        minHeight: 0,
+      },
+    },
     image: {
       width: '100%',
       borderRadius: '3px 3px 0px 0px',
@@ -37,13 +44,13 @@ const ProjectCard = ({ project }) => {
     },
     root: {
       width: 350,
-      height: 650,
+      minHeight: 650,
       margin: 15,
       paddingBottom: 15,
       [theme.breakpoints.down('xs')]: {
         width: '90vw',
         margin: 5,
-        height: 700,
+        minHeight: 300,
       },
     },
     rootSkills: { width: 350, height: 650, margin: 15, paddingBottom: 15 },
