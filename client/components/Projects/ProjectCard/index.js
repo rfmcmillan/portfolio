@@ -20,9 +20,6 @@ const ProjectCard = ({ project }) => {
       color: theme.palette.text.primary,
       margin: 5,
       width: '90%',
-      // [theme.breakpoints.down('xs')]: {
-      //   width: '90%',
-      // },
     },
     contain: { height: '100%' },
     description: {
@@ -53,8 +50,6 @@ const ProjectCard = ({ project }) => {
         minHeight: 300,
       },
     },
-    rootSkills: { width: 350, height: 650, margin: 15, paddingBottom: 15 },
-    skills: {},
     stackTitle: {
       fontSize: 22,
       fontWeight: 500,
@@ -65,20 +60,12 @@ const ProjectCard = ({ project }) => {
     title: { fontSize: 22, fontWeight: 500 },
     type: { marginBottom: 15, color: theme.palette.text.secondary },
   });
-  const classes = useStyles({ button: { height: 20, width: 20 } });
-
-  useEffect(() => {
-    setShowSkills(false);
-  }, []);
+  const classes = useStyles();
 
   return (
     <Grid item>
       <div>
-        <Paper
-          id="side-a"
-          elevation={3}
-          className={showSkills ? classes.rootSkills : classes.root}
-        >
+        <Paper id="side-a" elevation={3} className={classes.root}>
           <Grid
             className={classes.contain}
             container

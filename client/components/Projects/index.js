@@ -19,11 +19,7 @@ const Projects = () => {
         width: '90vw',
       },
     },
-    projects: {
-      [theme.breakpoints.down('xs')]: {
-        margin: 5,
-      },
-    },
+    projects: {},
     title: {
       fontSize: 32,
       fontWeight: 500,
