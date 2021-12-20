@@ -14,6 +14,9 @@ const Skills = () => {
       color: theme.palette.secondary.contrastText,
       paddingBottom: 75,
       paddingTop: 75,
+      [theme.breakpoints.down('sm')]: {
+        padding: '40px 0 40px 0',
+      },
     },
     header: {
       fontSize: 32,
