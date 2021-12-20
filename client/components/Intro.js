@@ -29,6 +29,9 @@ const Intro = () => {
       backgroundColor: theme.palette.primary.contrastText,
       padding: '75px 0 75px 0',
       margin: 'auto',
+      [theme.breakpoints.down('sm')]: {
+        padding: '40px 0 40px 0',
+      },
     },
   });
   const classes = useStyles();

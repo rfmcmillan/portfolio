@@ -44,6 +44,9 @@ const Projects = () => {
           flexDirection: 'column',
           paddingTop: '75px',
           paddingBottom: '75px',
+          [theme.breakpoints.down('sm')]: {
+            padding: '40px 0 40px 0',
+          },
         }}
         name="projects"
       >

@@ -40,7 +40,17 @@ const Nav = () => {
       },
       [theme.breakpoints.down('xs')]: {},
     },
-    menuButton: { fontSize: 40, color: theme.palette.secondary.main },
+    menuButton: {
+      [theme.breakpoints.down('sm')]: {
+        paddingRight: 0,
+        paddingLeft: 0,
+        width: 20,
+      },
+    },
+    menuIcon: {
+      fontSize: 40,
+      color: theme.palette.secondary.main,
+    },
     root: {
       backgroundColor: '#232323',
       boxShadow: '0px 0px 0px transparent',
@@ -52,8 +62,8 @@ const Nav = () => {
     socials: {},
     toolBar: {
       [theme.breakpoints.down('sm')]: {
-        paddingLeft: 16,
-        paddingRight: 8,
+        paddingLeft: 8,
+        paddingRight: 0,
       },
     },
   });
@@ -100,8 +110,12 @@ const Nav = () => {
 
           {matches ? (
             <div id="nav">
-              <Button onClick={handleClick}>
-                <MenuIcon className={classes.menuButton} />
+              <Button
+                size="small"
+                className={classes.menuButton}
+                onClick={handleClick}
+              >
+                <MenuIcon className={classes.menuIcon} />
               </Button>
               <Menu
                 keepMounted
