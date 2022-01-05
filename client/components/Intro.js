@@ -54,7 +54,7 @@ const Intro = () => {
             </Grid>
             <Grid item>
               <Typography className={classes.about} variant="body1">
-                a full-stack engineer with a background in architecture. Prior
+                a full stack engineer with a background in architecture. Prior
                 to 2021, I was focused on designing sustainable homes. Now,
                 after completing the software engineering program at Fullstack
                 Academy I am ready to begin my career in software development.
