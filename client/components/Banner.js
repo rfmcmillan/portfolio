@@ -27,7 +27,7 @@ const Banner = () => {
         <div className="role">
           <div className="block-2"></div>
           <div className="block-2-remain"></div>
-          <p id="job-function">Front End Developer</p>
+          <p id="job-function">Full Stack Engineer</p>
         </div>
       </div>
       <div id="arrow-container" className="animated fadeInDown">
