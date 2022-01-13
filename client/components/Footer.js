@@ -31,7 +31,6 @@ const Footer = () => {
     },
     name: {
       fontSize: 20,
-      fontWeight: 200,
       textDecoration: 'underline',
       fontFamily: theme.typography.fontFamily,
       color: theme.palette.primary.contrastText,
@@ -58,7 +57,7 @@ const Footer = () => {
     },
   });
   const classes = useStyles();
-  const { ref, inView, entry } = useInView({ threshold: 0 });
+  const { ref } = useInView({ threshold: 0 })
 
   return (
     <div className={classes.root} name="footer">
@@ -105,7 +104,7 @@ const Footer = () => {
                 direction="column"
               >
                 <Grid item>
-                  <Typography className={classes.credit}>Design by</Typography>
+                  <Typography className={classes.credit}>Design inspired by</Typography>
                 </Grid>
                 <Grid item>
                   <Link
@@ -113,17 +112,6 @@ const Footer = () => {
                     href="https://www.benlammers.dev/"
                   >
                     Ben Lammers
-                  </Link>
-                </Grid>
-                <Grid item>
-                  <Typography className={classes.and}>and</Typography>
-                </Grid>
-                <Grid item>
-                  <Link
-                    className={classes.name}
-                    href="https://codepen.io/KaioRocha/pen/YoEVvZ"
-                  >
-                    Kaio Almeida
                   </Link>
                 </Grid>
               </Grid>
@@ -137,7 +125,7 @@ const Footer = () => {
                 xs={matches ? undefined : 6}
               >
                 <Grid item xs={6}>
-                  <Typography className={classes.credit}>Design by</Typography>
+                  <Typography className={classes.credit}>Design inspired by</Typography>
                 </Grid>
                 <Grid item container justifyContent="flex-end" spacing={1}>
                   <Grid item>
@@ -146,17 +134,6 @@ const Footer = () => {
                       href="https://www.benlammers.dev/"
                     >
                       Ben Lammers
-                    </Link>
-                  </Grid>
-                  <Grid item>
-                    <Typography className={classes.and}>and</Typography>
-                  </Grid>
-                  <Grid item>
-                    <Link
-                      className={classes.name}
-                      href="https://codepen.io/KaioRocha/pen/YoEVvZ"
-                    >
-                      Kaio Almeida
                     </Link>
                   </Grid>
                 </Grid>
