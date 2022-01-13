@@ -1,21 +1,9 @@
 import React from 'react';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { KeyboardArrowDown } from '@material-ui/icons';
-import { Link, animateScroll as scroll } from 'react-scroll';
+import { Link } from 'react-scroll';
 
 const Banner = () => {
-  const theme = useTheme();
-  const useStyles = makeStyles({
-    root: {
-      backgroundColor: theme.palette.primary.main,
-      color: theme.palette.text.primary,
-      height: '100vh',
-    },
-    name: {
-      textAlign: 'center',
-    },
-  });
-  const classes = useStyles();
+  
   return (
     <div className="container">
       <div className="box">

@@ -1,44 +1,44 @@
-import React from 'react';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
-import { Grid, Paper, Typography } from '@material-ui/core';
-import { useInView, InView } from 'react-intersection-observer';
+import React from "react";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { Grid, Paper, Typography } from "@material-ui/core";
+import { useInView, InView } from "react-intersection-observer";
 
 const ThankYou = () => {
   const theme = useTheme();
   const useStyles = makeStyles({
     root: {
       backgroundColor: theme.palette.primary.contrastText,
-      paddingBottom: '25px',
-      paddingTop: '25px',
-      height: '80px',
+      paddingBottom: "25px",
+      paddingTop: "25px",
+      height: "80px",
     },
     card: {
-      backgroundColor: '#e0e0e0',
+      backgroundColor: "#e0e0e0",
       color: theme.palette.text.primary,
-      margin: 'auto',
-      padding: '20px 60px 20px 60px',
-      width: '40vw',
-      position: 'relative',
-      top: '50px',
-      [theme.breakpoints.up('md')]: {
-        width: '60vw',
+      margin: "auto",
+      padding: "20px 60px 20px 60px",
+      width: "40vw",
+      position: "relative",
+      top: "50px",
+      [theme.breakpoints.up("md")]: {
+        width: "60vw",
       },
-      [theme.breakpoints.down('sm')]: {
-        display: 'none',
+      [theme.breakpoints.down("sm")]: {
+        display: "none",
       },
     },
     contain: {},
-    text: { width: '80%', margin: 'auto', textAlign: 'center' },
+    text: { width: "80%", margin: "auto", textAlign: "center" },
   });
   const classes = useStyles();
-  const { ref, inView, entry } = useInView({ threshold: 0 });
+  const { ref } = useInView({ threshold: 0 });
   return (
     <section className={classes.root}>
       <Grid ref={ref} className={classes.contain}>
         <InView
           as="div"
           onChange={(inView, entry) => {
-            if (inView) entry.target.id = 'thank-you';
+            if (inView) entry.target.id = "thank-you";
           }}
         >
           <Paper

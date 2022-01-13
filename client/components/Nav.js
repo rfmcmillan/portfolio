@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { useInView } from 'react-intersection-observer';
+import React, { useState, useEffect } from "react";
 import {
   AppBar,
   Button,
@@ -8,22 +7,21 @@ import {
   MenuItem,
   Toolbar,
   useMediaQuery,
-} from '@material-ui/core';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
-import MenuIcon from '@material-ui/icons/Menu';
-import { socialData } from '../data/social.js';
-import Social from './Social.js';
+} from "@material-ui/core";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
+import MenuIcon from "@material-ui/icons/Menu";
+import { socialData } from "../data/social.js";
+import Social from "./Social.js";
 
 const Nav = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [sectionElements, setSectionElements] = useState([]);
-  const [ref, inView] = useInView({ threshold: 1, triggerOnce: true });
   const theme = useTheme();
-  const matches = useMediaQuery(theme.breakpoints.down('sm'));
+  const matches = useMediaQuery(theme.breakpoints.down("sm"));
   const useStyles = makeStyles({
     button: {
       color: theme.palette.secondary.main,
-      [theme.breakpoints.down('xs')]: {
+      [theme.breakpoints.down("xs")]: {
         paddingLeft: 3,
         paddingRight: 3,
         maxWidth: 70,
@@ -34,14 +32,14 @@ const Nav = () => {
       color: theme.palette.secondary.main,
       fontFamily: theme.typography.fontFamily,
       fontSize: 18,
-      textTransform: 'none',
-      [theme.breakpoints.down('sm')]: {
+      textTransform: "none",
+      [theme.breakpoints.down("sm")]: {
         fontSize: 16,
       },
-      [theme.breakpoints.down('xs')]: {},
+      [theme.breakpoints.down("xs")]: {},
     },
     menuButton: {
-      [theme.breakpoints.down('sm')]: {
+      [theme.breakpoints.down("sm")]: {
         paddingRight: 0,
         paddingLeft: 0,
         width: 20,
@@ -52,16 +50,16 @@ const Nav = () => {
       color: theme.palette.secondary.main,
     },
     root: {
-      backgroundColor: '#232323',
-      boxShadow: '0px 0px 0px transparent',
+      backgroundColor: "#232323",
+      boxShadow: "0px 0px 0px transparent",
       paddingTop: 5,
-      [theme.breakpoints.down('sm')]: {
+      [theme.breakpoints.down("sm")]: {
         paddingTop: 0,
       },
     },
     socials: {},
     toolBar: {
-      [theme.breakpoints.down('sm')]: {
+      [theme.breakpoints.down("sm")]: {
         paddingLeft: 8,
         paddingRight: 0,
       },
@@ -70,7 +68,7 @@ const Nav = () => {
   const classes = useStyles();
 
   useEffect(() => {
-    const array = Array.from(document.getElementsByTagName('section'));
+    const array = Array.from(document.getElementsByTagName("section"));
     setSectionElements(array);
   }, []);
 
@@ -83,7 +81,7 @@ const Nav = () => {
   };
 
   const handleScroll = (scrollY) => {
-    window.scroll({ top: scrollY, left: 0, behavior: 'smooth' });
+    window.scroll({ top: scrollY, left: 0, behavior: "smooth" });
   };
 
   return (
@@ -100,7 +98,7 @@ const Nav = () => {
           >
             {socialData.map((social, index) => (
               <Social
-                classNames={[social.className, 'socialAccent']}
+                classNames={[social.className, "socialAccent"]}
                 fileName={social.fileName}
                 aValues={social.aValues}
                 key={index}

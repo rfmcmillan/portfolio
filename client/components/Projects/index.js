@@ -1,31 +1,31 @@
-import React from 'react';
-import { Typography, Box, Grid, useMediaQuery } from '@material-ui/core';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
-import ProjectCard from './ProjectCard';
-import { projectsData } from '../../data/projects';
-import { useInView, InView } from 'react-intersection-observer';
+import React from "react";
+import { Typography, Box, Grid, useMediaQuery } from "@material-ui/core";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
+import ProjectCard from "./ProjectCard";
+import { projectsData } from "../../data/projects";
+import { useInView, InView } from "react-intersection-observer";
 
 const Projects = () => {
   const theme = useTheme();
-  const matches = useMediaQuery(theme.breakpoints.down('sm'));
+  const matches = useMediaQuery(theme.breakpoints.down("sm"));
   const useStyles = makeStyles({
     description: {
       fontSize: 20,
-      textAlign: 'center',
-      paddingBottom: '1em',
-      width: '100%',
-      [theme.breakpoints.down('xs')]: {
+      textAlign: "center",
+      paddingBottom: "1em",
+      width: "100%",
+      [theme.breakpoints.down("xs")]: {
         fontSize: 16,
-        width: '90vw',
+        width: "90vw",
       },
     },
     projects: {},
     title: {
       fontSize: 32,
       fontWeight: 500,
-      marginBottom: '.2em',
-      [theme.breakpoints.down('xs')]: {
-        marginBottom: '.4em',
+      marginBottom: ".2em",
+      [theme.breakpoints.down("xs")]: {
+        marginBottom: ".4em",
         fontSize: 24,
       },
     },
@@ -37,24 +37,24 @@ const Projects = () => {
     <section id="projects" title="Projects">
       <Box
         sx={{
-          alignItems: 'center',
+          alignItems: "center",
           backgroundColor: theme.palette.primary.contrastText,
           color: theme.palette.primary.main,
-          display: 'flex',
-          flexDirection: 'column',
-          paddingTop: '75px',
-          paddingBottom: '75px',
-          [theme.breakpoints.down('sm')]: {
-            padding: '40px 0 40px 0',
+          display: "flex",
+          flexDirection: "column",
+          paddingTop: "75px",
+          paddingBottom: "75px",
+          [theme.breakpoints.down("sm")]: {
+            padding: "40px 0 40px 0",
           },
         }}
         name="projects"
       >
         <Box
           sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
           }}
         >
           <Typography className={classes.title} variant="h2">
@@ -67,13 +67,13 @@ const Projects = () => {
         <InView
           as="div"
           onChange={(inView, entry) => {
-            if (inView) entry.target.id = 'projects';
+            if (inView) entry.target.id = "projects";
           }}
         >
           <Grid
             className={classes.projects}
-            alignItems={matches ? 'center' : undefined}
-            direction={matches ? 'column' : 'row'}
+            alignItems={matches ? "center" : undefined}
+            direction={matches ? "column" : "row"}
             container
           >
             {projectsData.map((project, index) => (

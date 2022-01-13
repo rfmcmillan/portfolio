@@ -1,34 +1,33 @@
-import React from 'react';
-import { Grid, Box, useMediaQuery } from '@material-ui/core';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
-import SkillItem from './SkillItem';
-import { useInView, InView } from 'react-intersection-observer';
+import React from "react";
+import { Grid, Box, useMediaQuery } from "@material-ui/core";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
+import SkillItem from "./SkillItem";
+import { InView } from "react-intersection-observer";
 
 const SkillSet = ({ data }) => {
   const theme = useTheme();
-  const matches = useMediaQuery(theme.breakpoints.down('sm'));
+  const matches = useMediaQuery(theme.breakpoints.down("sm"));
   const useStyles = makeStyles({
     container: {
-      width: '60vw',
-      margin: 'auto',
-      marginBottom: '1em',
+      width: "60vw",
+      margin: "auto",
+      marginBottom: "1em",
     },
     phrase: {
       color: theme.palette.text.primary,
       fontSize: 20,
-      textAlign: 'center',
+      textAlign: "center",
       fontFamily: theme.typography.fontFamily,
-      paddingBottom: '.4em',
-      [theme.breakpoints.down('xs')]: {
+      paddingBottom: ".4em",
+      [theme.breakpoints.down("xs")]: {
         fontSize: 16,
       },
     },
-    [theme.breakpoints.down('sm')]: {
-      width: '100vw',
+    [theme.breakpoints.down("sm")]: {
+      width: "100vw",
     },
   });
   const classes = useStyles();
-  const { ref, inView, entry } = useInView({ threshold: 0 });
 
   return (
     <div>
@@ -36,13 +35,13 @@ const SkillSet = ({ data }) => {
       <InView
         as="div"
         onChange={(inView, entry) => {
-          if (inView) entry.target.id = 'skills';
+          if (inView) entry.target.id = "skills";
         }}
       >
         <Grid
           className={classes.container}
           container
-          direction={matches ? 'column' : 'row'}
+          direction={matches ? "column" : "row"}
           alignItems="center"
         >
           {data.items.map((skill) => (
