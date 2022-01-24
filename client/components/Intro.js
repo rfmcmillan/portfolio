@@ -55,9 +55,12 @@ const Intro = () => {
             <Grid item>
               <Typography className={classes.about} variant="body1">
                 a full stack engineer with a background in architecture. Prior
-                to 2021, I was focused on designing sustainable homes. Now,
-                after completing the software engineering program at Fullstack
-                Academy I am ready to begin my career in software development.
+                to 2021, I was focused on designing sustainable homes and
+                creating incredible experiences for people in the form of
+                buildings. Now, after completing the software engineering
+                program at Fullstack Academy, I am ready to use the same
+                attention to detail I used as an architect to craft incredible
+                user experiences in the form of software.
               </Typography>
             </Grid>
           </Grid>
