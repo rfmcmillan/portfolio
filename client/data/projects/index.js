@@ -1,5 +1,4 @@
 import React from "react";
-import { pomodoroGo, pocketTrade, globalSnacker } from "../../img/projects";
 
 import { ExternalIcon, GithubIcon } from "../../img/icons";
 import {
@@ -8,18 +7,13 @@ import {
   redux,
   express,
   materialUi,
-  chai,
   mocha,
   html,
   css,
   nodejs,
-  git,
-  sequelize,
   webpack,
   jwt,
-  heroku,
   chrome,
-  alpaca,
   apexCharts,
   googleMaps,
 } from "../../img/logos";

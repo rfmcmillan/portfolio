@@ -1,41 +1,33 @@
-import React, { useState, useEffect } from 'react';
-import {
-  Box,
-  Button,
-  Grid,
-  Paper,
-  Tooltip,
-  Typography,
-} from '@material-ui/core';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
-import SkillItem from '../../Skills/SkillItem';
-import SkillBubble from '../SkillBubble';
+import React from "react";
+import { Box, Button, Grid, Paper, Typography } from "@material-ui/core";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
+import PropTypes from "prop-types";
+import SkillBubble from "../SkillBubble";
 
 const ProjectCard = ({ project }) => {
   const theme = useTheme();
-  const [showSkills, setShowSkills] = useState(false);
   const useStyles = makeStyles({
     button: {
       borderRadius: 30,
       color: theme.palette.text.primary,
       margin: 5,
-      width: '90%',
+      width: "90%",
     },
-    contain: { height: '100%' },
+    contain: { height: "100%" },
     description: {
       fontSize: 18,
       minHeight: 120,
-      [theme.breakpoints.down('xs')]: {
+      [theme.breakpoints.down("xs")]: {
         fontSize: 16,
         minHeight: 0,
       },
     },
     image: {
-      width: '100%',
-      borderRadius: '3px 3px 0px 0px',
+      width: "100%",
+      borderRadius: "3px 3px 0px 0px",
       minHeight: 200,
       borderBottom: `1px solid #e8e8e8`,
-      [theme.breakpoints.down('xs')]: {
+      [theme.breakpoints.down("xs")]: {
         minHeight: 0,
       },
     },
@@ -44,20 +36,20 @@ const ProjectCard = ({ project }) => {
       minHeight: 650,
       margin: 15,
       paddingBottom: 15,
-      [theme.breakpoints.down('xs')]: {
-        width: '90vw',
+      [theme.breakpoints.down("xs")]: {
+        width: "90vw",
         margin: 5,
         marginBottom: 15,
         minHeight: 300,
       },
-      [theme.breakpoints.down('sm')]: {
+      [theme.breakpoints.down("sm")]: {
         marginBottom: 15,
       },
     },
     stackTitle: {
       fontSize: 22,
       fontWeight: 500,
-      textAlign: 'center',
+      textAlign: "center",
       marginTop: 15,
     },
     text: { margin: 15 },
@@ -114,7 +106,7 @@ const ProjectCard = ({ project }) => {
                     title={skill.title}
                   />
                 ) : (
-                  ''
+                  ""
                 )
               )}
             </Grid>
@@ -128,7 +120,6 @@ const ProjectCard = ({ project }) => {
                     target="_blank"
                     rel="noopener noreferrer"
                     key={index}
-                    onFocus={() => setFlip(true)}
                   >
                     {button.text}
                   </Button>
@@ -143,3 +134,5 @@ const ProjectCard = ({ project }) => {
 };
 
 export default ProjectCard;
+
+ProjectCard.propTypes = { project: PropTypes.object };

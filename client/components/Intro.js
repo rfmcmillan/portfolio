@@ -38,7 +38,7 @@ const Intro = () => {
   const { ref } = useInView({ threshold: 0 });
 
   return (
-    <section className="section" id="intro" title="Intro">
+    <section className="section" id="intro">
       <div ref={ref} className={classes.root}>
         <InView
           as="div"
