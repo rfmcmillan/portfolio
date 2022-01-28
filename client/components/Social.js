@@ -3,10 +3,8 @@ import { makeStyles, useTheme } from "@material-ui/core/styles";
 import { Grid } from "@material-ui/core";
 
 const Social = (props) => {
-  console.log("props:", props);
   const { fileName, aValues, classNames = [] } = props;
   const { ariaLabel, href, ...otherAValues } = aValues;
-
   const theme = useTheme();
   const useStyles = makeStyles({
     image: {
