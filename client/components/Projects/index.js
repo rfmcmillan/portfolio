@@ -34,7 +34,7 @@ const Projects = () => {
   const { ref, inView, entry } = useInView({ threshold: 0 });
 
   return (
-    <section id="projects" title="Projects">
+    <section id="projects" data-title="Projects">
       <Box
         sx={{
           alignItems: "center",

@@ -127,7 +127,7 @@ const Nav = () => {
                       onClick={() => handleScroll(section.offsetTop)}
                       key={index}
                     >
-                      {section.title}
+                      {section.dataset.title}
                     </MenuItem>
                   );
                 })}
@@ -143,13 +143,14 @@ const Nav = () => {
               xs={7}
             >
               {sectionElements.map((section, index) => {
+                const { dataset, offsetTop } = section;
                 return (
                   <Grid item key={index}>
                     <Button
-                      onClick={() => handleScroll(section.offsetTop)}
+                      onClick={() => handleScroll(offsetTop)}
                       className={classes.button}
                     >
-                      {section.title}
+                      {dataset.title}
                     </Button>
                   </Grid>
                 );
